@@ -367,13 +367,17 @@ button.topbarbtn img {
 div.navbar-brand-box {
   padding-top: 2em; }
   div.navbar-brand-box a.navbar-brand {
-    width: 100%; }
+    width: 100%;
+    height: auto; }
     div.navbar-brand-box a.navbar-brand img {
-      max-height: 100px !important;
+      min-height: 100px;
+      max-height: 10vh;
       margin: 0 auto;
       display: block;
       height: auto !important; }
-
+      @media (min-width: 768px) {
+        div.navbar-brand-box a.navbar-brand img {
+          max-height: 15vh !important; } }
 nav.bd-links {
   margin-left: 0px;
   max-height: none !important; }
