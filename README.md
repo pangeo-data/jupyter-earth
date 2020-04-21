@@ -1,4 +1,4 @@
-# jupytearth-meta
+# jupyter-earth
 
 
 ## Build the documentation
