@@ -1,5 +1,7 @@
 # jupyter-earth
 
+[![NSF-1928406](https://img․shields․io/badge/NSF-1928406-blue.svg)](https://nsf․gov/awardsearch/showAward?AWD_ID=1928406)
+[![NSF-1928374](https://img․shields․io/badge/NSF-1928374-blue.svg)](https://nsf․gov/awardsearch/showAward?AWD_ID=1928374)
 
 ## Build the documentation
 
