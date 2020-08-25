@@ -3,6 +3,8 @@
 [![NSF-1928406](https://img․shields․io/badge/NSF-1928406-blue.svg)](https://nsf․gov/awardsearch/showAward?AWD_ID=1928406)
 [![NSF-1928374](https://img․shields․io/badge/NSF-1928374-blue.svg)](https://nsf․gov/awardsearch/showAward?AWD_ID=1928374)
 
+Source repository for the Jupyter meets the Earth project website: https://pangeo-data.github.io/jupyter-earth/
+
 ## Build the documentation
 
 The documentation for this repository is built using the beta version of
