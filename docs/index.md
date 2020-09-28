@@ -13,6 +13,17 @@ The full project description is available in the [original grant proposal](https
 
 ## Presentations and events
 
+
+### Discussion with Coiled
+_September 24, 2020_
+
+As a part of the [Science Thursdays](https://coiled.io/blog/coileds-first-live-stream-science-thursdays/) livestream events hosted by Hugo Bowne-Anderson and Matthew Rocklin, Lindsey Heagy joined for a conversation on using dask for inverse problems in geophysics
+
+- [announcement blog post](https://coiled.io/blog/imaging-earths-subsurface-with-python-and-jupyter/)
+- [recording on youtube](https://t.co/cImsLJUROP?amp=1)
+- [demo repository](https://github.com/simpeg-research/bookpurnong-inversion)
+
+
 ### EarthCube community meeting
 _July 27, 2020_
 
