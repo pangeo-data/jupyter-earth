@@ -13,6 +13,52 @@ The full project description is available in the [original grant proposal](https
 
 ## Presentations and events
 
+### EarthCube Webinar
+_November 6, 2020_
+
+We gave a presentation "Jupyter and Pangeo: Building robust, open ecosystems in EarthCube" at the EarthCube Webinar [Joining the EarthCube Community as a Funded Project - a Discussion on the 2021 NSF EarthCube Solicitation](https://www.earthcube.org/event/earthcube-webinar-joining-earthcube-community-funded-project-discussion-2021-nsf-earthcube-solicitation).
+
+- [slides](https://docs.google.com/presentation/d/1oIDTq5M4GI4qr53VG8XcI_tP9mPUW_9B9J-lDj90nfc/edit?usp=sharing)
+
+
+### Next Generation Ecosystems Experiments (NGEE) Seminars
+_October 19, 2020_
+
+As a part of the [NGEE-Tropics](https://ngee-tropics.lbl.gov/) seminar series, we gave a presentation entitled "Jupyter meets the Earth: partnering domain research with open-source development":
+
+- [slides](https://docs.google.com/presentation/d/1lyigjwK-Wkl_FjxxhQHieycQvMOVdyMgZgYx-6fpcg8/edit?usp=sharing)
+- [shared notes](https://docs.google.com/document/d/1UzrgbleUE0LCL2VewtbYce8qYVmU_o8z5325JYT9ij8/edit?usp=sharing)
+
+
+### JupyterCon Presentation
+_October 15, 2020_
+
+[JupyterCon](https://jupytercon.com/) was held online from October 5-17. We presented a poster on the Jupyter meets the Earth project:
+
+- [presentation description](https://cfp.jupytercon.com/2020/schedule/presentation/245/jupyter-meets-the-earth-connecting-jupyter-development-with-geoscience-research/)
+- [recording](https://drive.google.com/file/d/1mzik_NPnEaBf68ax1DvfASpZTsEK_FFO/view?usp=sharing)
+- [poster](https://drive.google.com/file/d/1AbDuTI9xtNowPHp6wN5MaT2NvJrmAB3T/view?usp=sharing)
+
+
+### Discussion with Coiled
+_September 24, 2020_
+
+As a part of the [Science Thursdays](https://coiled.io/blog/coileds-first-live-stream-science-thursdays/) livestream events hosted by Hugo Bowne-Anderson and Matthew Rocklin, Lindsey Heagy joined for a conversation on using dask for inverse problems in geophysics
+
+- [announcement blog post](https://coiled.io/blog/imaging-earths-subsurface-with-python-and-jupyter/)
+- [recording on youtube](https://t.co/cImsLJUROP?amp=1)
+- [demo repository](https://github.com/simpeg-research/bookpurnong-inversion)
+
+
+### EarthCube Council of Funded projects
+_September 10, 2020_
+
+We gave a project-overview presentation as a part of the EarthCube [Council of Funded Projects](https://www.earthcube.org/group/council-funded-projects-cfp) regular meeting series:
+
+- [slides](https://docs.google.com/presentation/d/1xQTYROldMRDg8RTNmRTCjPbNZ_AIC_80KhnAR7rcNB4/edit?usp=sharing)
+- [shared notes](https://docs.google.com/document/d/1v74fUNH6fldvv0iPFVx57bDyg3yJBGENNFc-DU74fxE/edit?usp=sharing)
+
+
 ### EarthCube community meeting
 _July 27, 2020_
 
@@ -33,6 +79,7 @@ Several team members participated as instructors and joing in the project-work a
 _June 6-14, 2020_
 
 As a part of the [Transform 2020 virtual conference](https://transform2020.sched.com/), Lindsey Heagy gave a tutorial on [geophysical inversions with SimPEG](https://transform2020.sched.com/event/cD5V/tutorial-geophysical-inversion-in-simpeg).
+
 
 ## Resources
 

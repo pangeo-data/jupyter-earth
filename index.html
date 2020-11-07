@@ -1,21 +1,42 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jupyter Meets the Earth &#8212; Jupyter Meets the Earth</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -23,15 +44,21 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tools we support" href="tools.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -57,7 +84,7 @@
 
 <form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -116,7 +143,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="_sources/index.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -130,7 +157,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -139,6 +167,7 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -154,6 +183,31 @@
    Presentations and events
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#earthcube-webinar">
+     EarthCube Webinar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-generation-ecosystems-experiments-ngee-seminars">
+     Next Generation Ecosystems Experiments (NGEE) Seminars
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupytercon-presentation">
+     JupyterCon Presentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion-with-coiled">
+     Discussion with Coiled
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#earthcube-council-of-funded-projects">
+     EarthCube Council of Funded projects
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#earthcube-community-meeting">
      EarthCube community meeting
@@ -186,6 +240,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -204,6 +259,52 @@
 </div>
 <div class="section" id="presentations-and-events">
 <h2>Presentations and events<a class="headerlink" href="#presentations-and-events" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="earthcube-webinar">
+<h3>EarthCube Webinar<a class="headerlink" href="#earthcube-webinar" title="Permalink to this headline">¶</a></h3>
+<p><em>November 6, 2020</em></p>
+<p>We gave a presentation “Jupyter and Pangeo: Building robust, open ecosystems in EarthCube” at the EarthCube Webinar <a class="reference external" href="https://www.earthcube.org/event/earthcube-webinar-joining-earthcube-community-funded-project-discussion-2021-nsf-earthcube-solicitation">Joining the EarthCube Community as a Funded Project - a Discussion on the 2021 NSF EarthCube Solicitation</a>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.google.com/presentation/d/1oIDTq5M4GI4qr53VG8XcI_tP9mPUW_9B9J-lDj90nfc/edit?usp=sharing">slides</a></p></li>
+</ul>
+</div>
+<div class="section" id="next-generation-ecosystems-experiments-ngee-seminars">
+<h3>Next Generation Ecosystems Experiments (NGEE) Seminars<a class="headerlink" href="#next-generation-ecosystems-experiments-ngee-seminars" title="Permalink to this headline">¶</a></h3>
+<p><em>October 19, 2020</em></p>
+<p>As a part of the <a class="reference external" href="https://ngee-tropics.lbl.gov/">NGEE-Tropics</a> seminar series, we gave a presentation entitled “Jupyter meets the Earth: partnering domain research with open-source development”:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.google.com/presentation/d/1lyigjwK-Wkl_FjxxhQHieycQvMOVdyMgZgYx-6fpcg8/edit?usp=sharing">slides</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1UzrgbleUE0LCL2VewtbYce8qYVmU_o8z5325JYT9ij8/edit?usp=sharing">shared notes</a></p></li>
+</ul>
+</div>
+<div class="section" id="jupytercon-presentation">
+<h3>JupyterCon Presentation<a class="headerlink" href="#jupytercon-presentation" title="Permalink to this headline">¶</a></h3>
+<p><em>October 15, 2020</em></p>
+<p><a class="reference external" href="https://jupytercon.com/">JupyterCon</a> was held online from October 5-17. We presented a poster on the Jupyter meets the Earth project:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cfp.jupytercon.com/2020/schedule/presentation/245/jupyter-meets-the-earth-connecting-jupyter-development-with-geoscience-research/">presentation description</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1mzik_NPnEaBf68ax1DvfASpZTsEK_FFO/view?usp=sharing">recording</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1AbDuTI9xtNowPHp6wN5MaT2NvJrmAB3T/view?usp=sharing">poster</a></p></li>
+</ul>
+</div>
+<div class="section" id="discussion-with-coiled">
+<h3>Discussion with Coiled<a class="headerlink" href="#discussion-with-coiled" title="Permalink to this headline">¶</a></h3>
+<p><em>September 24, 2020</em></p>
+<p>As a part of the <a class="reference external" href="https://coiled.io/blog/coileds-first-live-stream-science-thursdays/">Science Thursdays</a> livestream events hosted by Hugo Bowne-Anderson and Matthew Rocklin, Lindsey Heagy joined for a conversation on using dask for inverse problems in geophysics</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://coiled.io/blog/imaging-earths-subsurface-with-python-and-jupyter/">announcement blog post</a></p></li>
+<li><p><a class="reference external" href="https://t.co/cImsLJUROP?amp=1">recording on youtube</a></p></li>
+<li><p><a class="reference external" href="https://github.com/simpeg-research/bookpurnong-inversion">demo repository</a></p></li>
+</ul>
+</div>
+<div class="section" id="earthcube-council-of-funded-projects">
+<h3>EarthCube Council of Funded projects<a class="headerlink" href="#earthcube-council-of-funded-projects" title="Permalink to this headline">¶</a></h3>
+<p><em>September 10, 2020</em></p>
+<p>We gave a project-overview presentation as a part of the EarthCube <a class="reference external" href="https://www.earthcube.org/group/council-funded-projects-cfp">Council of Funded Projects</a> regular meeting series:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.google.com/presentation/d/1xQTYROldMRDg8RTNmRTCjPbNZ_AIC_80KhnAR7rcNB4/edit?usp=sharing">slides</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1v74fUNH6fldvv0iPFVx57bDyg3yJBGENNFc-DU74fxE/edit?usp=sharing">shared notes</a></p></li>
+</ul>
+</div>
 <div class="section" id="earthcube-community-meeting">
 <h3>EarthCube community meeting<a class="headerlink" href="#earthcube-community-meeting" title="Permalink to this headline">¶</a></h3>
 <p><em>July 27, 2020</em></p>
@@ -242,6 +343,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -258,7 +378,9 @@
     <div class="container">
       <p>
         
-            &copy; Copyright .<br/>
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
       </p>
     </div>
   </footer>
@@ -268,7 +390,10 @@
       </div>
     </div>
 
-    <script src="_static/js/index.js"></script>
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>
