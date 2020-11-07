@@ -1,1 +1,0 @@
-git+https://github.com/ExecutableBookProject/cli.git@master
