@@ -13,6 +13,14 @@ The full project description is available in the [original grant proposal](https
 
 ## Presentations and events
 
+### American Geophysical Union
+_December 1-17, 2020_
+
+As a part of the AGU Annual meeting, we presented:
+
+- [IN002-05](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/764293) Jupyter meets the Earth: advancing an open ecosystem that supports science
+- [GP005-04](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/734576) Advances in Magnetotelluric modelling and inversion with SimPEG
+
 ### EarthCube Webinar
 _November 6, 2020_
 
