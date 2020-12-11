@@ -20,6 +20,7 @@ As a part of the AGU Annual meeting, we presented:
 
 - [IN002-05](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/764293) Jupyter meets the Earth: advancing an open ecosystem that supports science
 - [GP005-04](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/734576) Advances in Magnetotelluric modelling and inversion with SimPEG
+- [C004-0010](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/743265) Multimodal Dataset Integration for Cloud Masking of ICESat-2
 
 ### EarthCube Webinar
 _November 6, 2020_
