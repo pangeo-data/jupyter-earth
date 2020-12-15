@@ -25,6 +25,11 @@ As a part of the AGU Annual meeting, we presented:
 - [H141-0025](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/766113) Spatio-Temporal Interpolation of Cloud Data
 - [H140-0003](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/715796) Jupyer Supported Interactive Data Processing Workflow for Intensively Monitored Watersheds across the US
 
+### Supercomputing Conference (SC)
+_November 11-19, 2020_
+
+As a part of the [Fourth Workshop on Interactive High-Performance Computing @ SC20](https://www.interactivehpc.com/), Anderson Banihirwe spoke on a panel about Interactive High Performance Computing.
+
 ### EarthCube Webinar
 _November 6, 2020_
 
