@@ -22,6 +22,7 @@ As a part of the AGU Annual meeting, we presented:
 - [GP005-04](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/734576) Advances in Magnetotelluric modelling and inversion with SimPEG
 - [C004-0010](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/743265) Multimodal Dataset Integration for Cloud Masking of ICESat-2
 - [H140-0003](https://agu.confex.com/agu/fm20/prelim.cgi/Paper/715796) Jupyer Supported Interactive Data Processing Workflow for Intensively Monitored Watersheds across the US
+- [IN002-07](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/744051) Fusion of ICESat-2 and complementary remote sensing data for interactive visualization in Jupyter
 
 ### EarthCube Webinar
 _November 6, 2020_
