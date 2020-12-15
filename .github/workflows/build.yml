@@ -4,6 +4,9 @@ on:
   push:
     branches:
     - master
+  pull_request:
+    branches:
+    - master
 
 jobs:
   build-docs:
@@ -13,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
       with:
         python-version: 3.7
 
@@ -27,7 +30,8 @@ jobs:
         jupyter-book build ./docs
 
     - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3.6.1
+      if: github.ref == 'refs/heads/master'
+      uses: peaceiris/actions-gh-pages@v3.7.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs/_build/html
