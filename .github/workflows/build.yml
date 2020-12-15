@@ -4,6 +4,9 @@ on:
   push:
     branches:
     - master
+  pull_request:
+    branches:
+    - master
 
 jobs:
   build-docs:
@@ -27,6 +30,7 @@ jobs:
         jupyter-book build ./docs
 
     - name: Deploy to gh-pages
+      if: github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
