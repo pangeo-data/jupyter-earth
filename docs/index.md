@@ -24,6 +24,8 @@ As a part of the AGU Annual meeting, we presented:
 - [IN002-07](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/744051) Fusion of ICESat-2 and complementary remote sensing data for interactive visualization in Jupyter
 - [H141-0025](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/766113) Spatio-Temporal Interpolation of Cloud Data
 - [H140-0003](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/715796) Jupyer Supported Interactive Data Processing Workflow for Intensively Monitored Watersheds across the US
+- [TH086](https://agu.confex.com/agu/fm20/meetingapp.cgi/Session/104761) Scripts to Software Frameworks: How Do We Share Our Research Code?
+- [SCIWS13](https://agu.confex.com/agu/fm20/meetingapp.cgi/Session/103714) Best Practices for Developing and Sustaining Your Open-Source Research Software
 
 ### Supercomputing Conference (SC)
 _November 11-19, 2020_
