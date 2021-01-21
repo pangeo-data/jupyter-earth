@@ -1,2 +1,12 @@
 title: Jupyter Meets the Earth
 logo: images/jupyter-earth.png
+
+repository:
+  url: https://github.com/pangeo-data/jupyter-earth
+  branch: master
+  path_to_book: docs
+
+launch_buttons:
+  notebook_interface: "jupyterlab" # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url: "https://mybinder.org"
+  thebe: true
