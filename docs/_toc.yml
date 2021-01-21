@@ -1,2 +1,5 @@
 - file: index
+- file: jupyter-resources/index
+  sections:
+    - file: jupyter-resources/widgets.ipynb
 - file: tools
