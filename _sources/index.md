@@ -13,6 +13,13 @@ The full project description is available in the [original grant proposal](https
 
 ## Presentations and events
 
+### ESIP winter meeting
+_January 26, 2021_
+
+As a part of the [ESIP winter meeting](https://2021esipwintermeeting.sched.com/), we were invited to present in the session: [Jupyter Notebooks: Harnessing the full potential](https://2021esipwintermeeting.sched.com/event/g495/jupyter-notebooks-harnessing-the-full-potential)
+
+- [slides](https://docs.google.com/presentation/d/1QBR3BkM0xIa3FQJPxWjLenWs--FqrZk0Q8qPxuqHkyg/edit)
+
 ### American Geophysical Union
 _December 1-17, 2020_
 
