@@ -1,3 +1,7 @@
 jupyter-book
 # sphinxcontrib-bibtex pinning reason: https://github.com/executablebooks/jupyter-book/issues/1137
 sphinxcontrib-bibtex<2.0.0
+numpy
+scipy
+matplotlib
+ipywidgets
