@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jupyter Widgets &#8212; Jupyter Meets the Earth</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -361,10 +361,6 @@
 </ul>
 <div class="section" id="motivating-example-mauna-loa-co-2-record">
 <h2>Motivating Example: Mauna Loa CO<span class="math notranslate nohighlight">\(_2\)</span> record<a class="headerlink" href="#motivating-example-mauna-loa-co-2-record" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you download and run this example locally, you will need to also download: the processed <a class="reference external" href="https://github.com/pangeo-data/jupyter-earth/tree/master/docs/jupyter-resources/mauna_loa_data.npz">Mauna Loa data</a></p>
-</div>
 <p>Carbon Dioxide (CO<span class="math notranslate nohighlight">\(_2\)</span>) is a greenhouse gas, and significant contributor to the warming of the climate. It is an important input into climate models, which we use to make predictions about possible future climate scenarios, and sometimes to make policy decisions, including carbon taxes.</p>
 <p><strong>Question:</strong> Based on historical CO<span class="math notranslate nohighlight">\(_2\)</span> data, can we predict what CO<span class="math notranslate nohighlight">\(_2\)</span> concentrations will be in the future?</p>
 <div class="section" id="learning-goals">
@@ -384,7 +380,8 @@
 <p>C. D. Keeling, S. C. Piper, R. B. Bacastow, M. Wahlen, T. P. Whorf, M. Heimann, and  H. A. Meijer, Exchanges of atmospheric CO2 and 13CO2 with the terrestrial biosphere and  oceans from 1978 to 2000.  I. Global aspects, SIO Reference Series, No. 01-06, Scripps  Institution of Oceanography, San Diego, 88 pages, 2001. https://scrippsco2.ucsd.edu/data/atmospheric_co2/primary_mlo_co2_record.html</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
@@ -398,12 +395,12 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">f77599633bba</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">3357</span><span class="n">d01c42c5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
@@ -415,7 +412,14 @@
 <h3>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co2_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mauna_loa_data.npz&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;mauna_loa_data.npz&quot;</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">urllib.request</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span>
+        <span class="s2">&quot;https://raw.github.com/pangeo-data/jupyter-earth/master/docs/jupyter-resources/mauna_loa_data.npz&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;./mauna_loa_data.npz&quot;</span>
+    <span class="p">)</span>
+
+<span class="n">co2_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mauna_loa_data.npz&quot;</span><span class="p">)</span>
 <span class="n">dates</span> <span class="o">=</span> <span class="n">co2_data</span><span class="p">[</span><span class="s2">&quot;dates&quot;</span><span class="p">]</span>
 <span class="n">co2</span> <span class="o">=</span> <span class="n">co2_data</span><span class="p">[</span><span class="s2">&quot;co2&quot;</span><span class="p">]</span>
 </pre></div>
@@ -563,7 +567,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "91b7a5e065164835a2874852a1d7fb22", "version_major": 2, "version_minor": 0}
+{"model_id": "9744c36e32d546ccb122c785c03e313d", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </div>
@@ -692,7 +696,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "2ff8a8576f62454aa77d5179e0de8226", "version_major": 2, "version_minor": 0}
+{"model_id": "0a6eaf49c5b04f8a8712dc143e7e7c63", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>When you move the slider, the function is called, and the return value is printed.</p>
@@ -705,7 +709,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "b7387f80c9f94a73ae9b07b0c013414b", "version_major": 2, "version_minor": 0}
+{"model_id": "9998a6bdcfea49ffa4e6deb994319fc9", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>If you pass a string, <code class="docutils literal notranslate"><span class="pre">interact</span></code> will generate a <code class="docutils literal notranslate"><span class="pre">Text</span></code> field.</p>
@@ -717,7 +721,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "43894731d65b43bd9d50de3468166710", "version_major": 2, "version_minor": 0}
+{"model_id": "f47aacef7c4f44a4844da74b87fac210", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">interact</span></code> can also be used as a decorator. This allows you to define a function and interact with it in a single shot. As this example shows, <code class="docutils literal notranslate"><span class="pre">interact</span></code> also works with functions that have multiple arguments.</p>
@@ -731,7 +735,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "4421d9b7b0e94b65951e614c47a46fd8", "version_major": 2, "version_minor": 0}
+{"model_id": "dd3fc87b16154509904e2476e50f691b", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </div>
@@ -755,7 +759,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "30730e79b2134d56986de19d15834d6f", "version_major": 2, "version_minor": 0}
+{"model_id": "90c619a4602046088416191365d1533c", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>Notice that a slider is only produced for <code class="docutils literal notranslate"><span class="pre">p</span></code> as the value of <code class="docutils literal notranslate"><span class="pre">q</span></code> is fixed.</p>
@@ -775,7 +779,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "664a3b1c230e4b2cac6579677a163754", "version_major": 2, "version_minor": 0}
+{"model_id": "3d0cd1ee7b0142548f8fba37a12a399a", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>This examples clarifies how <code class="docutils literal notranslate"><span class="pre">interact</span></code> proceses its keyword arguments:</p>
@@ -802,7 +806,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e7e3e0e4ef464514825051f7b9c3c169", "version_major": 2, "version_minor": 0}
+{"model_id": "26266ebd651746c89ed9df0dd25da429", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>A <code class="docutils literal notranslate"><span class="pre">FloatSlider</span></code> is generated if any of the values are floating point. The step size can be changed by passing a third element in the tuple.</p>
@@ -814,7 +818,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "aab96b316ef74e7fadc28301e3a46e96", "version_major": 2, "version_minor": 0}
+{"model_id": "d2a697ecf360411d819ded3a0e5a7703", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>For both integer and float-valued sliders, you can pick the initial value of the widget by passing a default keyword argument to the underlying Python function. Here we set the initial value of a float slider to <code class="docutils literal notranslate"><span class="pre">5.5</span></code>.</p>
@@ -828,7 +832,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "c578f96676bb4c3aa94a06d97d34aaff", "version_major": 2, "version_minor": 0}
+{"model_id": "e2a382cf36f44e5fb48e40ad20007b8d", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>Dropdown menus are constructed by passing a list of strings. In this case, the strings are both used as the names in the dropdown menu UI and passed to the underlying Python function.</p>
@@ -840,7 +844,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "63443d53b9134699a228a3089dc35537", "version_major": 2, "version_minor": 0}
+{"model_id": "6110fea81f53458fb034d103ba2412a3", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>If you want a dropdown menu that passes non-string values to the Python function, you can pass a list of tuples of the form <code class="docutils literal notranslate"><span class="pre">('label',</span> <span class="pre">value)</span></code>. The first items are the names in the dropdown menu UI and the second items are values that are the arguments passed to the underlying Python function.</p>
@@ -852,7 +856,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "d69cc071029943579461d4278c2ef1a5", "version_major": 2, "version_minor": 0}
+{"model_id": "bc390515d12a44f2a3e041bb3654c8df", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </div>
@@ -917,7 +921,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "7bcef8e231f3424c9700d357a1dda07d", "version_major": 2, "version_minor": 0}
+{"model_id": "dbd6900419c04825bda619810824db1c", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>At this point, the UI controls work just like they would if <code class="docutils literal notranslate"><span class="pre">interact</span></code> had been used. You can manipulate them interactively and the function will be called. However, the widget instance returned by <code class="docutils literal notranslate"><span class="pre">interactive</span></code> also gives you access to the current keyword arguments and return value of the underlying Python function.</p>
@@ -977,7 +981,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ef83bf77673d43e98de1f22eada5c649", "version_major": 2, "version_minor": 0}
+{"model_id": "d7b9633bfd444991a0ce683c22b19fe6", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="section" id="disabling-continuous-updates">
@@ -1004,7 +1008,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "151b399c0b4046b38bb710a9cfb8ce28", "version_major": 2, "version_minor": 0}
+{"model_id": "6fefc3e6f63143f9a0ffffd401135125", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>You can do the same thing with <code class="docutils literal notranslate"><span class="pre">interactive</span></code> by using the a <code class="docutils literal notranslate"><span class="pre">dict</span></code> as the second argument, as shown below.</p>
@@ -1017,7 +1021,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e52a0eede82d4cd5af5b267245739782", "version_major": 2, "version_minor": 0}
+{"model_id": "9446e95bed9243d69669f43df17a874b", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </div>
@@ -1034,7 +1038,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "59981ba5341846a48964c890ce4fda1c", "version_major": 2, "version_minor": 0}
+{"model_id": "1b924314bd8a40e7a73a823efacf2ce5", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </div>
@@ -1095,7 +1099,7 @@ Note that a dropdown is used if a list or a list of tuples is given (signifying 
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     
