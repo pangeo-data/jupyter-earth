@@ -14,7 +14,6 @@
       - file: jupyter-resources/ecosystem/ipython.ipynb
       - file: jupyter-resources/ecosystem/ipython-customization.ipynb
       - file: jupyter-resources/ecosystem/widgets.ipynb
-      - file: jupyter-resources/ecosystem/managing-state.ipynb
       - file: jupyter-resources/ecosystem/jupyterhub.ipynb
       - file: jupyter-resources/ecosystem/binder.ipynb
       - file: jupyter-resources/ecosystem/jupyterbook.ipynb
