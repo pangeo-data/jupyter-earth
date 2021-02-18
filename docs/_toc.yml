@@ -9,6 +9,7 @@
 
   - file: jupyter-resources/ecosystem/index
     sections:
+      - file: jupyter-resources/ecosystem/notebook.ipynb
       - file: jupyter-resources/ecosystem/jupyterlab.ipynb
       - file: jupyter-resources/ecosystem/ipython.ipynb
       - file: jupyter-resources/ecosystem/ipython-customization.ipynb
@@ -22,6 +23,7 @@
     sections:
       - file: jupyter-resources/broader/visualization.ipynb
       - file: jupyter-resources/broader/dask.ipynb
+      - file: jupyter-resources/broader/intake.ipynb
       - file: jupyter-resources/broader/dashboards.ipynb
 
 - file: tools

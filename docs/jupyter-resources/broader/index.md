@@ -14,4 +14,5 @@ Here, we touch on
 
 - visualization packages including Matplotlib, Plotly, Bokeh and others
 - large scale analytics and parallelization with Dask
+- accessing data with Intake
 - creating and sharing interactive dashboards with Voilà, Panel, and Dash
