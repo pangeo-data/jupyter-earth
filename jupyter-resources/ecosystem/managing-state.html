@@ -68,7 +68,7 @@
 <meta property="og:url"         content="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/ecosystem/managing-state.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Managing state" />
-<meta property="og:description" content="Managing state" />
+<meta property="og:description" content="Managing state  The notebook is an interactive computing environment. It lets you execute code in a step-by step fashion. This is powerful for thinking through " />
 <meta property="og:image"       content="https://pangeo-data.github.io/jupyter-earth/_static/jupyter-earth.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -324,6 +324,25 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-assignment">
+   Variable assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scope-of-functions">
+   Scope of functions
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -333,6 +352,131 @@
                 
   <div class="section" id="managing-state">
 <h1>Managing state<a class="headerlink" href="#managing-state" title="Permalink to this headline">¶</a></h1>
+<p>The notebook is an interactive computing environment. It lets you execute code in a step-by step fashion. This is powerful for thinking through a problem and taking your next steps based on what you see or do in the cell above. But it can lead to some challenging, non-intuitive behaviours if you run cells out of order or multiple times. In this notebook, we capture some “gotchas” and tips for avoiding tying your notebook in a knot. If you have ideas or experiences to contribute here, <a class="reference external" href="https://github.com/pangeo-data/jupyter-earth">contributions to this repository</a> are welcome!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="variable-assignment">
+<h2>Variable assignment<a class="headerlink" href="#variable-assignment" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes as you are working, you might do simple computations, updates to a variable. One way to do this is to just over-write the variable name. The danger here is that if you re-run the second or third cell below, the value will update again, which may not be intended.</p>
+<p>If you have a large notebook and update a parameter above, re-run the cells below, this can be easy to miss and generate non-intuitive results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>A safer way to do this operation is to create a new variable with a different name. No matter how many times we execute the second cell below, the value will always be <code class="docutils literal notranslate"><span class="pre">4</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_times_2</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_times_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scope-of-functions">
+<h2>Scope of functions<a class="headerlink" href="#scope-of-functions" title="Permalink to this headline">¶</a></h2>
+<p>The scope of variables assigned at the top level in the notebook (e.g. not inside a function or class) is global. This means you can still use them inside of a function. In the second cell below, we create a sine wave with a given frequency.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequency</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sketchy_sine_wave</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">frequency</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sketchy_sine_wave</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/managing-state_12_0.png" src="../../_images/managing-state_12_0.png" />
+</div>
+</div>
+<p>If we change the value of <code class="docutils literal notranslate"><span class="pre">frequency</span></code>, then the the behaviour of <code class="docutils literal notranslate"><span class="pre">sine_wave</span></code> changes. So even though the second cell has code that is identical to the cell above, the output is different. This can be confusing!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequency</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sketchy_sine_wave</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/managing-state_15_0.png" src="../../_images/managing-state_15_0.png" />
+</div>
+</div>
+<p>A safer approach is to keep the scope of variables inside a function local to that function and assign default-values to parameters as appropriate. This will also allow you to much more easily pull functions / classes that you write in the notebook into a python file to create a module if you want to later re-use that code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">safer_sine_wave</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">frequency</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
