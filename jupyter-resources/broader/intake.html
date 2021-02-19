@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Managing state &#8212; Jupyter Meets the Earth</title>
+    <title>Intake &#8212; Jupyter Meets the Earth</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,14 +54,24 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/broader/intake.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="JupyterHub" href="jupyterhub.html" />
-    <link rel="prev" title="Jupyter Widgets" href="widgets.html" />
+    <link rel="next" title="Dask" href="dashboards.html" />
+    <link rel="prev" title="Dashboards" href="dask.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/broader/intake.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Intake" />
+<meta property="og:description" content="Intake" />
+<meta property="og:image"       content="https://pangeo-data.github.io/jupyter-earth/_static/jupyter-earth.png" />
+
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -119,48 +129,73 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
-   <li class="toctree-l2 current active collapsible-parent">
-    <a class="reference internal" href="index.html">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ecosystem/index.html">
      Tools in the Jupyter ecosystem
     </a>
-    <ul class="current collapse-ul">
+    <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="jupyterlab.html">
+      <a class="reference internal" href="../ecosystem/notebook.html">
+       Jupyter Notebook
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#running-code">
+       Running Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#markdown-cells">
+       Markdown Cells
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#heading-1">
+       Heading 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#heading-2">
+       Heading 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#typesetting-equations">
+       Typesetting Equations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/jupyterlab.html">
        JupyterLab
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="ipython.html">
+      <a class="reference internal" href="../ecosystem/ipython.html">
        IPython
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="ipython-customization.html">
+      <a class="reference internal" href="../ecosystem/ipython-customization.html">
        IPython Customization
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="widgets.html">
+      <a class="reference internal" href="../ecosystem/widgets.html">
        Jupyter Widgets
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       Managing state
-      </a>
-     </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="jupyterhub.html">
+      <a class="reference internal" href="../ecosystem/jupyterhub.html">
        JupyterHub
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="binder.html">
+      <a class="reference internal" href="../ecosystem/binder.html">
        Binder
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="jupyterbook.html">
+      <a class="reference internal" href="../ecosystem/jupyterbook.html">
        Jupyter Book
       </a>
      </li>
@@ -168,23 +203,28 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../broader/index.html">
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="index.html">
      Examples from the broader ecosystem
     </a>
-    <ul class="collapse-ul">
+    <ul class="current collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../broader/visualization.html">
+      <a class="reference internal" href="visualization.html">
        Visualization
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../broader/dask.html">
+      <a class="reference internal" href="dask.html">
        Dashboards
       </a>
      </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Intake
+      </a>
+     </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../broader/dashboards.html">
+      <a class="reference internal" href="dashboards.html">
        Dask
       </a>
      </li>
@@ -241,7 +281,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/jupyter-resources/ecosystem/managing-state.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/jupyter-resources/broader/intake.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -251,6 +291,24 @@
 </div>
 
         <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pangeo-data/jupyter-earth"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/broader/intake.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/broader/intake.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
 
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -266,7 +324,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/master?urlpath=lab/tree/docs/jupyter-resources/ecosystem/managing-state.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/master?urlpath=lab/tree/docs/jupyter-resources/broader/intake.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -293,8 +351,8 @@
         
               <div>
                 
-  <div class="section" id="managing-state">
-<h1>Managing state<a class="headerlink" href="#managing-state" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="intake">
+<h1>Intake<a class="headerlink" href="#intake" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -310,7 +368,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./jupyter-resources/ecosystem"
+            path: "./jupyter-resources/broader"
         },
         predefinedOutput: true
     }
@@ -325,8 +383,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="widgets.html" title="previous page">Jupyter Widgets</a>
-    <a class='right-next' id="next-link" href="jupyterhub.html" title="next page">JupyterHub</a>
+    <a class='left-prev' id="prev-link" href="dask.html" title="previous page">Dashboards</a>
+    <a class='right-next' id="next-link" href="dashboards.html" title="next page">Dask</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

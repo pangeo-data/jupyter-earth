@@ -54,14 +54,24 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/ecosystem/jupyterhub.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Binder" href="binder.html" />
-    <link rel="prev" title="Managing state" href="managing-state.html" />
+    <link rel="prev" title="Jupyter Widgets" href="widgets.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/ecosystem/jupyterhub.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="JupyterHub" />
+<meta property="og:description" content="JupyterHub  &lt;img src=&#34;https://jupyter.org/assets/hublogo.svg&#34; width=30%&gt;   JupyterHub is a multi-user Jupyter that can be deployed on the cloud or your own hard" />
+<meta property="og:image"       content="https://pangeo-data.github.io/jupyter-earth/_static/jupyter-earth.png" />
+
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -125,6 +135,36 @@
     </a>
     <ul class="current collapse-ul">
      <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html">
+       Jupyter Notebook
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#running-code">
+       Running Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#markdown-cells">
+       Markdown Cells
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#heading-1">
+       Heading 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#heading-2">
+       Heading 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#typesetting-equations">
+       Typesetting Equations
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="jupyterlab.html">
        JupyterLab
       </a>
@@ -142,11 +182,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="widgets.html">
        Jupyter Widgets
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="managing-state.html">
-       Managing state
       </a>
      </li>
      <li class="toctree-l3 current active">
@@ -181,6 +216,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../broader/dask.html">
        Dashboards
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../broader/intake.html">
+       Intake
       </a>
      </li>
      <li class="toctree-l3">
@@ -252,6 +292,24 @@
 
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pangeo-data/jupyter-earth"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/ecosystem/jupyterhub.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/ecosystem/jupyterhub.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -286,6 +344,35 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conceptual-model-of-jupyterhub">
+   Conceptual model of JupyterHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-littlest-jupyterhub-tljh">
+   The Littlest JupyterHub (TLJH)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zero-to-jupyterhub-for-kubernetes-z2jh">
+   Zero to JupyterHub for Kubernetes (Z2JH)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-on-hpc-centers-in-the-us">
+   Jupyter on HPC centers in the US
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -295,6 +382,41 @@
                 
   <div class="section" id="jupyterhub">
 <h1>JupyterHub<a class="headerlink" href="#jupyterhub" title="Permalink to this headline">¶</a></h1>
+<img src="https://jupyter.org/assets/hublogo.svg" width=30%>
+<p>JupyterHub is a multi-user Jupyter that can be deployed on the cloud or your own hardware. You may have used JupyterHub if you have ever logged in to Jupyter at an HPC center or on your campus.</p>
+<p><strong>Additional Resources</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.readthedocs.io">JupyterHub Documentation</a></p></li>
+<li><p><a class="reference external" href="https://tljh.jupyter.org">The Littlest JupyterHub</a></p></li>
+<li><p><a class="reference external" href="https://zero-to-jupyterhub.readthedocs.io">Zero to JupyterHub - Kubernetes</a></p></li>
+</ul>
+<div class="section" id="conceptual-model-of-jupyterhub">
+<h2>Conceptual model of JupyterHub<a class="headerlink" href="#conceptual-model-of-jupyterhub" title="Permalink to this headline">¶</a></h2>
+<img src="../images/2019-06-sdss-jupyterhub.png">
+<p>Image credit: <a class="reference external" href="https://github.com/choldgraf">Chris Holdgraf</a>. Presented at the SDSS Conference. <a class="reference external" href="https://docs.google.com/presentation/d/1w-gvBn1c7Bos2ZPyKlBwMaO-caxgfpOwf6M00RtZ92c/edit#slide=id.g5a990f77bb_0_0">Original slides</a></p>
+</div>
+<div class="section" id="the-littlest-jupyterhub-tljh">
+<h2>The Littlest JupyterHub (TLJH)<a class="headerlink" href="#the-littlest-jupyterhub-tljh" title="Permalink to this headline">¶</a></h2>
+<p>TLJH is a simple JupyterHub distribution for a small (0-100) number of users on a single server, for example for a class or a small research group. In the docs, there us a guide: <a class="reference external" href="https://tljh.jupyter.org/en/latest/topic/whentouse.html#topic-whentouse">When to use The Littlest JupyterHub</a> to determine if this is the right tool for you. The <a class="reference external" href="https://tljh.jupyter.org/en/latest/install/index.html">installation instructions</a> include guides for deploying TLJH on: Digital Ocean, OVH, Jetstream, Google Cloud, Amazon Web Services, Azure, or your own server.</p>
+</div>
+<div class="section" id="zero-to-jupyterhub-for-kubernetes-z2jh">
+<h2>Zero to JupyterHub for Kubernetes (Z2JH)<a class="headerlink" href="#zero-to-jupyterhub-for-kubernetes-z2jh" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://zero-to-jupyterhub.readthedocs.io/en/stable/index.html">Z2JH guide</a> outlines how to deploy JupyterHub on the commercial cloud. It is:</p>
+<ul class="simple">
+<li><p>Scalable in both users and in resources</p></li>
+<li><p>Uses Docker for environment management</p></li>
+<li><p>Agnostic to the provider and hardware configuration</p></li>
+</ul>
+</div>
+<div class="section" id="jupyter-on-hpc-centers-in-the-us">
+<h2>Jupyter on HPC centers in the US<a class="headerlink" href="#jupyter-on-hpc-centers-in-the-us" title="Permalink to this headline">¶</a></h2>
+<p>Here are links to deployments on some of the major HPC facilities in the US that are accessed by geoscience researchers:</p>
+<ul class="simple">
+<li><p>NERSC (<a class="reference external" href="https://jupyter.nersc.gov">login</a>, <a class="reference external" href="https://docs.nersc.gov/services/jupyter/">documentation</a>)</p></li>
+<li><p>NCAR Cheyenne &amp; Casper (<a class="reference external" href="https://jupyterhub.ucar.edu/">login</a>, <a class="reference external" href="https://www2.cisl.ucar.edu/resources/jupyterhub-ncar">documentation</a>)</p></li>
+</ul>
+<p>If you would like add to this list, please feel free to <a class="reference external" href="https://github.com/pangeo-data/jupyter-earth">suggest a change in the source repository</a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -325,7 +447,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="managing-state.html" title="previous page">Managing state</a>
+    <a class='left-prev' id="prev-link" href="widgets.html" title="previous page">Jupyter Widgets</a>
     <a class='right-next' id="next-link" href="binder.html" title="next page">Binder</a>
 
     </div>

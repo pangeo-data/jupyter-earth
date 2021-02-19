@@ -17,28 +17,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import mod
-mod.g(0)
+enjoy = input('Are you enjoying this tutorial? ')
+# print('enjoy is:', enjoy)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mZeroDivisionError[0m                         Traceback (most recent call last)
-[0;32m<ipython-input-35-81c06c6c0e90>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;32mimport[0m [0mmod[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0mmod[0m[0;34m.[0m[0mg[0m[0;34m([0m[0;36m0[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;32m~/work/jupyter-earth/jupyter-earth/docs/jupyter-resources/ecosystem/mod.py[0m in [0;36mg[0;34m(y)[0m
-[1;32m      4[0m [0;34m[0m[0m
-[1;32m      5[0m [0;32mdef[0m [0mg[0m[0;34m([0m[0my[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 6[0;31m     [0;32mreturn[0m [0mf[0m[0;34m([0m[0my[0m[0;34m+[0m[0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;32m~/work/jupyter-earth/jupyter-earth/docs/jupyter-resources/ecosystem/mod.py[0m in [0;36mf[0;34m(x)[0m
-[1;32m      1[0m [0;34m[0m[0m
-[1;32m      2[0m [0;32mdef[0m [0mf[0m[0;34m([0m[0mx[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 3[0;31m     [0;32mreturn[0m [0;36m1.0[0m[0;34m/[0m[0;34m([0m[0mx[0m[0;34m-[0m[0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      4[0m [0;34m[0m[0m
-[1;32m      5[0m [0;32mdef[0m [0mg[0m[0;34m([0m[0my[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[0;32m<ipython-input-37-fce34167df91>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0menjoy[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m'Are you enjoying this tutorial? '[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;31m# print('enjoy is:', enjoy)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mZeroDivisionError[0m: float division by zero
-ZeroDivisionError: float division by zero
+[0;32m/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ipykernel/kernelbase.py[0m in [0;36mraw_input[0;34m(self, prompt)[0m
+[1;32m    853[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    854[0m             raise StdinNotImplementedError(
+[0;32m--> 855[0;31m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    856[0m             )
+[1;32m    857[0m         return self._input_request(str(prompt),
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
 

@@ -54,6 +54,7 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/introduction/tour.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Tools in the Jupyter ecosystem" href="../ecosystem/index.html" />
@@ -62,6 +63,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/introduction/tour.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="A tour of Jupyter" />
+<meta property="og:description" content="A tour of Jupyter  &lt;img src=&#34;https://jupyter.org/assets/main-logo.svg&#34; align=&#34;center&#34; width=20%&gt;  Jupyter Notebook - a web application for interactive computing" />
+<meta property="og:image"       content="https://pangeo-data.github.io/jupyter-earth/_static/jupyter-earth.png" />
+
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -125,6 +135,36 @@
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html">
+       Jupyter Notebook
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#running-code">
+       Running Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#markdown-cells">
+       Markdown Cells
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#heading-1">
+       Heading 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#heading-2">
+       Heading 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ecosystem/notebook.html#typesetting-equations">
+       Typesetting Equations
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../ecosystem/jupyterlab.html">
        JupyterLab
       </a>
@@ -142,11 +182,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../ecosystem/widgets.html">
        Jupyter Widgets
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../ecosystem/managing-state.html">
-       Managing state
       </a>
      </li>
      <li class="toctree-l3">
@@ -181,6 +216,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../broader/dask.html">
        Dashboards
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../broader/intake.html">
+       Intake
       </a>
      </li>
      <li class="toctree-l3">
@@ -252,6 +292,24 @@
 
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pangeo-data/jupyter-earth"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/introduction/tour.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/introduction/tour.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -292,24 +350,31 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#intro-to-the-notebook-a-web-application-for-interactive-computing">
-   Intro to the notebook - a web application for interactive computing.
+  <a class="reference internal nav-link" href="#jupyter-notebook-a-web-application-for-interactive-computing">
+   Jupyter Notebook - a web application for interactive computing.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quick-overviews-of-a-few-other-parts-of-the-project">
-   Quick overviews of a few other parts of the project
+  <a class="reference internal nav-link" href="#beyond-the-notebook-the-broader-jupyter-ecosystem">
+   Beyond the notebook - the broader Jupyter ecosystem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-bit-of-architecture">
-   A bit of architecture
+  <a class="reference internal nav-link" href="#kernels-and-protocols-a-bit-of-architecture">
+   Kernels and protocols - a bit of architecture
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#communities">
-   Communities
+  <a class="reference internal nav-link" href="#community">
+   Community
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connected-communities">
+     Connected communities
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -324,47 +389,53 @@
                 
   <div class="section" id="a-tour-of-jupyter">
 <h1>A tour of Jupyter<a class="headerlink" href="#a-tour-of-jupyter" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="intro-to-the-notebook-a-web-application-for-interactive-computing">
-<h2>Intro to the notebook - a web application for interactive computing.<a class="headerlink" href="#intro-to-the-notebook-a-web-application-for-interactive-computing" title="Permalink to this headline">¶</a></h2>
+<img src="https://jupyter.org/assets/main-logo.svg" align="center" width=20%><div class="section" id="jupyter-notebook-a-web-application-for-interactive-computing">
+<h2>Jupyter Notebook - a web application for interactive computing.<a class="headerlink" href="#jupyter-notebook-a-web-application-for-interactive-computing" title="Permalink to this headline">¶</a></h2>
+<p>The notebook lets you combine narrative text, equations, and figures with code and rich outputs in an interactive computing environment. It can be run on your local machine, an remote server at a High Performance computing facility or on the cloud.</p>
+<img src="../images/Jupyter-Notebook.png" width=70%></div>
+<div class="section" id="beyond-the-notebook-the-broader-jupyter-ecosystem">
+<h2>Beyond the notebook - the broader Jupyter ecosystem<a class="headerlink" href="#beyond-the-notebook-the-broader-jupyter-ecosystem" title="Permalink to this headline">¶</a></h2>
+<p>Notebooks are a core part of Jupyter, but the ecosystem of Jupyter tools for interactive computing is much broader.</p>
+<p><strong>JupyterLab</strong> is the next generation interface for Jupyter. It includes notebooks, but also the ability to open a terminal, edit and run markdown files with computational content, and view a range of data types. It is extensible so new plugins can be added to extend its functionality.</p>
+<img src="../images/jupyterlab-md-terminal.png"><p><strong>JupyterHub</strong> is a multi-user version of Jupyter. It allows Jupyter to be run on a shared computational infrastructure. For example on the Cloud or a High Performance Computing (HPC) Facility.</p>
+<p>Two popular projects for deploying JupyterHubs are</p>
 <ul class="simple">
-<li><p>Live documents + code.</p></li>
-<li><p>Rich outputs</p></li>
-<li><p>Rich markdown</p></li>
-<li><p>Local or remote usage - back to it later.</p></li>
-<li><p>IPython - Python++</p></li>
+<li><p><a class="reference external" href="https://tljh.jupyter.org/en/latest/">The Littlest JupyterHub</a> for a small number (0-100) of users on a single server</p></li>
+<li><p><a class="reference external" href="https://zero-to-jupyterhub.readthedocs.io/en/stable/">Zero to JupyterHub with Kubernetes</a> for deploying larger JupyterHubs on the cloud.</p></li>
 </ul>
+<p><strong>JupyterBook</strong> lets you take a collection of notebooks and markdown files and turn it into a web-based textbook with JupyterBook. That is how we created this resource! Here are a few examples from the geoscience community</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://brian-rose.github.io/ClimateLaboratoryBook/home.html">The Climate Laboratory</a></p></li>
+<li><p><a class="reference external" href="https://earth-env-data-science.github.io/intro">An Introduction to Earth and Environmental Data Science</a></p></li>
+</ul>
+<p>If you have created a book that you would like to share, please feel free to <a class="reference external" href="https://github.com/pangeo-data/jupyter-earth">suggest a change in the source repository</a></p>
+<p><strong>Binder</strong> lets you take a repository of notebooks with a specification of the software dependencies and share it so that others can run your code. There is an example deployment at <a class="reference external" href="https://mybinder.org/">mybinder.org</a>.</p>
 </div>
-<div class="section" id="quick-overviews-of-a-few-other-parts-of-the-project">
-<h2>Quick overviews of a few other parts of the project<a class="headerlink" href="#quick-overviews-of-a-few-other-parts-of-the-project" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>JupyterLab</p></li>
-<li><p>JupyterHub</p></li>
-<li><p>JupyterBook</p></li>
-<li><p>Binder - intro</p></li>
-</ul>
+<div class="section" id="kernels-and-protocols-a-bit-of-architecture">
+<h2>Kernels and protocols - a bit of architecture<a class="headerlink" href="#kernels-and-protocols-a-bit-of-architecture" title="Permalink to this headline">¶</a></h2>
+<p>In addition to software, the Jupyter project also defines standards and protocols for interactive computing. By defining a protocol for interactive computing, a kernel can be defined for different programming languages. To date, there are over <a class="reference external" href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">100 different kernels</a> for running code interactively with Jupyter.</p>
 </div>
-<div class="section" id="a-bit-of-architecture">
-<h2>A bit of architecture<a class="headerlink" href="#a-bit-of-architecture" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="community">
+<h2>Community<a class="headerlink" href="#community" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter is more than the lines of code that the software contains. Jupyter is a community driven project with stakeholders and contributors from academia, industry and non-profit sectors. It is fiscally sponsored by <a class="reference external" href="https://numfocus.org/project/project-jupyter">NumFOCUS</a>.</p>
+<img src="../images/Jupyter-Pyramid.png" width=70%>
+<p>A few connection points with the community include:</p>
 <ul class="simple">
-<li><p>kernels, interfaces, documents, services</p></li>
-<li><p>Protocols for others to build on</p>
-<ul>
-<li><p>Community kernels</p></li>
-<li><p>Third-party clients.</p></li>
+<li><p>the <a class="reference external" href="https://blog.jupyter.org/">blog</a></p></li>
+<li><p>the <a class="reference external" href="https://discourse.jupyter.org/">discourse forum</a></p></li>
+<li><p>and <a class="reference external" href="https://twitter.com/projectjupyter">twitter</a></p></li>
 </ul>
-</li>
-</ul>
+<div class="section" id="connected-communities">
+<h3>Connected communities<a class="headerlink" href="#connected-communities" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://pangeo.io/"><strong>Pangeo</strong></a> is a community platform for Big Data Geoscience.</p>
+<blockquote>
+<div><p>Pangeo is first and foremost a community promoting open, reproducible, and scalable science. This community provides documentation, develops and maintains software, and deploys computing infrastructure to make scientific research and programming easier. The Pangeo software ecosystem involves open source tools such as xarray, iris, dask, jupyter, and many other packages. – <a class="reference external" href="https://pangeo.io/#what-is-pangeo">What is Pangeo?</a></p>
+</div></blockquote>
+<p><a class="reference external" href="https://2i2c.org/"><strong>2i2c</strong></a> is the international interactive computing collaboration.</p>
+<blockquote>
+<div><p>2i2c is a mission-driven non-profit that develops, deploys, customizes, and manages open source tools for interactive computing in research and education. – <a class="reference external" href="https://2i2c.org/">2i2c</a></p>
+</div></blockquote>
 </div>
-<div class="section" id="communities">
-<h2>Communities<a class="headerlink" href="#communities" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Multistakeholder structure, contribution &amp; governance.</p></li>
-<li><p>Discourse, JupyterCon, Twitter.</p></li>
-<li><p>Pangeo</p></li>
-<li><p>2i2c</p></li>
-<li><p>NumFOCUS</p></li>
-</ul>
-<p><img alt="Jupyter pyramid" src="../../_images/Jupyter-Pyramid.png" /></p>
 </div>
 </div>
 

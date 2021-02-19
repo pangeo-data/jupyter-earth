@@ -54,6 +54,7 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/ecosystem/ipython.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="IPython Customization" href="ipython-customization.html" />
@@ -62,6 +63,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/ecosystem/ipython.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="IPython" />
+<meta property="og:description" content="IPython  beyond plain python  When executing code in IPython, all valid Python syntax works as-is, but IPython provides a number of features designed to make th" />
+<meta property="og:image"       content="https://pangeo-data.github.io/jupyter-earth/_static/jupyter-earth.png" />
+
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -125,6 +135,36 @@
     </a>
     <ul class="current collapse-ul">
      <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html">
+       Jupyter Notebook
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#running-code">
+       Running Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#markdown-cells">
+       Markdown Cells
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#heading-1">
+       Heading 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#heading-2">
+       Heading 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#typesetting-equations">
+       Typesetting Equations
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="jupyterlab.html">
        JupyterLab
       </a>
@@ -142,11 +182,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="widgets.html">
        Jupyter Widgets
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="managing-state.html">
-       Managing state
       </a>
      </li>
      <li class="toctree-l3">
@@ -181,6 +216,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../broader/dask.html">
        Dashboards
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../broader/intake.html">
+       Intake
       </a>
      </li>
      <li class="toctree-l3">
@@ -251,6 +291,24 @@
 </div>
 
         <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pangeo-data/jupyter-earth"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/ecosystem/ipython.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/ecosystem/ipython.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
 
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -356,8 +414,12 @@
   <div class="section" id="ipython">
 <h1>IPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h1>
 <p><em>beyond plain python</em></p>
-<p>This material is adapted from the ICESat2 Hackweek <a class="reference external" href="https://github.com/ICESAT-2HackWeek/intro-jupyter-git">intro-jupyter-git</a> session by <a class="reference external" href="https://github.com/fperez">&#64;fperez</a>.</p>
 <p>When executing code in IPython, all valid Python syntax works as-is, but IPython provides a number of features designed to make the interactive experience more fluid and efficient.</p>
+<p><strong>Additional resources</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ipython.readthedocs.io/en/stable/">IPython documentation</a></p></li>
+</ul>
+<p>This material is adapted from the ICESat2 Hackweek <a class="reference external" href="https://github.com/ICESAT-2HackWeek/intro-jupyter-git">intro-jupyter-git</a> session by <a class="reference external" href="https://github.com/fperez">&#64;fperez</a>.</p>
 <div class="section" id="first-things-first-running-code-getting-help">
 <h2>First things first: running code, getting help<a class="headerlink" href="#first-things-first-running-code-getting-help" title="Permalink to this headline">¶</a></h2>
 <p>In the notebook, to run a cell of code, hit <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code>. This executes the cell and puts the cursor in the next cell below, or makes a new one if you are at the end.  Alternately, you can use:</p>
@@ -377,7 +439,7 @@
 </div>
 </div>
 </div>
-<p>Getting help:</p>
+<p>Getting help. Use the <code class="docutils literal notranslate"><span class="pre">?</span></code> to call up documentation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>
@@ -393,6 +455,7 @@ np.linspace<span class="o">?</span>
 </div>
 </div>
 </div>
+<p>To bring up the source code, use <code class="docutils literal notranslate"><span class="pre">??</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>np.isclose<span class="o">??</span>
@@ -400,6 +463,7 @@ np.linspace<span class="o">?</span>
 </div>
 </div>
 </div>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">*</span></code> as a wildcard if you know part of the name but not all of it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>*int*<span class="o">?</span>
@@ -407,6 +471,7 @@ np.linspace<span class="o">?</span>
 </div>
 </div>
 </div>
+<p>And if you ever need a summary of the above, you can always use the <code class="docutils literal notranslate"><span class="pre">%quickref</span></code> magic</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">quickref</span>
@@ -440,6 +505,7 @@ np.linspace<span class="o">?</span>
 </div>
 </div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">_</span></code> stores the value of the last output (which is quite handy if you ran an expensive computation and forgot to assign the output to a variable!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="o">+</span><span class="mi">10</span>
@@ -485,7 +551,7 @@ np.linspace<span class="o">?</span>
 </div>
 </div>
 </div>
-<p>Previous inputs are available, too:</p>
+<p>Previous inputs are available, too. Either through <code class="docutils literal notranslate"><span class="pre">In[N]</span></code> or <code class="docutils literal notranslate"><span class="pre">_i</span></code> for the previous input:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span>
@@ -510,6 +576,7 @@ np.linspace<span class="o">?</span>
 </div>
 </div>
 </div>
+<p>The history magic prints the input history</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">history</span> -n 1-5
@@ -533,6 +600,7 @@ np.linspace?
 </div>
 <div class="section" id="accessing-the-underlying-operating-system">
 <h2>Accessing the underlying operating system<a class="headerlink" href="#accessing-the-underlying-operating-system" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">!</span></code> lets you run commands on the terminal</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pwd
@@ -545,6 +613,7 @@ np.linspace?
 </div>
 </div>
 </div>
+<p>It doesn’t need to be at the beginning of the cell, and can actually be assigned to a variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="o">!</span>ls 
@@ -555,7 +624,7 @@ np.linspace?
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>files this directory:
-[&#39;binder.ipynb&#39;, &#39;index.md&#39;, &#39;ipython-customization.ipynb&#39;, &#39;ipython.ipynb&#39;, &#39;jupyterbook.ipynb&#39;, &#39;jupyterhub.ipynb&#39;, &#39;jupyterlab.ipynb&#39;, &#39;managing-state.ipynb&#39;, &#39;mauna_loa_data.npz&#39;, &#39;widgets.ipynb&#39;]
+[&#39;binder.ipynb&#39;, &#39;index.md&#39;, &#39;ipython-customization.ipynb&#39;, &#39;ipython.ipynb&#39;, &#39;jupyterbook.ipynb&#39;, &#39;jupyterhub.ipynb&#39;, &#39;jupyterlab.ipynb&#39;, &#39;mauna_loa_data.npz&#39;, &#39;notebook.ipynb&#39;, &#39;widgets.ipynb&#39;]
 </pre></div>
 </div>
 </div>
@@ -574,13 +643,14 @@ np.linspace?
  &#39;jupyterbook.ipynb&#39;,
  &#39;jupyterhub.ipynb&#39;,
  &#39;jupyterlab.ipynb&#39;,
- &#39;managing-state.ipynb&#39;,
  &#39;mauna_loa_data.npz&#39;,
+ &#39;notebook.ipynb&#39;,
  &#39;widgets.ipynb&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+<p>Python variables can be passed to the command line by putting them in curly brackets <code class="docutils literal notranslate"><span class="pre">{var}</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="o">{</span>files<span class="o">[</span><span class="m">0</span><span class="o">]</span>.upper<span class="o">()}</span>
@@ -593,6 +663,7 @@ np.linspace?
 </div>
 </div>
 </div>
+<p>It can even be in a loop, and with formatting</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -624,11 +695,11 @@ np.linspace?
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>06 - jupyterlab
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>07 - managing-state
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
+08 - notebook
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--
-09 - widgets
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09 - widgets
 </pre></div>
 </div>
 </div>
@@ -650,6 +721,7 @@ np.linspace?
 </div>
 <p>Line vs cell magics:</p>
 <p>Magics can be applied at the single-line level or to entire cells. Line magics are identified with a single <code class="docutils literal notranslate"><span class="pre">%</span></code> prefix, while cell magics use <code class="docutils literal notranslate"><span class="pre">%%</span></code> and can only be used as the first line of the cell (since they apply to the entire cell). Some magics, like the convenient <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> that ships built-in with IPython, can be called in either mode, while others may be line- or cell-only (you can see all magics with <code class="docutils literal notranslate"><span class="pre">%lsmagic</span></code>).</p>
+<p>A comprehensive list with descriptions is available in the <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython documentation</a></p>
 <p>Let’s see this with some <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -658,7 +730,7 @@ np.linspace?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.7 µs ± 593 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.5 µs ± 256 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -674,7 +746,7 @@ np.linspace?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.39 µs ± 12.4 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.61 µs ± 59.4 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -693,19 +765,19 @@ np.linspace?
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 100 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>933 ns ± 9.17 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.01 µs ± 21.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 size: 200 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5 µs ± 28.3 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.61 µs ± 31.3 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 size: 300 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.63 µs ± 97.8 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.78 µs ± 31.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 size: 400 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.27 µs ± 91.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.71 µs ± 119 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -724,14 +796,23 @@ df -h
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My shell is: /bin/bash
 My disk usage is:
 Filesystem      Size  Used Avail Use% Mounted on
-udev            3.4G     0  3.4G   0% /dev
-tmpfs           696M  680K  695M   1% /run
-/dev/sdb1        84G   64G   20G  77% /
-tmpfs           3.4G  8.0K  3.4G   1% /dev/shm
+/dev/root        84G   64G   20G  77% /
+devtmpfs        3.4G     0  3.4G   0% /dev
+tmpfs           3.4G   12K  3.4G   1% /dev/shm
+tmpfs           696M  1.1M  695M   1% /run
 tmpfs           5.0M     0  5.0M   0% /run/lock
 tmpfs           3.4G     0  3.4G   0% /sys/fs/cgroup
-/dev/sdb15      105M  3.7M  101M   4% /boot/efi
+/dev/sdb15      105M  3.9M  101M   4% /boot/efi
+/dev/loop0      138M  138M     0 100% /snap/chromium/1479
+/dev/loop1       56M   56M     0 100% /snap/core18/1944
+/dev/loop2       56M   56M     0 100% /snap/core18/1988
+/dev/loop3      163M  163M     0 100% /snap/gnome-3-28-1804/145
+/dev/loop4       65M   65M     0 100% /snap/gtk-common-themes/1514
+/dev/loop6       32M   32M     0 100% /snap/snapd/10707
+/dev/loop5       70M   70M     0 100% /snap/lxd/19188
+/dev/loop7       32M   32M     0 100% /snap/snapd/11036
 /dev/sda1        14G  4.1G  9.0G  32% /mnt
+/dev/loop8      138M  138M     0 100% /snap/chromium/1497
 </pre></div>
 </div>
 </div>
@@ -810,11 +891,12 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>459 ms ± 10.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>555 ms ± 25.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">prun</span></code> magic runs a python code profiler</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">prun</span> to_optimize(1_000)
@@ -890,30 +972,7 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mod</span>
-<span class="n">mod</span><span class="o">.</span><span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">81</span><span class="n">c06c6c0e90</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">mod</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">mod</span><span class="o">.</span><span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="nn">~/work/jupyter-earth/jupyter-earth/docs/jupyter-resources/ecosystem/mod.py</span> in <span class="ni">g</span><span class="nt">(y)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="nn">~/work/jupyter-earth/jupyter-earth/docs/jupyter-resources/ecosystem/mod.py</span> in <span class="ni">f</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-
-<span class="ne">ZeroDivisionError</span>: float division by zero
+<span class="c1"># mod.g(0)</span>
 </pre></div>
 </div>
 </div>
@@ -922,9 +981,15 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 <div class="section" id="basic-debugging">
 <h2>Basic debugging<a class="headerlink" href="#basic-debugging" title="Permalink to this headline">¶</a></h2>
 <p>When running code interactively, it can be tricky to figure out how to debug…</p>
+<p>The debug magic lets you move up (<code class="docutils literal notranslate"><span class="pre">u</span></code>) or down (<code class="docutils literal notranslate"><span class="pre">d</span></code>) the stack trace, and you can print out variables to see if you can figure out what went wrong.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">debug</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:root:No traceback has been produced, nothing to debug.
 </pre></div>
 </div>
 </div>
@@ -932,7 +997,25 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enjoy</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Are you enjoying this tutorial? &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;enjoy is:&#39;</span><span class="p">,</span> <span class="n">enjoy</span><span class="p">)</span>
+<span class="c1"># print(&#39;enjoy is:&#39;, enjoy)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="n">fce34167df91</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">enjoy</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Are you enjoying this tutorial? &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># print(&#39;enjoy is:&#39;, enjoy)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">854</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">855</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>

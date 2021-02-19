@@ -54,14 +54,24 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/ecosystem/jupyterlab.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="IPython" href="ipython.html" />
-    <link rel="prev" title="Tools in the Jupyter ecosystem" href="index.html" />
+    <link rel="prev" title="Jupyter Notebook" href="notebook.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/ecosystem/jupyterlab.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="JupyterLab" />
+<meta property="og:description" content="JupyterLab  JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data.  You can arrange multiple documents / windows t" />
+<meta property="og:image"       content="https://pangeo-data.github.io/jupyter-earth/_static/jupyter-earth.png" />
+
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -124,6 +134,36 @@
      Tools in the Jupyter ecosystem
     </a>
     <ul class="current collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html">
+       Jupyter Notebook
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#running-code">
+       Running Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#markdown-cells">
+       Markdown Cells
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#heading-1">
+       Heading 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#heading-2">
+       Heading 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebook.html#typesetting-equations">
+       Typesetting Equations
+      </a>
+     </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        JupyterLab
@@ -142,11 +182,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="widgets.html">
        Jupyter Widgets
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="managing-state.html">
-       Managing state
       </a>
      </li>
      <li class="toctree-l3">
@@ -181,6 +216,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../broader/dask.html">
        Dashboards
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../broader/intake.html">
+       Intake
       </a>
      </li>
      <li class="toctree-l3">
@@ -252,6 +292,24 @@
 
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pangeo-data/jupyter-earth"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/ecosystem/jupyterlab.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/ecosystem/jupyterlab.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -295,6 +353,47 @@
                 
   <div class="section" id="jupyterlab">
 <h1>JupyterLab<a class="headerlink" href="#jupyterlab" title="Permalink to this headline">¶</a></h1>
+<p><em>JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data.</em></p>
+<p>You can arrange multiple documents / windows to customize the layout to fit your needs:</p>
+<ul class="simple">
+<li><p>notebooks</p></li>
+<li><p>outputs</p></li>
+<li><p>markdown files</p></li>
+<li><p>terminal</p></li>
+<li><p>interactive console</p></li>
+<li><p>text files, python files</p></li>
+<li><p>data / documents with rich views (including csv, pdf, json, hdf, …)</p></li>
+</ul>
+<img src="../images/jupyterlab-widgets-gif.gif" width=80%>
+<p><strong>Additional resources</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/">JupyterLab documentation</a></p></li>
+</ul>
+<p>This video overview is from the <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">JupyterLab getting started documentation</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;A5YyoCKxEOU&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="600"
+    height="300"
+    src="https://www.youtube.com/embed/A5YyoCKxEOU"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -325,7 +424,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Tools in the Jupyter ecosystem</a>
+    <a class='left-prev' id="prev-link" href="notebook.html" title="previous page">Jupyter Notebook</a>
     <a class='right-next' id="next-link" href="ipython.html" title="next page">IPython</a>
 
     </div>
