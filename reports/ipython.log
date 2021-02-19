@@ -28,11 +28,11 @@ enjoy = input('Are you enjoying this tutorial? ')
 [0m[1;32m      2[0m [0;31m# print('enjoy is:', enjoy)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ipykernel/kernelbase.py[0m in [0;36mraw_input[0;34m(self, prompt)[0m
-[1;32m    853[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    854[0m             raise StdinNotImplementedError(
-[0;32m--> 855[0;31m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    856[0m             )
-[1;32m    857[0m         return self._input_request(str(prompt),
+[1;32m    844[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    845[0m             raise StdinNotImplementedError(
+[0;32m--> 846[0;31m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    847[0m             )
+[1;32m    848[0m         return self._input_request(str(prompt),
 
 [0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
 StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.

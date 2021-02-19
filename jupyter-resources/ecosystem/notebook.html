@@ -152,21 +152,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="#heading-1">
-       Heading 1
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="#heading-2">
-       Heading 2
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="#typesetting-equations">
-       Typesetting Equations
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="jupyterlab.html">
        JupyterLab
       </a>
@@ -184,6 +169,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="widgets.html">
        Jupyter Widgets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="managing-state.html">
+       Managing state
       </a>
      </li>
      <li class="toctree-l3">
@@ -471,28 +461,6 @@
      Markdown basics
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#heading-1">
-   Heading 1
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#heading-2">
-   Heading 2
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heading-2-1">
-     Heading 2.1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heading-2-2">
-     Heading 2.2
-    </a>
-   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#embedded-code">
      Embedded code
@@ -513,12 +481,12 @@
      General HTML
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#typesetting-equations">
+     Typesetting Equations
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#typesetting-equations">
-   Typesetting Equations
-  </a>
  </li>
 </ul>
 
@@ -1069,18 +1037,6 @@ Namespaces are one honking great idea – let’s do more of those!</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="heading-1">
-<h1>Heading 1<a class="headerlink" href="#heading-1" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="heading-2">
-<h1>Heading 2<a class="headerlink" href="#heading-2" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="heading-2-1">
-<h2>Heading 2.1<a class="headerlink" href="#heading-2-1" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="heading-2-2">
-<h2>Heading 2.2<a class="headerlink" href="#heading-2-2" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="embedded-code">
 <h2>Embedded code<a class="headerlink" href="#embedded-code" title="Permalink to this headline">¶</a></h2>
 <p>You can embed code meant for illustration instead of execution in Python:</p>
@@ -1164,10 +1120,9 @@ console.log("Hello World")
 <td>row 2, cell 2</td>
 </tr>
 </table></div>
-</div>
 <hr class="docutils" />
 <div class="section" id="typesetting-equations">
-<h1>Typesetting Equations<a class="headerlink" href="#typesetting-equations" title="Permalink to this headline">¶</a></h1>
+<h2>Typesetting Equations<a class="headerlink" href="#typesetting-equations" title="Permalink to this headline">¶</a></h2>
 <p>The Markdown parser included in IPython is MathJax-aware.  This means that you can freely mix in mathematical expressions using the <a class="reference external" href="http://docs.mathjax.org/en/latest/tex.html#tex-support">MathJax subset of Tex and LaTeX</a>.</p>
 <p>You can use single-dollar signs to include inline math, e.g. <code class="docutils literal notranslate"><span class="pre">$e^{i</span> <span class="pre">\pi}</span> <span class="pre">=</span> <span class="pre">-1$</span></code> will render as <span class="math notranslate nohighlight">\(e^{i \pi} = -1\)</span>, and double-dollars for displayed math:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
@@ -1195,6 +1150,7 @@ e^x=\sum_{i=0}^\infty \frac{1}{i!}x^i
 \dot{z} &amp; = -\beta z + xy
 \end{align}</p>
 <p>Please refer to the MathJax documentation for a comprehensive description of which parts of LaTeX are supported, but note that Jupyter’s support for LaTeX is <strong>limited to mathematics</strong>. You can <strong>not</strong> use LaTeX typesetting constrcuts for text or document structure, for text formatting you should restrict yourself to Markdown syntax.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
