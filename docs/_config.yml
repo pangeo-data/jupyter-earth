@@ -1,6 +1,12 @@
 title: Jupyter Meets the Earth
 logo: images/jupyter-earth.png
 
+html:
+  use_edit_page_button: true
+  use_repository_button: true
+  use_issues_button: true
+  baseurl: https://pangeo-data.github.io/jupyter-earth
+
 repository:
   url: https://github.com/pangeo-data/jupyter-earth
   branch: master
