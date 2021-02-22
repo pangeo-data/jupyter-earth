@@ -12,6 +12,7 @@ Pythia](https://ncar.github.io/ProjectPythia/).
 
 Here, we touch on
 
+- different data structures in the Python ecosystem including Numpy, Pandas, Xarray
 - visualization packages including Matplotlib, Plotly, Bokeh and others
 - large scale analytics and parallelization with Dask
 - accessing data with Intake

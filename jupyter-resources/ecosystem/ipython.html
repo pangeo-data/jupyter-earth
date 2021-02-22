@@ -189,6 +189,11 @@
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
+      <a class="reference internal" href="../broader/data-structures.html">
+       Data structures
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../broader/visualization.html">
        Visualization
       </a>
@@ -714,7 +719,7 @@ np.linspace?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.1 µs ± 316 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.9 µs ± 149 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -730,7 +735,7 @@ np.linspace?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.56 µs ± 24.5 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.52 µs ± 16.2 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -749,19 +754,19 @@ np.linspace?
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 100 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.04 µs ± 12.8 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.03 µs ± 12.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 size: 200 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.64 µs ± 37.8 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.63 µs ± 18.4 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 size: 300 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.88 µs ± 104 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.94 µs ± 41.3 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 size: 400 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.56 µs ± 119 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.67 µs ± 63.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -786,16 +791,16 @@ tmpfs           3.4G   12K  3.4G   1% /dev/shm
 tmpfs           696M  1.1M  695M   1% /run
 tmpfs           5.0M     0  5.0M   0% /run/lock
 tmpfs           3.4G     0  3.4G   0% /sys/fs/cgroup
-/dev/sda15      105M  3.9M  101M   4% /boot/efi
-/dev/loop0      163M  163M     0 100% /snap/gnome-3-28-1804/145
-/dev/loop2       65M   65M     0 100% /snap/gtk-common-themes/1514
-/dev/loop1       70M   70M     0 100% /snap/lxd/19188
-/dev/loop3       32M   32M     0 100% /snap/snapd/10707
-/dev/loop4       32M   32M     0 100% /snap/snapd/11036
-/dev/loop6       56M   56M     0 100% /snap/core18/1988
-/dev/loop5      138M  138M     0 100% /snap/chromium/1479
-/dev/loop7       56M   56M     0 100% /snap/core18/1944
-/dev/sdb1        14G  4.1G  9.0G  32% /mnt
+/dev/sdb15      105M  3.9M  101M   4% /boot/efi
+/dev/loop2      163M  163M     0 100% /snap/gnome-3-28-1804/145
+/dev/loop0       56M   56M     0 100% /snap/core18/1944
+/dev/loop3       56M   56M     0 100% /snap/core18/1988
+/dev/loop1      138M  138M     0 100% /snap/chromium/1479
+/dev/loop4       70M   70M     0 100% /snap/lxd/19188
+/dev/loop5       32M   32M     0 100% /snap/snapd/10707
+/dev/loop7       32M   32M     0 100% /snap/snapd/11036
+/dev/loop6       65M   65M     0 100% /snap/gtk-common-themes/1514
+/dev/sda1        14G  4.1G  9.0G  32% /mnt
 /dev/loop8      138M  138M     0 100% /snap/chromium/1497
 </pre></div>
 </div>
@@ -875,7 +880,7 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>527 ms ± 13.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>500 ms ± 6.36 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
