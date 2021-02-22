@@ -21,6 +21,7 @@
 
   - file: jupyter-resources/broader/index
     sections:
+      - file: jupyter-resources/broader/data-structures.ipynb 
       - file: jupyter-resources/broader/visualization.ipynb
       - file: jupyter-resources/broader/dask.ipynb
       - file: jupyter-resources/broader/intake.ipynb
