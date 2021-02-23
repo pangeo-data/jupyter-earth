@@ -11,5 +11,5 @@ dependencies:
   - ipywidgets
   - pip
   - pip:
-    - jupyterbook
+    - jupyter-book
     - sphinxcontrib-bibtex<2.0.0
