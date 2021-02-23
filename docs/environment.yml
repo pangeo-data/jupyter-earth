@@ -9,7 +9,7 @@ dependencies:
   - scipy
   - matplotlib
   - ipywidgets
-  - sphinxcontrib-bibtex<2.0.0
-
-  pip:
+  - pip
+  - pip:
     - jupyterbook
+    - sphinxcontrib-bibtex<2.0.0
