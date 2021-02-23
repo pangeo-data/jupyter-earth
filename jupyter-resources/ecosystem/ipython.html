@@ -121,6 +121,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../introduction/ecosystem.html">
+       Ecosystem
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../introduction/tour.html">
        A tour of Jupyter
       </a>
@@ -719,7 +724,7 @@ np.linspace?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.9 µs ± 149 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.9 µs ± 214 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -735,7 +740,7 @@ np.linspace?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.52 µs ± 16.2 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.78 µs ± 27.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -754,19 +759,19 @@ np.linspace?
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 100 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.03 µs ± 12.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.12 µs ± 12.3 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 size: 200 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.63 µs ± 18.4 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9 µs ± 17.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 size: 300 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.94 µs ± 41.3 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.13 µs ± 57.3 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 size: 400 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.67 µs ± 63.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.95 µs ± 82.1 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -782,26 +787,17 @@ df -h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My shell is: /bin/bash
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My shell is: /bin/zsh
 My disk usage is:
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/root        84G   64G   20G  77% /
-devtmpfs        3.4G     0  3.4G   0% /dev
-tmpfs           3.4G   12K  3.4G   1% /dev/shm
-tmpfs           696M  1.1M  695M   1% /run
-tmpfs           5.0M     0  5.0M   0% /run/lock
-tmpfs           3.4G     0  3.4G   0% /sys/fs/cgroup
-/dev/sdb15      105M  3.9M  101M   4% /boot/efi
-/dev/loop2      163M  163M     0 100% /snap/gnome-3-28-1804/145
-/dev/loop0       56M   56M     0 100% /snap/core18/1944
-/dev/loop3       56M   56M     0 100% /snap/core18/1988
-/dev/loop1      138M  138M     0 100% /snap/chromium/1479
-/dev/loop4       70M   70M     0 100% /snap/lxd/19188
-/dev/loop5       32M   32M     0 100% /snap/snapd/10707
-/dev/loop7       32M   32M     0 100% /snap/snapd/11036
-/dev/loop6       65M   65M     0 100% /snap/gtk-common-themes/1514
-/dev/sda1        14G  4.1G  9.0G  32% /mnt
-/dev/loop8      138M  138M     0 100% /snap/chromium/1497
+Filesystem                                             Size   Used  Avail Capacity  iused               ifree %iused  Mounted on
+/dev/disk1s1                                          466Gi  443Gi   11Gi    98%  5174387 9223372036849601420    0%   /
+devfs                                                 197Ki  197Ki    0Bi   100%      683                   0  100%   /dev
+/dev/disk1s4                                          466Gi   11Gi   11Gi    52%       11 9223372036854775796    0%   /private/var/vm
+map -hosts                                              0Bi    0Bi    0Bi   100%        0                   0  100%   /net
+map auto_home                                           0Bi    0Bi    0Bi   100%        0                   0  100%   /home
+/dev/disk2s2                                          3.6Ti  2.5Ti  1.1Ti    70% 28947660          4266019619    1%   /Volumes/My Passport for Mac
+com.apple.TimeMachine.2021-02-17-162629@/dev/disk1s1  466Gi  443Gi   11Gi    98%  5173925 9223372036849601882    0%   /Volumes/com.apple.TimeMachine.localsnapshots/Backups.backupdb/Lindsey’s MacBook Pro (2)/2021-02-17-162629/Macintosh HD
+com.apple.TimeMachine.2021-02-17-151820@/dev/disk1s1  466Gi  442Gi   11Gi    98%  5173313 9223372036849602494    0%   /Volumes/com.apple.TimeMachine.localsnapshots/Backups.backupdb/Lindsey’s MacBook Pro (2)/2021-02-17-151820/Macintosh HD
 </pre></div>
 </div>
 </div>
@@ -818,7 +814,7 @@ And more...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing test.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting test.txt
 </pre></div>
 </div>
 </div>
@@ -880,7 +876,7 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>500 ms ± 6.36 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>568 ms ± 39.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -894,6 +890,17 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         4 function calls in 0.567 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.567    0.567    0.567    0.567 &lt;ipython-input-29-3d4a58aab281&gt;:1(to_optimize)
+        1    0.000    0.000    0.567    0.567 {built-in method builtins.exec}
+        1    0.000    0.000    0.567    0.567 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.000    0.000    0.000    0.000 {method &#39;disable&#39; of &#39;_lsprof.Profiler&#39; objects}
 </pre></div>
 </div>
 </div>
@@ -952,7 +959,7 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing mod.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting mod.py
 </pre></div>
 </div>
 </div>
@@ -987,24 +994,6 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enjoy</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Are you enjoying this tutorial? &#39;</span><span class="p">)</span>
 <span class="c1"># print(&#39;enjoy is:&#39;, enjoy)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="n">fce34167df91</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">enjoy</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Are you enjoying this tutorial? &#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># print(&#39;enjoy is:&#39;, enjoy)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">844</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">845</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">846</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">848</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
