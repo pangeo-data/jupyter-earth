@@ -724,7 +724,7 @@ np.linspace?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.9 µs ± 214 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.8 µs ± 171 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -740,7 +740,7 @@ np.linspace?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.78 µs ± 27.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4 µs ± 10.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -759,19 +759,19 @@ np.linspace?
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 100 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.12 µs ± 12.3 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.09 µs ± 19.1 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 size: 200 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9 µs ± 17.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.61 µs ± 15.1 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 size: 300 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.13 µs ± 57.3 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.68 µs ± 31.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 size: 400 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.95 µs ± 82.1 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.3 µs ± 67.8 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -787,17 +787,25 @@ df -h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My shell is: /bin/zsh
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My shell is: /bin/bash
 My disk usage is:
-Filesystem                                             Size   Used  Avail Capacity  iused               ifree %iused  Mounted on
-/dev/disk1s1                                          466Gi  443Gi   11Gi    98%  5174387 9223372036849601420    0%   /
-devfs                                                 197Ki  197Ki    0Bi   100%      683                   0  100%   /dev
-/dev/disk1s4                                          466Gi   11Gi   11Gi    52%       11 9223372036854775796    0%   /private/var/vm
-map -hosts                                              0Bi    0Bi    0Bi   100%        0                   0  100%   /net
-map auto_home                                           0Bi    0Bi    0Bi   100%        0                   0  100%   /home
-/dev/disk2s2                                          3.6Ti  2.5Ti  1.1Ti    70% 28947660          4266019619    1%   /Volumes/My Passport for Mac
-com.apple.TimeMachine.2021-02-17-162629@/dev/disk1s1  466Gi  443Gi   11Gi    98%  5173925 9223372036849601882    0%   /Volumes/com.apple.TimeMachine.localsnapshots/Backups.backupdb/Lindsey’s MacBook Pro (2)/2021-02-17-162629/Macintosh HD
-com.apple.TimeMachine.2021-02-17-151820@/dev/disk1s1  466Gi  442Gi   11Gi    98%  5173313 9223372036849602494    0%   /Volumes/com.apple.TimeMachine.localsnapshots/Backups.backupdb/Lindsey’s MacBook Pro (2)/2021-02-17-151820/Macintosh HD
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        84G   67G   17G  81% /
+devtmpfs        3.4G     0  3.4G   0% /dev
+tmpfs           3.4G   12K  3.4G   1% /dev/shm
+tmpfs           696M  1.1M  695M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           3.4G     0  3.4G   0% /sys/fs/cgroup
+/dev/sdb15      105M  3.9M  101M   4% /boot/efi
+/dev/loop0       56M   56M     0 100% /snap/core18/1944
+/dev/loop2      138M  138M     0 100% /snap/chromium/1497
+/dev/loop3      163M  163M     0 100% /snap/gnome-3-28-1804/145
+/dev/loop1       56M   56M     0 100% /snap/core18/1988
+/dev/loop4       65M   65M     0 100% /snap/gtk-common-themes/1514
+/dev/loop5       32M   32M     0 100% /snap/snapd/10707
+/dev/loop6       32M   32M     0 100% /snap/snapd/11036
+/dev/loop7       70M   70M     0 100% /snap/lxd/19188
+/dev/sda1        14G  4.1G  9.0G  32% /mnt
 </pre></div>
 </div>
 </div>
@@ -814,7 +822,7 @@ And more...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting test.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing test.txt
 </pre></div>
 </div>
 </div>
@@ -876,7 +884,7 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>568 ms ± 39.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>460 ms ± 10.9 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -890,17 +898,6 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         4 function calls in 0.567 seconds
-
-   Ordered by: internal time
-
-   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.567    0.567    0.567    0.567 &lt;ipython-input-29-3d4a58aab281&gt;:1(to_optimize)
-        1    0.000    0.000    0.567    0.567 {built-in method builtins.exec}
-        1    0.000    0.000    0.567    0.567 &lt;string&gt;:1(&lt;module&gt;)
-        1    0.000    0.000    0.000    0.000 {method &#39;disable&#39; of &#39;_lsprof.Profiler&#39; objects}
 </pre></div>
 </div>
 </div>
@@ -959,7 +956,7 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting mod.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing mod.py
 </pre></div>
 </div>
 </div>
@@ -992,7 +989,7 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enjoy</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Are you enjoying this tutorial? &#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># enjoy = input(&#39;Are you enjoying this tutorial? &#39;)</span>
 <span class="c1"># print(&#39;enjoy is:&#39;, enjoy)</span>
 </pre></div>
 </div>
@@ -1006,6 +1003,11 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%perl</span>
 <span class="nv">@months</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;July&quot;</span><span class="p">,</span> <span class="s">&quot;August&quot;</span><span class="p">,</span> <span class="s">&quot;September&quot;</span><span class="p">);</span>
 <span class="k">print</span> <span class="nv">$months</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>July
 </pre></div>
 </div>
 </div>
@@ -1036,6 +1038,12 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;A little chirp&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;A little chirp&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/ipython_70_1.png" src="../../_images/ipython_70_1.png" />
 </div>
 </div>
 </div>
