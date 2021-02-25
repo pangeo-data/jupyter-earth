@@ -7,6 +7,9 @@ html:
   use_issues_button: true
   baseurl: https://pangeo-data.github.io/jupyter-earth
 
+bibtex_bibfiles:
+  - bibliography.bib
+
 repository:
   url: https://github.com/pangeo-data/jupyter-earth
   branch: master
