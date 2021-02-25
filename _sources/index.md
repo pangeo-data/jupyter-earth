@@ -13,6 +13,13 @@ The full project description is available in the [original grant proposal](https
 
 ## Presentations and events
 
+### CIG developers meeting
+_February 25, 2021_
+
+We were invited to present a brief overview of the Pangeo ecosystem at the [2021 Computational Infrastructure for Geodynamics developers workshop](https://geodynamics.org/cig/events/calendar/2021-cig-developers-workshop/)
+
+- [slides](https://docs.google.com/presentation/d/1jdcov4EsHb2H64nTQLqhucATLLJFapzxX8YkykiqYY4/edit?usp=sharing)
+
 ### ESIP winter meeting
 _January 26, 2021_
 
