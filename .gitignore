@@ -2,5 +2,6 @@ docs/_build
 docs/jupyter-resources/ecosystem/mod.py
 docs/jupyter-resources/ecosystem/test.txt
 docs/jupyter-resources/images/widgets-video.mp4
+__pycache__
 
 .ipynb_checkpoints
