@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Binder &#8212; Jupyter Meets the Earth</title>
+    <title>MyBinder.org &#8212; Jupyter Meets the Earth</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -67,8 +67,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/ecosystem/binder.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Binder" />
-<meta property="og:description" content="Binder  &lt;img src=&#34;https://mybinder.org/static/logo.svg&#34; width=30%&gt;   live, computational environments, running on the cloud, built from your research repositori" />
+<meta property="og:title"       content="MyBinder.org" />
+<meta property="og:description" content="MyBinder.org  &lt;img src=&#34;https://mybinder.org/static/logo.svg&#34; width=30%&gt;   The public and free MyBinder.org service enables anyone to start and use a Jupyter en" />
 <meta property="og:image"       content="https://pangeo-data.github.io/jupyter-earth/_static/jupyter-earth.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -176,7 +176,7 @@
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Binder
+       MyBinder.org
       </a>
      </li>
      <li class="toctree-l3">
@@ -271,9 +271,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/jupyter-resources/ecosystem/binder.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/jupyter-resources/ecosystem/binder.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -294,7 +294,7 @@
             href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/ecosystem/binder.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/ecosystem/binder.ipynb"><button
+        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/ecosystem/binder.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -309,44 +309,35 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/master?urlpath=lab/tree/docs/jupyter-resources/ecosystem/binder.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-binder-ready-repository">
-   Creating a Binder-ready repository
+  <a class="reference internal nav-link" href="#terminology">
+   Terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-binderhub-ready-git-repository">
+   Creating a BinderHub-ready git repository
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#specifying-an-environment">
-     Specifying an environment
+    <a class="reference internal nav-link" href="#recommended-guides">
+     Recommended guides
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-specifying-an-environment">
+     About specifying an environment
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -355,15 +346,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-repositories">
-     Example repositories
+    <a class="reference internal nav-link" href="#example-git-repositories">
+     Example git repositories
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sharing-your-notebooks-on-a-public-binder">
-   Sharing your notebooks on a public binder
+  <a class="reference internal nav-link" href="#sharing-your-notebooks-on-a-public-binderhub">
+   Sharing your notebooks on a public BinderHub
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -410,24 +401,35 @@
         
               <div>
                 
-  <div class="section" id="binder">
-<h1>Binder<a class="headerlink" href="#binder" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mybinder-org">
+<h1>MyBinder.org<a class="headerlink" href="#mybinder-org" title="Permalink to this headline">¶</a></h1>
 <img src="https://mybinder.org/static/logo.svg" width=30%>
-<p><em>live, computational environments, running on the cloud, built from your research repositories</em></p>
-<p><strong>Additional Resources</strong></p>
+<p>The public and free <a class="reference external" href="https://mybinder.org">MyBinder.org</a> service enables anyone to start and use a Jupyter environment that is automatically prepared with what’s needed to run contents of a public git repository. As an example, you can click on <a class="reference external" href="https://mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/master?urlpath=lab/tree/demo">this mybinder.org link</a> to start and use a Jupyter environment with Python, C++, and R and some example notebooks from the <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-demo">jupyterlab/jupyterlab-demo</a> repository on GitHub.</p>
+<div class="section" id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+<p>As <em>Binder</em> is often casually used to refer to multiple things, it’s useful to distinguish that:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://mybinder.org">mybinder.org</a></p></li>
-<li><p><a class="reference external" href="https://mybinder.readthedocs.io">mybinder.org documentation</a></p></li>
-<li><p><a class="reference external" href="https://mybinder.readthedocs.io">Binder documentation</a></p></li>
+<li><p><em>mybinder.org</em> is a free and public service.</p></li>
+<li><p><em><a class="reference external" href="https://binderhub.readthedocs.io/en/latest/">BinderHub</a></em> is the open source software used by mybinder.org.</p></li>
+<li><p>A BinderHub-ready git repository could be referred to as <em>a binder</em>.</p></li>
 </ul>
-<div class="section" id="creating-a-binder-ready-repository">
-<h2>Creating a Binder-ready repository<a class="headerlink" href="#creating-a-binder-ready-repository" title="Permalink to this headline">¶</a></h2>
-<p>We highly recomment the Zero-to-Binder tutorials available in <a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-julia.md">Julia</a>, <a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-python.md">Python</a> or <a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-r.md">R</a> for getting a respository of notebooks Binder-ready.</p>
-<p><img alt="Binder Repo" src="../../_images/binder-repo.png" /></p>
-<div class="section" id="specifying-an-environment">
-<h3>Specifying an environment<a class="headerlink" href="#specifying-an-environment" title="Permalink to this headline">¶</a></h3>
-<p>In order to reproduce computational work in a notebook, we need both the lines of code in the notebook as well as the description of the environment and software dependencies that the code in the notebook relies on.</p>
-<p>Software dependencies can be specified in standard configuration files. Some of the common configuration files include</p>
+</div>
+<div class="section" id="creating-a-binderhub-ready-git-repository">
+<h2>Creating a BinderHub-ready git repository<a class="headerlink" href="#creating-a-binderhub-ready-git-repository" title="Permalink to this headline">¶</a></h2>
+<p>To make your notebooks accessible with mybinder.org, you have to make them public in a git repository and declare what is required for them to run properly.</p>
+<div class="section" id="recommended-guides">
+<h3>Recommended guides<a class="headerlink" href="#recommended-guides" title="Permalink to this headline">¶</a></h3>
+<p>While we provide some details below, we highly recommend the following external, more detailed programming language tailored guides:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-julia.md">Julia</a></p></li>
+<li><p><a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-python.md">Python</a></p></li>
+<li><p><a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-r.md">R</a></p></li>
+</ul>
+</div>
+<div class="section" id="about-specifying-an-environment">
+<h3>About specifying an environment<a class="headerlink" href="#about-specifying-an-environment" title="Permalink to this headline">¶</a></h3>
+<p>In order for mybinder.org to reproduce computational work in a notebook, it needs both the code itself and the code’s dependencies declared, such as Python’s <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library.</p>
+<p>To declare software dependencies for various programming languages, you can use standard configuration files. Some of the common configuration files recognized by all BinderHubs include:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://mybinder.readthedocs.io/en/latest/using/config_files.html#environment-yml-install-a-conda-environment">environment.yml</a>: a standard configuration file for installing packages from conda.</p></li>
 <li><p><a class="reference external" href="https://mybinder.readthedocs.io/en/latest/using/config_files.html#requirements-txt-install-a-python-environment">requirements.txt</a>: a standard file for installing Python packages using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code></p></li>
@@ -439,18 +441,18 @@
 <div class="section" id="tips-for-reproducibility-of-results">
 <h3>Tips for reproducibility of results<a class="headerlink" href="#tips-for-reproducibility-of-results" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Kernel</span> <span class="pre">--&gt;</span> <span class="pre">Restart</span> <span class="pre">--&gt;</span> <span class="pre">Run</span> <span class="pre">All</span></code>: Check that your notebook can run from start to finish without errors and that the state of the notebook is the same as what you are expecting (for more, see the discussion on <a class="reference internal" href="managing-state.html"><span class="doc std std-doc">managing state</span></a>)</p></li>
-<li><p>Pin dependencies in your environment configuration file. You can capture the current versions in your environment, for example using</p>
+<li><p><em>Run your notebooks from start to finish</em>. By using <code class="docutils literal notranslate"><span class="pre">Kernel</span> <span class="pre">--&gt;</span> <span class="pre">Restart</span> <span class="pre">--&gt;</span> <span class="pre">Run</span> <span class="pre">All</span></code>, you can confirm that your notebooks were in and arrives to a state you are expecting (see the discussion on <a class="reference internal" href="managing-state.html"><span class="doc std std-doc">managing state</span></a>).</p></li>
+<li><p><em>Freeze your environment</em>. As software evolves, it is relevant for reproducibility to capture a snapshot in time of the current versions in your environment. To do so, you can for example use:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span></code> to export the exact version of every Python package in your environment in a format that can be used in requirements.txt</p></li>
-<li><p>or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">-n</span> <span class="pre">&lt;env-name&gt;</span></code> to export to an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span></code> to export to requirements.txt</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">-n</span> <span class="pre">&lt;env-name&gt;</span></code> to export to <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="example-repositories">
-<h3>Example repositories<a class="headerlink" href="#example-repositories" title="Permalink to this headline">¶</a></h3>
-<p>An extensive listing of Binder-ready repositories for a range of programming languages is available in the <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/examples/sample_repos.html">documentation</a>. For the geoscience community, a couple particularly-relevant examples include</p>
+<div class="section" id="example-git-repositories">
+<h3>Example git repositories<a class="headerlink" href="#example-git-repositories" title="Permalink to this headline">¶</a></h3>
+<p>An extensive listing of Binder-ready repositories for a range of programming languages is available in the <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/examples/sample_repos.html">documentation</a>. For the geoscience community, a couple particularly-relevant examples include:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/binder-examples/requirements">Python environment with a requirements.txt</a></p></li>
 <li><p><a class="reference external" href="https://github.com/binder-examples/conda">Conda environment with an environment.yml</a></p></li>
@@ -460,8 +462,8 @@
 </ul>
 </div>
 </div>
-<div class="section" id="sharing-your-notebooks-on-a-public-binder">
-<h2>Sharing your notebooks on a public binder<a class="headerlink" href="#sharing-your-notebooks-on-a-public-binder" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sharing-your-notebooks-on-a-public-binderhub">
+<h2>Sharing your notebooks on a public BinderHub<a class="headerlink" href="#sharing-your-notebooks-on-a-public-binderhub" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://mybinder.org">mybinder.org</a> and <a class="reference external" href="https://binder.pangeo.io">binder.pangeo.io</a> provide public binders where you can create a link to an interactive session with your code. The image below shows the interface for <a class="reference external" href="https://mybinder.org">mybinder.org</a>. The Pangeo Binder interface is very similar and has additional functionality for launching a Dask-Kubernetes cluster for distributed computation.</p>
 <p><img alt="MyBinder.org" src="../../_images/binder.png" /></p>
 <div class="section" id="step-1-specify-repository-location">
