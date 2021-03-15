@@ -1,31 +1,33 @@
-- file: index.md
+# Table of Content file reference: https://jupyterbook.org/customize/toc.html
+# Note that the file extensions (.md, .ipynb) are assumed
+- file: index
 
-- file: jupyter-resources/index.md
+- file: jupyter-resources/index
   sections:
-  - file: jupyter-resources/introduction/index.md
+  - file: jupyter-resources/introduction/index
     sections:
-      - file: jupyter-resources/introduction/overview.ipynb
-      - file: jupyter-resources/introduction/ecosystem.ipynb
-      - file: jupyter-resources/introduction/tour.ipynb
+      - file: jupyter-resources/introduction/overview
+      - file: jupyter-resources/introduction/ecosystem
+      - file: jupyter-resources/introduction/tour
 
-  - file: jupyter-resources/ecosystem/index.md
+  - file: jupyter-resources/ecosystem/index
     sections:
-      - file: jupyter-resources/ecosystem/notebook.ipynb
-      - file: jupyter-resources/ecosystem/jupyterlab.ipynb
-      - file: jupyter-resources/ecosystem/ipython.ipynb
-      - file: jupyter-resources/ecosystem/ipython-customization.ipynb
-      - file: jupyter-resources/ecosystem/widgets.ipynb
-      - file: jupyter-resources/ecosystem/managing-state.ipynb
-      - file: jupyter-resources/ecosystem/jupyterhub.ipynb
-      - file: jupyter-resources/ecosystem/binder.ipynb
-      - file: jupyter-resources/ecosystem/jupyterbook.ipynb
+      - file: jupyter-resources/ecosystem/notebook
+      - file: jupyter-resources/ecosystem/jupyterlab
+      - file: jupyter-resources/ecosystem/ipython
+      - file: jupyter-resources/ecosystem/ipython-customization
+      - file: jupyter-resources/ecosystem/widgets
+      - file: jupyter-resources/ecosystem/managing-state
+      - file: jupyter-resources/ecosystem/jupyterhub
+      - file: jupyter-resources/ecosystem/binder
+      - file: jupyter-resources/ecosystem/jupyterbook
 
-  - file: jupyter-resources/broader/index.md
+  - file: jupyter-resources/broader/index
     sections:
-      - file: jupyter-resources/broader/data-structures.ipynb 
-      - file: jupyter-resources/broader/visualization.ipynb
-      - file: jupyter-resources/broader/dask.ipynb
-      - file: jupyter-resources/broader/intake.ipynb
-      - file: jupyter-resources/broader/dashboards.ipynb
+      - file: jupyter-resources/broader/data-structures
+      - file: jupyter-resources/broader/visualization
+      - file: jupyter-resources/broader/dask
+      - file: jupyter-resources/broader/intake
+      - file: jupyter-resources/broader/dashboards
 
-- file: tools.md
+- file: tools
