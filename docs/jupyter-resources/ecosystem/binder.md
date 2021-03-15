@@ -2,7 +2,7 @@
 
 <img src="https://mybinder.org/static/logo.svg" width=30%>
 
-The public and free [MyBinder.org](https://mybinder.org) service enable anyone to start and use a Jupyter environment that is automatically prepared with what's needed to run the content in a public git repository. As an example, you can click on [this mybinder.org link](https://mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/master?urlpath=lab/tree/demo) to start and use a Jupyter environment with Python, C++, and R and some example notebooks from the [jupyterlab/jupyterlab-demo](https://github.com/jupyterlab/jupyterlab-demo) repository on GitHub.
+The public and free [MyBinder.org](https://mybinder.org) service enables anyone to start and use a Jupyter environment that is automatically prepared with what's needed to run contents of a public git repository. As an example, you can click on [this mybinder.org link](https://mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/master?urlpath=lab/tree/demo) to start and use a Jupyter environment with Python, C++, and R and some example notebooks from the [jupyterlab/jupyterlab-demo](https://github.com/jupyterlab/jupyterlab-demo) repository on GitHub.
 
 ## Terminology
 
@@ -13,11 +13,11 @@ As _Binder_ is often casually used to refer to multiple things, it's useful to d
 
 ## Creating a BinderHub-ready git repository
 
-To make your notebooks accessible with mybinder.org, you have to make them public in a git repository and declare whats required for them to run properly.
+To make your notebooks accessible with mybinder.org, you have to make them public in a git repository and declare what is required for them to run properly.
 
 ### Recommended guides
 
-While we provide some details below, we highly recommend the following more detailed external and programming language tailored guides:
+While we provide some details below, we highly recommend the following external, more detailed programming language tailored guides:
 - [Julia](https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-julia.md)
 - [Python](https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-python.md)
 - [R](https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-r.md)
