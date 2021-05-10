@@ -8,7 +8,7 @@ The public and free [MyBinder.org](https://mybinder.org) service enables anyone 
 
 As _Binder_ is often casually used to refer to multiple things, it's useful to distinguish that:
 - _mybinder.org_ is a free and public service.
-- _[BinderHub](https://binderhub.readthedocs.io/en/latest/)_ is the open source software used by mybinder.org.
+- _[BinderHub](https://binderhub.readthedocs.io/)_ is a kubernetes-based cloud service that allows users to share reproducible interactive computing environments from code repositories. It is the open source software used by mybinder.org.
 - A BinderHub-ready git repository could be referred to as _a binder_.
 
 ## Creating a BinderHub-ready git repository

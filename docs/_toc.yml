@@ -20,6 +20,8 @@
     - file: jupyter-resources/ecosystem/binder
     - file: jupyter-resources/ecosystem/jupyterbook
 
+- file: jupyter-resources/usecases/index
+
 - file: jupyter-resources/broader/index
   sections:
     - file: jupyter-resources/broader/data-structures
@@ -27,5 +29,6 @@
     - file: jupyter-resources/broader/dask
     - file: jupyter-resources/broader/intake
     - file: jupyter-resources/broader/dashboards
+    - file: jupyter-resources/broader/domaintools
 
-- file: tools
+- file: jupyter-resources/learning-resources/index
