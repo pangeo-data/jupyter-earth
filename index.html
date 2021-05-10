@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jupyter Meets the Earth &#8212; Jupyter Meets the Earth</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -57,24 +54,15 @@
     <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/index.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction to Jupyter for Scientists" href="jupyter-resources/index.html" />
-
+    <link rel="next" title="Introduction: What is Jupyter?" href="jupyter-resources/introduction/index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://pangeo-data.github.io/jupyter-earth/index.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Jupyter Meets the Earth" />
-<meta property="og:description" content="Jupyter Meets the Earth  This is the project home for the EarthCube-funded project (Awards 1928406 and 1928374): Jupyter meets the Earth: Enabling discovery in " />
-<meta property="og:image"       content="https://pangeo-data.github.io/jupyter-earth/_static/jupyter-earth.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -83,155 +71,166 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
-  
-  <img src="_static/jupyter-earth.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Jupyter Meets the Earth</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="#">
+      
+      <img src="_static/jupyter-earth.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Jupyter Meets the Earth</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1 current active">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
   <a class="reference internal" href="#">
    Jupyter Meets the Earth
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="jupyter-resources/index.html">
-   Introduction to Jupyter for Scientists
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter-resources/introduction/index.html">
+   Introduction: What is Jupyter?
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="jupyter-resources/introduction/index.html">
-     Introduction
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/introduction/overview.html">
+     Jupyter Overview
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/introduction/overview.html">
-       Jupyter Overview
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/introduction/ecosystem.html">
-       Ecosystem
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/introduction/tour.html">
-       A tour of Jupyter
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="jupyter-resources/ecosystem/index.html">
-     Tools in the Jupyter ecosystem
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/introduction/ecosystem.html">
+     Ecosystem
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/ecosystem/notebook.html">
-       Jupyter Notebook
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/ecosystem/jupyterlab.html">
-       JupyterLab
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/ecosystem/ipython.html">
-       IPython
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/ecosystem/ipython-customization.html">
-       IPython Customization
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/ecosystem/widgets.html">
-       Jupyter Widgets
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/ecosystem/managing-state.html">
-       Managing state
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/ecosystem/jupyterhub.html">
-       JupyterHub
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/ecosystem/binder.html">
-       MyBinder.org
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/ecosystem/jupyterbook.html">
-       Jupyter Book
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="jupyter-resources/broader/index.html">
-     Examples from the broader ecosystem
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/introduction/tour.html">
+     A tour of Jupyter
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/broader/data-structures.html">
-       Data structures
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/broader/visualization.html">
-       Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/broader/dask.html">
-       Dashboards
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/broader/intake.html">
-       Intake
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="jupyter-resources/broader/dashboards.html">
-       Dask
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter-resources/ecosystem/index.html">
+   Tools in the Jupyter ecosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/ecosystem/notebook.html">
+     Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/ecosystem/jupyterlab.html">
+     JupyterLab
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/ecosystem/ipython.html">
+     IPython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/ecosystem/ipython-customization.html">
+     IPython Customization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/ecosystem/widgets.html">
+     Jupyter Widgets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/ecosystem/managing-state.html">
+     Managing state
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/ecosystem/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/ecosystem/binder.html">
+     MyBinder.org
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/ecosystem/jupyterbook.html">
+     Jupyter Book
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tools.html">
-   Tools we support
+  <a class="reference internal" href="jupyter-resources/usecases/index.html">
+   Geoscience use cases
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter-resources/broader/index.html">
+   Examples from the broader ecosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/broader/data-structures.html">
+     Data structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/broader/visualization.html">
+     Visualization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/broader/dask.html">
+     Dashboards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/broader/intake.html">
+     Intake
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/broader/dashboards.html">
+     Dask
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-resources/broader/domaintools.html">
+     Domain specific tools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="jupyter-resources/learning-resources/index.html">
+   External learning resources
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -299,12 +298,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -313,15 +312,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#project-description">
    Project description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-you-can-find-here">
+   What you can find here
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -405,8 +408,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -423,6 +425,10 @@
 <h2>Project description<a class="headerlink" href="#project-description" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f?source=friends_link&amp;sk=945065ffe0c101b6c8ec369425574600">Jupyter meets the Earth project</a> combines research use cases in geosciences with technical developments within the <a class="reference external" href="http://jupyter.org/">Jupyter</a> and <a class="reference external" href="http://pangeo.io/">Pangeo</a> ecosystems. In this model of equal partners, scientific questions help drive software infrastructure development, and new technologies expand the horizons of viable research.</p>
 <p>The full project description is available in the <a class="reference external" href="https://zenodo.org/record/3369939">original grant proposal</a>.</p>
+</div>
+<div class="section" id="what-you-can-find-here">
+<h2>What you can find here<a class="headerlink" href="#what-you-can-find-here" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the <a class="reference external" href="#presentations-and-events">project updates and our event archive</a>, here you can find onboarding resources for Jupyter and the other related tools, tailored for Earth science researchers. Jupyter ecosystem helps advance Earth science research in many ways, including data exploration, interactive analysis, documentation, and reproducibility of work. To giuve you an idea of how Jupyter achieves this, some of these tutorials come along with a motivating example that focuses on real science problems using real data.</p>
 </div>
 <div class="section" id="presentations-and-events">
 <h2>Presentations and events<a class="headerlink" href="#presentations-and-events" title="Permalink to this headline">¶</a></h2>
@@ -571,7 +577,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="jupyter-resources/index.html" title="next page">Introduction to Jupyter for Scientists</a>
+    <a class='right-next' id="next-link" href="jupyter-resources/introduction/index.html" title="next page">Introduction: What is Jupyter?</a>
 
         </div>
         
@@ -592,11 +598,9 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

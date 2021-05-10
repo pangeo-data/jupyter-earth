@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboards &#8212; Jupyter Meets the Earth</title>
+    <title>Domain specific tools &#8212; Jupyter Meets the Earth</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,11 +51,11 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/broader/dask.html" />
+    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/broader/domaintools.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Intake" href="intake.html" />
-    <link rel="prev" title="Visualization" href="visualization.html" />
+    <link rel="next" title="External learning resources" href="../learning-resources/index.html" />
+    <link rel="prev" title="Dask" href="dashboards.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -202,8 +202,8 @@
      Visualization
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="dask.html">
      Dashboards
     </a>
    </li>
@@ -217,8 +217,8 @@
      Dask
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="domaintools.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Domain specific tools
     </a>
    </li>
@@ -270,9 +270,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/jupyter-resources/broader/dask.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/jupyter-resources/broader/domaintools.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -290,10 +290,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/broader/dask.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/broader/domaintools.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/broader/dask.ipynb"><button
+        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/broader/domaintools.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -308,26 +308,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/master?urlpath=lab/tree/docs/jupyter-resources/broader/dask.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -341,8 +321,14 @@
         
               <div>
                 
-  <div class="section" id="dashboards">
-<h1>Dashboards<a class="headerlink" href="#dashboards" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="domain-specific-tools">
+<h1>Domain specific tools<a class="headerlink" href="#domain-specific-tools" title="Permalink to this headline">¶</a></h1>
+<p>View the active development ideas and progress in our GitHub repository <a class="reference external" href="https://github.com/pangeo-data/jupyter-earth/issues">issues</a>.</p>
+<p>Some of our current areas of development include:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://icepyx.readthedocs.io/en/latest/">icepyx</a>: Python tools for obtaining and working with ICESat-2 data</p></li>
+<li><p><a class="reference external" href="https://docs.simpeg.xyz">SimPEG</a>: A framework and toolbox for geophysical inversions</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
@@ -370,8 +356,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="visualization.html" title="previous page">Visualization</a>
-    <a class='right-next' id="next-link" href="intake.html" title="next page">Intake</a>
+    <a class='left-prev' id="prev-link" href="dashboards.html" title="previous page">Dask</a>
+    <a class='right-next' id="next-link" href="../learning-resources/index.html" title="next page">External learning resources</a>
 
         </div>
         

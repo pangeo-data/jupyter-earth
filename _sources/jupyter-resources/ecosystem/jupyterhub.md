@@ -1,6 +1,6 @@
 # JupyterHub
 
-[JupyterHub](https://jupyterhub.readthedocs.io) is what organizations typically install (in a single server, cloud, or HPC) to provide Jupyter environments for a potentially very large group of users. Users can through a JupyterHub get started working in a Jupyter environment without any prior setup.
+[JupyterHub](https://jupyterhub.readthedocs.io) is a multi-user Hub that spawns, manages, and proxies multiple instances of the single-user Jupyter notebook server. It is what organizations typically install (in a single server, cloud, or HPC) to provide Jupyter environments for a potentially very large group of users. Users can through a JupyterHub get started working in a Jupyter environment without any prior setup.
 
 ## Conceptual model of JupyterHub
 
