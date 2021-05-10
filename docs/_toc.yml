@@ -2,32 +2,33 @@
 # Note that the file extensions (.md, .ipynb) are assumed
 - file: index
 
-- file: jupyter-resources/index
+- file: jupyter-resources/introduction/index
   sections:
-  - file: jupyter-resources/introduction/index
-    sections:
-      - file: jupyter-resources/introduction/overview
-      - file: jupyter-resources/introduction/ecosystem
-      - file: jupyter-resources/introduction/tour
+    - file: jupyter-resources/introduction/overview
+    - file: jupyter-resources/introduction/ecosystem
+    - file: jupyter-resources/introduction/tour
 
-  - file: jupyter-resources/ecosystem/index
-    sections:
-      - file: jupyter-resources/ecosystem/notebook
-      - file: jupyter-resources/ecosystem/jupyterlab
-      - file: jupyter-resources/ecosystem/ipython
-      - file: jupyter-resources/ecosystem/ipython-customization
-      - file: jupyter-resources/ecosystem/widgets
-      - file: jupyter-resources/ecosystem/managing-state
-      - file: jupyter-resources/ecosystem/jupyterhub
-      - file: jupyter-resources/ecosystem/binder
-      - file: jupyter-resources/ecosystem/jupyterbook
+- file: jupyter-resources/ecosystem/index
+  sections:
+    - file: jupyter-resources/ecosystem/notebook
+    - file: jupyter-resources/ecosystem/jupyterlab
+    - file: jupyter-resources/ecosystem/ipython
+    - file: jupyter-resources/ecosystem/ipython-customization
+    - file: jupyter-resources/ecosystem/widgets
+    - file: jupyter-resources/ecosystem/managing-state
+    - file: jupyter-resources/ecosystem/jupyterhub
+    - file: jupyter-resources/ecosystem/binder
+    - file: jupyter-resources/ecosystem/jupyterbook
 
-  - file: jupyter-resources/broader/index
-    sections:
-      - file: jupyter-resources/broader/data-structures
-      - file: jupyter-resources/broader/visualization
-      - file: jupyter-resources/broader/dask
-      - file: jupyter-resources/broader/intake
-      - file: jupyter-resources/broader/dashboards
+- file: jupyter-resources/usecases/index
 
-- file: tools
+- file: jupyter-resources/broader/index
+  sections:
+    - file: jupyter-resources/broader/data-structures
+    - file: jupyter-resources/broader/visualization
+    - file: jupyter-resources/broader/dask
+    - file: jupyter-resources/broader/intake
+    - file: jupyter-resources/broader/dashboards
+    - file: jupyter-resources/broader/domaintools
+
+- file: jupyter-resources/learning-resources/index

@@ -10,6 +10,9 @@ The [Jupyter meets the Earth project](https://blog.jupyter.org/jupyter-meets-the
 
 The full project description is available in the [original grant proposal](https://zenodo.org/record/3369939).
 
+## What you can find here
+
+In addition to the [project updates and our event archive](#presentations-and-events), here you can find onboarding resources for Jupyter and the other related tools, tailored for Earth science researchers. Jupyter ecosystem helps advance Earth science research in many ways, including data exploration, interactive analysis, documentation, and reproducibility of work. To giuve you an idea of how Jupyter achieves this, some of these tutorials come along with a motivating example that focuses on real science problems using real data. 
 
 ## Presentations and events
 
