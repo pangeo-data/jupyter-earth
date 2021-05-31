@@ -58,7 +58,7 @@ jobs:
 
       - name: Test build image
         run: |
-          docker build -t image-build-test .
+          docker build -t image-build-test ./hub.jupytearth.org-image
 
       - name: Build, tag, and push image to Amazon ECR
         if: github.event_name == 'push'
