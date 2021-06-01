@@ -35,6 +35,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: ci-ecr
+          role-skip-session-tagging: true
 
       # ref: https://github.com/aws-actions/amazon-ecr-login
       #
