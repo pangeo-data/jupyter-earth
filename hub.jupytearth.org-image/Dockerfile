@@ -8,7 +8,9 @@
 FROM pangeo/pangeo-notebook:2021.05.15
 ARG DEBIAN_FRONTEND=noninteractive
 
-# DISABLED: We don't need additional apt packages at the moment.
+# DISABLED: apt packages.
+#
+#           Enable if we have a apt package we want to install!
 #
 # USER root
 # RUN echo "Installing apt-get packages..." \
@@ -42,11 +44,17 @@ RUN echo "Installing pip packages..." \
 
 
 
-RUN echo "Installing jupyterlab extensions..." \
- && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
- && jupyter labextension install -y --clean \
-        @lckr/jupyterlab_variableinspector \
- && echo "Installing jupyterlab extensions complete!"
+# DISABLED: JupyterLab 2 extensions.
+#
+#           If we want to install JupyterLab 2 based extensions we should first
+#           install node and add extensions here, but JupyterLab 3 extensions
+#           should preferably be installed as Python packages.
+#
+# RUN echo "Installing jupyterlab extensions..." \
+#  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
+#  && jupyter labextension install -y --clean \
+#         @lckr/jupyterlab_variableinspector \
+#  && echo "Installing jupyterlab extensions complete!"
 
 
 
