@@ -2,7 +2,7 @@
 # hub.jupytearth.org. After having built the image, administrators can visit
 # https://hub.jupytearth.org/services/configurator and set the image
 #
-name: Build hub.jupytearth.org user image
+name: Build image for hub.jupytearth.org
 
 on:
   pull_request:
@@ -15,7 +15,8 @@ on:
       - hub.jupytearth.org-image/**
 
 jobs:
-  build:
+  build-image:
+    name: Build image
     runs-on: ubuntu-20.04
     steps:
 
