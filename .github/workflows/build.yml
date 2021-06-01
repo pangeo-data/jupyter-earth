@@ -3,10 +3,16 @@ name: build-docs
 on:
   push:
     branches:
-    - master
+      - master
+    paths-ignore:
+      - .github/workflows/build-image.yaml
+      - hub.jupytearth.org-image/**
   pull_request:
     branches:
-    - master
+      - master
+    paths-ignore:
+      - .github/workflows/build-image.yaml
+      - hub.jupytearth.org-image/**
 
 jobs:
   build-docs:
