@@ -9,10 +9,12 @@ on:
     paths:
       - .github/workflows/build-image.yaml
       - hub.jupytearth.org-image/**
+      - "!hub.jupytearth.org-image/README.md"
   push:
     paths:
       - .github/workflows/build-image.yaml
       - hub.jupytearth.org-image/**
+      - "!hub.jupytearth.org-image/README.md"
 
 jobs:
   build-image:
