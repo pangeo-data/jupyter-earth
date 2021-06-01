@@ -1,0 +1,80 @@
+# This GitHub workflow builds and pushes a user environment image to be used at
+# hub.jupytearth.org. After having built the image, administrators can visit
+# https://hub.jupytearth.org/services/configurator and set the image
+#
+name: Build hub.jupytearth.org user image
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/build-image.yaml
+      - hub.jupytearth.org-image/**
+  push:
+    paths:
+      - .github/workflows/build-image.yaml
+      - hub.jupytearth.org-image/**
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Checkout files in repo
+        uses: actions/checkout@v2
+
+      # ref: https://github.com/aws-actions/configure-aws-credentials
+      #
+      - name: Configure AWS credentials
+        if: github.event_name == 'push'
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-west-2
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ci-ecr
+
+      # ref: https://github.com/aws-actions/amazon-ecr-login
+      #
+      - name: Login to Amazon ECR
+        if: github.event_name == 'push'
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      # If we run out of disk space building this image, we can decomment this
+      # step to free up space for our GitHub Job runner.
+      #
+      # ref: https://github.com/easimon/maximize-build-space
+      #
+      # - name: Maximize build space
+      #   uses: easimon/maximize-build-space@b4d02c14493a9653fe7af06cc89ca5298071c66e
+      #   with:
+      #     root-reserve-mb: 51200 # 50 GB
+      #     # NOTE: We dump remaining space here to avoid
+      #     #       overriding our checked out repo folder.
+      #     build-mount-path: /var/lib/docker/tmp
+      #     remove-dotnet: "true"
+      #     remove-haskell: "true"
+      #     remove-android: "true"
+
+      - name: Test build image
+        run: |
+          docker build -t image-build-test .
+
+      - name: Build, tag, and push image to Amazon ECR
+        if: github.event_name == 'push'
+        id: push
+        run: |
+          IMAGE_NAME=${{ steps.login-ecr.outputs.registry }}/jmte/user-env
+          IMAGE_TAG=$(git rev-parse --short "$GITHUB_SHA")
+          IMAGE=$IMAGE_NAME:$IMAGE_TAG
+          echo ::set-output "name=image-name::$IMAGE"
+
+          docker tag image-build-test $IMAGE .
+          docker push $IMAGE
+
+      - name: How to update hub.jupytearth.org to use this image
+        if: github.event_name == 'push'
+        run: |
+          echo "1. Visit https://hub.jupytearth.org/services/configurator as a JupyterHub admin."
+          echo "2. Configure to use this image: ${{ steps.push.outputs.image-name }}"
+          echo "3. Press save."
