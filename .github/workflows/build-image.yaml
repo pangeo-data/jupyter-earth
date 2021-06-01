@@ -75,7 +75,7 @@ jobs:
           IMAGE=$IMAGE_NAME:$IMAGE_TAG
           echo ::set-output "name=image-name::$IMAGE"
 
-          docker tag image-build-test $IMAGE .
+          docker tag image-build-test $IMAGE
           docker push $IMAGE
 
       - name: How to update hub.jupytearth.org to use this image
