@@ -8,17 +8,16 @@
 FROM pangeo/pangeo-notebook:2021.05.15
 ARG DEBIAN_FRONTEND=noninteractive
 
-# DISABLED: apt packages.
-#
-#           Enable if we have a apt package we want to install!
-#
-# USER root
-# RUN echo "Installing apt-get packages..." \
-#  && apt-get update \
-#  && apt-get install -y \
-#         gcc \
-#  && rm -rf /var/lib/apt/lists/*
-# USER ${NB_USER}
+USER root
+RUN echo "Installing apt-get packages..." \
+ && apt-get update \
+ && apt-get install -y \
+        groff \
+            # The aws CLI apparently relies on "groff"
+            # Issue about including it in future versions of pangeo-notebook:
+            # https://github.com/pangeo-data/pangeo-docker-images/issues/216
+ && rm -rf /var/lib/apt/lists/*
+USER ${NB_USER}
 
 
 # We only need to install packages not listed in this file already:
