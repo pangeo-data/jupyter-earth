@@ -34,8 +34,6 @@ RUN echo "Installing conda packages..." \
 RUN echo "Installing pip packages..." \
  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
  && pip install --no-cache-dir \
-        jupyter-resource-usage \
-            # ref: https://github.com/jupyter-server/jupyter-resource-usage
         jupyterlab==3.1.0a10 \
             # ref: https://github.com/jupyterlab/jupyterlab
         jupyterlab-link-share \
