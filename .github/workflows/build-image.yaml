@@ -15,6 +15,7 @@ on:
       - .github/workflows/build-image.yaml
       - hub.jupytearth.org-image/**
       - "!hub.jupytearth.org-image/README.md"
+  workflow_dispatch:
 
 jobs:
   build-image:
@@ -28,7 +29,7 @@ jobs:
       # ref: https://github.com/aws-actions/configure-aws-credentials
       #
       - name: Configure AWS credentials
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-region: us-west-2
@@ -36,11 +37,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: ci-ecr
           role-skip-session-tagging: true
+          role-duration-seconds: 3600
 
       # ref: https://github.com/aws-actions/amazon-ecr-login
       #
       - name: Login to Amazon ECR
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
@@ -65,7 +67,7 @@ jobs:
           docker build -t image-build-test ./hub.jupytearth.org-image
 
       - name: Build, tag, and push image to Amazon ECR
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         id: push
         run: |
           IMAGE_NAME=${{ steps.login-ecr.outputs.registry }}/jmte/user-env
@@ -77,7 +79,7 @@ jobs:
           docker push $IMAGE
 
       - name: How to update hub.jupytearth.org to use this image
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         run: |
           echo "1. Visit https://hub.jupytearth.org/services/configurator as a JupyterHub admin."
           echo "2. Configure to use this image: ${{ steps.push.outputs.image-name }}"
