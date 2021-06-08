@@ -8,10 +8,13 @@
 FROM pangeo/pangeo-notebook:2021.05.15
 ARG DEBIAN_FRONTEND=noninteractive
 
+
 USER root
+# We only need to install packages not listed in this file already:
+# https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/apt.txt
 RUN echo "Installing apt-get packages..." \
- && apt-get update \
- && apt-get install -y \
+ && apt-get update > /dev/null \
+ && apt-get -qq install --yes \
         groff \
             # The aws CLI apparently relies on "groff"
             # Issue about including it in future versions of pangeo-notebook:
@@ -22,80 +25,111 @@ RUN echo "Installing apt-get packages..." \
             # A friendly terminal editor, even easier than nano for new users
         mc \
             # powerful terminal-based file manager, better than the one in JLab
-        build-essential gfortran 
+        build-essential gfortran \
             # Regular build tools for compiling common stuff
-            
-# for nbconvert
-RUN apt-get update > /dev/null && \
-    apt-get -qq install --yes \
-            texlive-xetex \
-            texlive-fonts-recommended \
-            texlive-plain-generic > /dev/null
-
-# Some common geospatial dependencies
-RUN apt-get update > /dev/null && \
-    apt-get -qq install --yes \
-            libspatialindex-dev \
-            libgeos-dev \
-            libproj-dev \
-            proj-data \
-            proj-bin \
-            graphviz \
-            ffmpeg > /dev/null
-            
-RUN rm -rf /var/lib/apt/lists/*
+        texlive-xetex texlive-fonts-recommended texlive-plain-generic \
+            # Dependencies for nbconvert
+        # common geospatial dependencies:
+        libspatialindex-dev \
+        libgeos-dev \
+        libproj-dev \
+        proj-data \
+        proj-bin \
+        graphviz \
+        ffmpeg \
+ && rm -rf /var/lib/apt/lists/*
 
 # Switch user away from ROOT for the rest
 USER ${NB_USER}
+
 
 # We only need to install packages not listed in this file already:
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/packages.txt
 RUN echo "Installing conda packages..." \
  && mamba install -n ${CONDA_ENV} -y \
+        #
+        # visualization:
+        altair \
+        bqplot \
+        plotly \
+        plotly_express \
+        seaborn \
+        ipycanvas \
+        ipympl \
+        jupyter_bokeh \
+        jupyterlab-geojson \
+        #
+        # tests and formatting:
+        black \
+        flake8 \
+        pep8 \
+        pyflakes \
+        pylint \
+        pytest \
+        pytest-cov \
+        #
+        # documentation:
+        jupyter-book \
+        jupytext \
+        numpydoc \
+        sphinx \
+        #
+        # data:
+        ipydatagrid \
+        ipyparallel \
+        lxml \
+        pytables \
+        statsmodels \
+        xlrd \
+        #
+        # jupyterlab and extensions:
+        jupyterlab==3.1.0a11 \
+            # ref: https://github.com/jupyterlab/jupyterlab
+        jupyter-repo2docker \
+        # jupyterlab-drawio \
+            # DISABLED: One can't save work so it could be a disservice to have
+            #           it enabled: https://github.com/QuantStack/jupyterlab-drawio/issues/6
+        jupyterlab-link-share \
+            # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
+        jupyterlab-git \
+        jupyterlab-system-monitor \
+        jupyterlab-variableinspector \
+        nbdime \
+        retrolab \
+        #
+        # other
+        cython \
+        fortran-magic \
         google-cloud-sdk \
-        ipython jupyter jupyterlab jupyter-book jupyter-repo2docker \
-        retrolab jupyterlab-git jupyterlab-system-monitor \
-        jupyterlab-variableinspector jupyterlab-drawio nbdime \
-        ipywidgets ipympl ipycanvas ipydatagrid \
-        numpy scipy matplotlib sympy scikit-image scikit-learn networkx \
-        pandas seaborn statsmodels xarray xlrd \
-        geopandas h5py netcdf4 pytables jupyterlab-geojson \
-        zarr intake intake-xarray intake-esm pydap rasterio \
-        altair bokeh jupyter_bokeh plotly plotly_express bqplot \
-        cython numba fortran-magic \
-        dask dask-labextension distributed ipyparallel \
-        black jedi pep8 flake8 pyflakes pylint pytest pytest-cov \
-        sphinx numpydoc pandoc jupytext \
-        yaml lxml requests \
+        julia \
         nodejs \
-        pip \
+        sympy \
  && echo "Installing conda packages complete!"
 
 
-# We only need to install packages not listed in this file already:
+# We use a conda first approach in this Dockerfile, so only install pip packages
+# if you have a clear reason to not use conda.
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/packages.txt
-RUN echo "Installing pip packages..." \
- && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
- && pip install --no-cache-dir \
-        jupyterlab==3.1.0a11 \
-            # ref: https://github.com/jupyterlab/jupyterlab
-        jupyterlab-link-share \
-            # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
-        julia \
-            # If we install julia w/conda, it pulls the entirety of Julia in...
- && echo "Installing pip packages complete!"
+#
+# RUN echo "Installing pip packages..." \
+#  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
+#  && pip install --no-cache-dir \
+#         <package-name-here>
+#  && echo "Installing pip packages complete!"
+
 
 # Configure conda/mamba to create new environments within the home folder by
 # default. This allows the environments to remain in between restarts of the
 # container if only the home folder is persisted.
 RUN conda config --system --prepend envs_dirs '~/.conda/envs'
 
+
 # User environment variables
 # Configure PIP always installs to the user's home directory
 ENV PIP_USER=True
 
-# Set up micro as the default EDITOR (git, etc). Advanced users will reconfigure this 
-# to vim/emacs/etc, but this will ensure that less unix-experienced ones have a good 
-# first experience
+# Set up micro as the default EDITOR (git, etc). Advanced users will reconfigure
+# this to vim/emacs/etc, but this will ensure that less unix-experienced ones
+# have a good first experience
 ENV EDITOR=micro
 ENV VISUAL=micro
