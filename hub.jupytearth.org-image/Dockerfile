@@ -70,6 +70,7 @@ RUN echo "Installing conda packages..." \
         altair \
         bqplot \
         plotly \
+        python-kaleido \
         seaborn \
         ipycanvas \
         ipympl \
@@ -129,9 +130,25 @@ RUN echo "Installing pip packages..." \
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
-        jupyterlab==3.1.0a11 \
+        jupyterlab==3.1.0a12 \
             # ref: https://github.com/jupyterlab/jupyterlab
+        plotly-geo \
+            # NOTE: This package is not available in conda (conda-forge or
+            #       plotly), even though they describe it to be.
+            # ref: https://github.com/plotly/plotly.py#extended-geo-support
  && echo "Installing pip packages complete!"
+
+
+# NOTE: This is just for packages that doesn't yet support the JupyterLab 3 way
+#       of installing extensions using python packages. Plotly version 5
+#       probably won't need this but for now with plotly version 4 we still do.
+RUN echo "Installing jupyterlab extensions..." \
+ && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
+ && jupyter labextension install -y --clean \
+        @jupyter-widgets/jupyterlab-manager \
+        jupyterlab-plotly \
+        plotlywidget \
+ && echo "Installing jupyterlab extensions complete!"
 
 
 # Configure conda/mamba to create new environments within the home folder by
