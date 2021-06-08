@@ -1,6 +1,6 @@
 # This GitHub workflow builds and pushes a user environment image to be used at
 # hub.jupytearth.org. After having built the image, administrators can visit
-# https://hub.jupytearth.org/services/configurator and set the image
+# https://hub.jupytearth.org/services/configurator/ and set the image
 #
 name: Build image for hub.jupytearth.org
 
@@ -81,6 +81,6 @@ jobs:
       - name: How to update hub.jupytearth.org to use this image
         if: github.event_name != 'pull_request'
         run: |
-          echo "1. Visit https://hub.jupytearth.org/services/configurator as a JupyterHub admin."
+          echo "1. Visit https://hub.jupytearth.org/services/configurator/ as a JupyterHub admin."
           echo "2. Configure to use this image: ${{ steps.push.outputs.image-name }}"
           echo "3. Press save."
