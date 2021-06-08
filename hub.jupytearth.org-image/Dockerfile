@@ -52,7 +52,6 @@ RUN echo "Installing conda packages..." \
         altair \
         bqplot \
         plotly \
-        plotly_express \
         seaborn \
         ipycanvas \
         ipympl \
@@ -81,10 +80,6 @@ RUN echo "Installing conda packages..." \
         pytables \
         statsmodels \
         xlrd \
-        #
-        # jupyterlab and extensions:
-        jupyterlab==3.1.0a11 \
-            # ref: https://github.com/jupyterlab/jupyterlab
         jupyter-repo2docker \
         # jupyterlab-drawio \
             # DISABLED: One can't save work so it could be a disservice to have
@@ -111,11 +106,12 @@ RUN echo "Installing conda packages..." \
 # if you have a clear reason to not use conda.
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/packages.txt
 #
-# RUN echo "Installing pip packages..." \
-#  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
-#  && pip install --no-cache-dir \
-#         <package-name-here>
-#  && echo "Installing pip packages complete!"
+RUN echo "Installing pip packages..." \
+ && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
+ && pip install --no-cache-dir \
+        jupyterlab==3.1.0a11 \
+            # ref: https://github.com/jupyterlab/jupyterlab
+ && echo "Installing pip packages complete!"
 
 
 # Configure conda/mamba to create new environments within the home folder by
