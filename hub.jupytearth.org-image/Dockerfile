@@ -15,6 +15,7 @@ USER root
 RUN echo "Installing apt-get packages..." \
  && apt-get update > /dev/null \
  && apt-get -qq install --yes \
+        curl \
         groff \
             # The aws CLI apparently relies on "groff"
             # Issue about including it in future versions of pangeo-notebook:
@@ -39,8 +40,25 @@ RUN echo "Installing apt-get packages..." \
         ffmpeg \
  && rm -rf /var/lib/apt/lists/*
 
+
+# Install Julia
+ENV JULIA_PATH /srv/julia
+ENV JULIA_DEPOT_PATH ${JULIA_PATH}/pkg
+ENV JULIA_VERSION 1.6.1
+ENV PATH $PATH:${JULIA_PATH}/bin
+RUN mkdir -p ${JULIA_PATH} \
+ && curl -sSL "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_VERSION%[.-]*}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" \
+  | tar -xz -C ${JULIA_PATH} --strip-components 1 \
+ && mkdir -p ${JULIA_DEPOT_PATH} \
+ && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH}
+
+
 # Switch user away from ROOT for the rest
 USER ${NB_USER}
+
+# Prepare Julia
+RUN julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
+ && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
 
 
 # We only need to install packages not listed in this file already:
@@ -96,7 +114,6 @@ RUN echo "Installing conda packages..." \
         cython \
         fortran-magic \
         google-cloud-sdk \
-        julia \
         nodejs \
         sympy \
  && echo "Installing conda packages complete!"
@@ -109,6 +126,9 @@ RUN echo "Installing conda packages..." \
 RUN echo "Installing pip packages..." \
  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
  && pip install --no-cache-dir \
+        julia \
+            # To enable doing Julia stuff from Python
+            # ref: https://pyjulia.readthedocs.io/en/latest/index.html
         jupyterlab==3.1.0a11 \
             # ref: https://github.com/jupyterlab/jupyterlab
  && echo "Installing pip packages complete!"
