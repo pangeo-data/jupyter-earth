@@ -18,15 +18,57 @@ RUN echo "Installing apt-get packages..." \
             # https://github.com/pangeo-data/pangeo-docker-images/issues/216
         nano \
             # A terminal file editor, vim is already made available
- && rm -rf /var/lib/apt/lists/*
-USER ${NB_USER}
+        micro \
+            # A friendly terminal editor, even easier than nano for new users
+        mc \
+            # powerful terminal-based file manager, better than the one in JLab
+        build-essential gfortran 
+            # Regular build tools for compiling common stuff
+            
+# for nbconvert
+RUN apt-get update > /dev/null && \
+    apt-get -qq install --yes \
+            texlive-xetex \
+            texlive-fonts-recommended \
+            texlive-plain-generic > /dev/null
 
+# Some common geospatial dependencies
+RUN apt-get update > /dev/null && \
+    apt-get -qq install --yes \
+            libspatialindex-dev \
+            libgeos-dev \
+            libproj-dev \
+            proj-data \
+            proj-bin \
+            graphviz \
+            ffmpeg > /dev/null
+            
+RUN rm -rf /var/lib/apt/lists/*
+
+# Switch user away from ROOT for the rest
+USER ${NB_USER}
 
 # We only need to install packages not listed in this file already:
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/packages.txt
 RUN echo "Installing conda packages..." \
  && mamba install -n ${CONDA_ENV} -y \
         google-cloud-sdk \
+        ipython jupyter jupyterlab jupyter-book jupyter-repo2docker \
+        retrolab jupyterlab-git jupyterlab-system-monitor \
+        jupyterlab-variableinspector jupyterlab-drawio nbdime \
+        ipywidgets ipympl ipycanvas ipydatagrid \
+        numpy scipy matplotlib sympy scikit-image scikit-learn networkx \
+        pandas seaborn statsmodels xarray xlrd \
+        geopandas h5py netcdf4 pytables jupyterlab-geojson \
+        zarr intake intake-xarray intake-esm pydap rasterio \
+        altair bokeh jupyter_bokeh plotly plotly_express bqplot \
+        cython numba fortran-magic \
+        dask dask-labextension distributed ipyparallel \
+        black jedi pep8 flake8 pyflakes pylint pytest pytest-cov \
+        sphinx numpydoc pandoc rise jupytext \
+        yaml lxml requests \
+        nodejs \
+        pip \
  && echo "Installing conda packages complete!"
 
 
@@ -35,29 +77,25 @@ RUN echo "Installing conda packages..." \
 RUN echo "Installing pip packages..." \
  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
  && pip install --no-cache-dir \
-        jupyterlab==3.1.0a10 \
+        jupyterlab==3.1.0a11 \
             # ref: https://github.com/jupyterlab/jupyterlab
         jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
+        julia \
+            # If we install julia w/conda, it pulls the entirety of Julia in...
  && echo "Installing pip packages complete!"
-
-
-
-# DISABLED: JupyterLab 2 extensions.
-#
-#           If we want to install JupyterLab 2 based extensions we should first
-#           install node and add extensions here, but JupyterLab 3 extensions
-#           should preferably be installed as Python packages.
-#
-# RUN echo "Installing jupyterlab extensions..." \
-#  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
-#  && jupyter labextension install -y --clean \
-#         @lckr/jupyterlab_variableinspector \
-#  && echo "Installing jupyterlab extensions complete!"
-
-
 
 # Configure conda/mamba to create new environments within the home folder by
 # default. This allows the environments to remain in between restarts of the
 # container if only the home folder is persisted.
 RUN conda config --system --prepend envs_dirs '~/.conda/envs'
+
+# User environment variables
+# Configure PIP always installs to the user's home directory
+ENV PIP_USER=True
+
+# Set up micro as the default EDITOR (git, etc). Advanced users will reconfigure this 
+# to vim/emacs/etc, but this will ensure that less unix-experienced ones have a good 
+# first experience
+ENV EDITOR=micro
+ENV VISUAL=micro
