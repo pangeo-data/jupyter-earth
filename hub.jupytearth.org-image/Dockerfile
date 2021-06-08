@@ -65,7 +65,7 @@ RUN echo "Installing conda packages..." \
         cython numba fortran-magic \
         dask dask-labextension distributed ipyparallel \
         black jedi pep8 flake8 pyflakes pylint pytest pytest-cov \
-        sphinx numpydoc pandoc rise jupytext \
+        sphinx numpydoc pandoc jupytext \
         yaml lxml requests \
         nodejs \
         pip \
