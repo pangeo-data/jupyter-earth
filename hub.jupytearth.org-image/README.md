@@ -13,5 +13,5 @@ verify if it can successfully rebuild.
 Whenever a pull request is merged modifying the image, a GitHub Workflow will
 build and push the image and emit a message on how to update
 https://hub.jupytearth.org to start making use of the new image. In short, it is
-to visit https://hub.jupytearth.org/services/configurator and enter the image
+to visit https://hub.jupytearth.org/services/configurator/ and enter the image
 name:tag which is described in the executed GitHub Workflow.
