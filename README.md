@@ -1,5 +1,6 @@
 # jupyter-earth
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/HEAD/?urlpath=lab)
 [![NSF-1928406](https://img.shields.io/badge/NSF-1928406-blue)](https://nsf.gov/awardsearch/showAward?AWD_ID=1928406)
 [![NSF-1928374](https://img.shields.io/badge/NSF-1928374-blue)](https://nsf.gov/awardsearch/showAward?AWD_ID=1928374)
 
