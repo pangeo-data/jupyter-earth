@@ -1,0 +1,1528 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPython basics: beyond plain Python &#8212; Jupyter Meets the Earth</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/interactive/ipython-basics.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/jupyter-earth.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Jupyter Meets the Earth</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Jupyter Meets the Earth
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jupyter-resources/introduction/index.html">
+   Introduction: What is Jupyter?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/introduction/overview.html">
+     Jupyter Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/introduction/ecosystem.html">
+     Ecosystem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/introduction/tour.html">
+     A tour of Jupyter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jupyter-resources/ecosystem/index.html">
+   Tools in the Jupyter ecosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/ecosystem/notebook.html">
+     Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/ecosystem/jupyterlab.html">
+     JupyterLab
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/ecosystem/ipython.html">
+     IPython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/ecosystem/ipython-customization.html">
+     IPython Customization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/ecosystem/widgets.html">
+     Jupyter Widgets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/ecosystem/managing-state.html">
+     Managing state
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/ecosystem/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/ecosystem/binder.html">
+     MyBinder.org
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/ecosystem/jupyterbook.html">
+     Jupyter Book
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jupyter-resources/usecases/index.html">
+   Geoscience use cases
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jupyter-resources/broader/index.html">
+   Examples from the broader ecosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/broader/data-structures.html">
+     Data structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/broader/visualization.html">
+     Visualization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/broader/dask.html">
+     Dashboards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/broader/intake.html">
+     Intake
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/broader/dashboards.html">
+     Dask
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-resources/broader/domaintools.html">
+     Domain specific tools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jupyter-resources/learning-resources/index.html">
+   External learning resources
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/interactive/ipython-basics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pangeo-data/jupyter-earth"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Finteractive/ipython-basics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/interactive/ipython-basics.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/master?urlpath=lab/tree/docs/interactive/ipython-basics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-things-first-running-code-getting-help">
+   First things first: running code, getting help
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discovering-what-you-need-within-ipython-itself">
+   Discovering what you need within IPython itself
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#asking-for-help-with">
+     Asking for help with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ?
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tab-completion">
+     Tab completion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-the-underlying-operating-system">
+   Accessing the underlying operating system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beyond-python-magic-functions">
+   Beyond Python: magic functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-language-integration">
+   Multi-language integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rich-object-displays">
+   Rich object displays
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ipython-basics-beyond-plain-python">
+<h1>IPython basics: beyond plain Python<a class="headerlink" href="#ipython-basics-beyond-plain-python" title="Permalink to this headline">¶</a></h1>
+<p>This short notebook will give you a quick taste of some of IPython’s capabilities. IPython is the default “kernel” for most Jupyter installations (the kernel is the process that executes the code you type into notebook cells, and it’s typically based on a single programming language).</p>
+<p>IPython started its life in 2001 as a terminal-based application that offered enhancements over the default Python interactive prompt. You can still use it that way, but here we’ll use it through the notebook environment in JupyterLab.</p>
+<p>The focus of IPython is on your Interactive experience, and its features are tailored to the typical workflow of everyday scientific computation and data analysis. In a nutshell, IPython is an interactive Python prompt that:</p>
+<ul class="simple">
+<li><p>Starts by being a strict superset of Python: any valid Python code should behave similarly, at most returning cosmetically improved representations of information, but not different results.</p></li>
+<li><p>Offers features to make it easy to run small code fragments (typed directly or as external scripts with the <code class="docutils literal notranslate"><span class="pre">%run</span></code> command) and iterate on their results. Variables from execution stay defined in the kernel and you can incrementally build the state of your analysis.</p></li>
+<li><p>Facilitates exploration of your Python environment with the <code class="docutils literal notranslate"><span class="pre">?</span></code> operator and a powerful and extensible tab-completion system.</p></li>
+<li><p>Provides direct access to the underlying operating system via a syntax that’s not valid Python but is convenient to type: <code class="docutils literal notranslate"><span class="pre">!cmd</span> <span class="pre">arg1</span> <span class="pre">arg2...</span></code> is executed by the underlying OS instead of as Python.</p></li>
+<li><p>Provides an extensible system of special commands known as “magics,” that can perform all manner of transformations on their input, letting you do anything with user input ranging from defining one-off aliases for common operations, to blending multiple programming languages in a single session. Magic commands are marked by one or two <code class="docutils literal notranslate"><span class="pre">%</span></code> characters at their start.</p></li>
+</ul>
+<p>This notebook is a small introduction to the features of IPython. Our <a class="reference external" href="https://github.com/ipython/ipython-in-depth">IPython in depth
+tutorial</a> contains many more details on these topics and much more.</p>
+<div class="section" id="first-things-first-running-code-getting-help">
+<h2>First things first: running code, getting help<a class="headerlink" href="#first-things-first-running-code-getting-help" title="Permalink to this headline">¶</a></h2>
+<p>In the notebook, to run a cell of code, hit <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code>. This executes the cell and puts the cursor in the next cell below, or makes a new one if you are at the end.  Alternately, you can use:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Alt-Enter</span></code> to force the creation of a new cell unconditionally (useful when inserting new content in the middle of an existing notebook).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Control-Enter</span></code> executes the cell and keeps the cursor in the same cell, useful for quick experimentation of snippets that you don’t need to keep permanently.</p></li>
+</ul>
+</div>
+<div class="section" id="discovering-what-you-need-within-ipython-itself">
+<h2>Discovering what you need within IPython itself<a class="headerlink" href="#discovering-what-you-need-within-ipython-itself" title="Permalink to this headline">¶</a></h2>
+<p>IPython tries to make it easy for you to discover things about all your Python tools, objects, variables and libraries (including IPython itself, obviously) with a few keystrokes, and while staying focused on the task at hand. The first key you will want to use is <code class="docutils literal notranslate"><span class="pre">?</span></code>, which can be summoned by itself:</p>
+<div class="section" id="asking-for-help-with">
+<h3>Asking for help with <code class="docutils literal notranslate"><span class="pre">?</span></code><a class="headerlink" href="#asking-for-help-with" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Typing <code class="docutils literal notranslate"><span class="pre">object_name?</span></code> will print all sorts of details about any object, including docstrings, function definition lines (for call arguments) and constructor details for classes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
+collections.namedtuple<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you use <em>two</em> <code class="docutils literal notranslate"><span class="pre">??</span></code> characters, IPython will attempt to dig deeper into the object and show you its source code, if available:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>collections.Counter.most_common<span class="o">??</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">?</span></code> character can also be used in conjunction with a shell-like wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code> as a <em>search</em> tool to find names that match a substring in your variables (or the namespace of any library or object):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>*int*<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tab-completion">
+<h3>Tab completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h3>
+<p>Tab completion, especially for attributes, is a convenient way to explore the structure of any object you’re dealing with. Simply type <code class="docutils literal notranslate"><span class="pre">object_name.&lt;TAB&gt;</span></code> to view the object’s attributes. Besides Python objects and keywords, tab completion also works on file and directory names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collections</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-5-7d231e8e5d09&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">collections</span><span class="o">.</span>
+                <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before we move on, this command (whose special <code class="docutils literal notranslate"><span class="pre">%</span></code> syntax we explain below) gives you access to an IPython quick reference card:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">quickref</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-the-underlying-operating-system">
+<h2>Accessing the underlying operating system<a class="headerlink" href="#accessing-the-underlying-operating-system" title="Permalink to this headline">¶</a></h2>
+<p>Any text prepended with a <code class="docutils literal notranslate"><span class="pre">!</span></code> is sent directly to the underlying OS:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/fperez/research/jupytearth/jupyter-earth/docs/interactive
+</pre></div>
+</div>
+</div>
+</div>
+<p>and this syntax can be used in assignments, conveniently capturing command output into a Python variable you can then process further:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="o">!</span>ls
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My current directory&#39;s files:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My current directory&#39;s files:
+[&#39;ipython-beyond-python.ipynb&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Conversely, Python variables can be expanded when calling system commands. For simple values, <code class="docutils literal notranslate"><span class="pre">$var</span></code> expands the variable into its text form:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$files</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ipython-beyond-python.ipynb]
+</pre></div>
+</div>
+</div>
+</div>
+<p>and more complex expressions can be captured with <code class="docutils literal notranslate"><span class="pre">{expr}</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="o">{</span>files<span class="o">[</span><span class="m">0</span><span class="o">]</span>.upper<span class="o">()}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IPYTHON-BEYOND-PYTHON.IPYNB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that all this is available even in multiline blocks. While not as portable as pure Python code to do the same (it will only run in IPython and not as a regular Python script), it can be an extremely convenient way to weave together messy scripting logic that is quite common in data analysis activities:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ipynb&#39;</span><span class="p">):</span>
+        <span class="o">!</span><span class="nb">echo</span> <span class="o">{</span><span class="s2">&quot;%02d&quot;</span> % i<span class="o">}</span> - <span class="s2">&quot;{os.path.splitext(f)[0]}&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00 - ipython-beyond-python
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="beyond-python-magic-functions">
+<h2>Beyond Python: magic functions<a class="headerlink" href="#beyond-python-magic-functions" title="Permalink to this headline">¶</a></h2>
+<p>The IPyhton ‘magic’ functions are a set of commands, invoked by prepending one or two <code class="docutils literal notranslate"><span class="pre">%</span></code> signs to their name, that live in a namespace separate from your normal Python variables and provide a more command-like interface.  They take flags with <code class="docutils literal notranslate"><span class="pre">--</span></code> and arguments without quotes, parentheses or commas. The motivation behind this system is two-fold:</p>
+<ul class="simple">
+<li><p>To provide an orthogonal namespace for controlling IPython itself and exposing other system-oriented functionality.</p></li>
+<li><p>To expose a calling mode that requires minimal verbosity and typing while working interactively.  Thus the inspiration taken from the classic Unix shell style for commands.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">magic</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Line vs cell magics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> list(range(1000))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11 µs ± 122 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.01 µs ± 25.1 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like with <code class="docutils literal notranslate"><span class="pre">!cmd</span></code> above, you can capture the return value of any magic by assigning it. For example, with the <code class="docutils literal notranslate"><span class="pre">-o</span></code> flag, <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> returns its output as a data structure in addition to printing the summary, so you can later do computations with it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> -o list(range(100))
+<span class="n">t</span><span class="o">.</span><span class="n">best</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>786 ns ± 25.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.442348900003708e-07
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">best</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.325789290007379e-07
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Note:</em> there is no generic mechanism for capturing the output of a cell magic into a variable, though you can work around this if needed by grabbing the <code class="docutils literal notranslate"><span class="pre">_</span></code> variable that automatically stores the last computed result after running a cell magic whose return value you may want.</p>
+<p>Line magics can be used even inside code blocks:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">100</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size:&#39;</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="o">%</span><span class="k">timeit</span> list(range(size))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 100 100000 loops, best of 3: 1.86 µs per loop
+size: 200 100000 loops, best of 3: 2.49 µs per loop
+size: 300 100000 loops, best of 3: 4.04 µs per loop
+size: 400 100000 loops, best of 3: 6.21 µs per loop
+</pre></div>
+</div>
+</div>
+</div>
+<p>Magics can do anything they want with their input, so it doesn’t have to be valid Python. Note that the <code class="docutils literal notranslate"><span class="pre">bash</span></code> magic passes <em>all</em> of its input unmodified to Bash, so <code class="docutils literal notranslate"><span class="pre">$var</span></code> isn’t expanded assuming that <code class="docutils literal notranslate"><span class="pre">var</span></code> is a Python variable as <code class="docutils literal notranslate"><span class="pre">!cmd</span></code> does. This lets you paste unmodified Shell scripting code into a cell and you are guaranteed that it will run in a separate Bash process as if it was a script executed at the command line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+echo &quot;My shell is:&quot; $SHELL
+echo &quot;My disk usage is:&quot;
+df -h
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My shell is: /bin/bash
+My disk usage is:
+Filesystem                                                                 Size   Used  Avail Capacity  iused       ifree %iused  Mounted on
+/dev/disk1s5s1                                                            1.8Ti   14Gi  432Gi     4%   553757 19538475003    0%   /
+devfs                                                                     199Ki  199Ki    0Bi   100%      690           0  100%   /dev
+/dev/disk1s4                                                              1.8Ti  1.0Gi  432Gi     1%        3 19539028757    0%   /System/Volumes/VM
+/dev/disk1s2                                                              1.8Ti  281Mi  432Gi     1%      814 19539027946    0%   /System/Volumes/Preboot
+/dev/disk1s6                                                              1.8Ti  264Ki  432Gi     1%       19 19539028741    0%   /System/Volumes/Update
+/dev/disk1s1                                                              1.8Ti  1.4Ti  432Gi    77%  3890131 19535138629    0%   /System/Volumes/Data
+map auto_home                                                               0Bi    0Bi    0Bi   100%        0           0  100%   /System/Volumes/Data/home
+/dev/disk2s2                                                              1.8Ti  1.3Ti  481Gi    75% 32911853  4262055426    1%   /Volumes/WD Time Machine Backup
+/dev/disk2s3                                                              2.7Ti  610Gi  2.1Ti    22%   675768  4294291511    0%   /Volumes/WDSilverData
+/Library/PreferencePanes/Witch.prefPane/Contents/Helpers/witchdaemon.app  1.8Ti  1.4Ti  385Gi    80%  3730872 19535297888    0%   /private/var/folders/qh/gvcvjg9x2qj0py4gwxt65x3c0010dw/T/AppTranslocation/1A4BB6CE-9FE1-4B38-9920-C49FE0DDAB87
+/dev/disk3s1                                                              603Mi  396Mi  207Mi    66%      638  4294966641    0%   /Volumes/Slack
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also capture stdout/err from these subprocesses into Python variables, instead of letting them go directly to stdout/err</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+echo &quot;hi, stdout&quot;
+echo &quot;hello, stderr&quot; &gt;&amp;2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi, stdout
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, stderr
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> --out output --err error
+echo &quot;hi, stdout&quot;
+echo &quot;hello, stderr&quot; &gt;&amp;2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, stderr
+
+hi, stdout
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another interesting cell magic: create any file you want locally from the notebook:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%writefile test.txt
+This is a test file!
+It can contain anything I want...
+
+And more...
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing test.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat test.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a test file!
+It can contain anything I want...
+
+And more...
+</pre></div>
+</div>
+</div>
+</div>
+<p>Most magic functions have help built into them which you can summon with the usual <code class="docutils literal notranslate"><span class="pre">?</span></code> operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">cd</span><span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Docstring:</span>
+Change the current working directory.
+
+This command automatically maintains an internal list of directories
+you visit during your IPython session, in the variable _dh. The
+command %dhist shows this history nicely formatted. You can also
+do &#39;cd -&lt;tab&gt;&#39; to see directory history conveniently.
+
+Usage:
+
+  cd &#39;dir&#39;: changes to directory &#39;dir&#39;.
+
+  cd -: changes to the last visited directory.
+
+  cd -&lt;n&gt;: changes to the n-th directory in the directory history.
+
+  cd --foo: change to directory that matches &#39;foo&#39; in history
+
+  cd -b &lt;bookmark_name&gt;: jump to a bookmark set by %bookmark
+     (note: cd &lt;bookmark_name&gt; is enough if there is no
+      directory &lt;bookmark_name&gt;, but a bookmark with the name exists.)
+      &#39;cd -b &lt;tab&gt;&#39; allows you to tab-complete bookmark names.
+
+Options:
+
+-q: quiet.  Do not print the working directory after the cd command is
+executed.  By default IPython&#39;s cd command does print this directory,
+since the default prompts do not display path information.
+
+Note that !cd doesn&#39;t work for this purpose because the shell where
+!command runs is immediately discarded after executing &#39;command&#39;.
+
+Examples
+--------
+::
+
+  In [10]: cd parent/child
+  /home/tsuser/parent/child
+<span class=" -Color -Color-Red">File:</span>      ~/local/conda/lib/python3.9/site-packages/IPython/core/magics/osm.py
+</pre></div>
+</div>
+</div>
+</div>
+<p>The magic system is easily extensible, you can define your own magic functions with a few lines of code, <a class="reference external" href="https://ipython.readthedocs.io/en/stable/config/custommagics.html">as explained in the documentation</a>.</p>
+<p>To close this section, let’s see what other magics are currently defined in the system. You should explore these, as they can be quite useful in everyday work, and they can give you ideas for creating new ones to meet your own needs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">lsmagic</span> -h
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available line magics:
+%alias  %alias_magic  %autoawait  %autocall  %automagic  %autosave  %bookmark  %cat  %cd  %cl  %clear  %colors  %conda  %config  %connect_info  %cp  %d  %dd  %debug  %dhist  %dirs  %dl  %doctest_mode  %dp  %dus  %dx  %ed  %edit  %env  %gui  %hist  %history  %killbgscripts  %ldir  %less  %lf  %lk  %ll  %load  %load_ext  %loadpy  %logoff  %logon  %logstart  %logstate  %logstop  %ls  %lsmagic  %lx  %macro  %magic  %man  %matplotlib  %mkdir  %more  %mv  %notebook  %page  %pastebin  %pdb  %pdef  %pdoc  %pfile  %pinfo  %pinfo2  %pip  %popd  %pprint  %precision  %prun  %psearch  %psource  %pushd  %pwd  %pycat  %pylab  %qtconsole  %quickref  %recall  %rehashx  %reload_ext  %rep  %rerun  %reset  %reset_selective  %rm  %rmdir  %run  %save  %sc  %set_env  %store  %sx  %system  %tb  %time  %timeit  %unalias  %unload_ext  %who  %who_ls  %whos  %xdel  %xmode
+
+Available cell magics:
+%%!  %%HTML  %%SVG  %%bash  %%capture  %%debug  %%file  %%html  %%javascript  %%js  %%latex  %%markdown  %%perl  %%prun  %%pypy  %%python  %%python2  %%python3  %%ruby  %%script  %%sh  %%svg  %%sx  %%system  %%time  %%timeit  %%writefile
+
+Automagic is ON, % prefix IS NOT needed for line magics.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multi-language-integration">
+<h2>Multi-language integration<a class="headerlink" href="#multi-language-integration" title="Permalink to this headline">¶</a></h2>
+<p>Through the Magic system, IPython makes it possible to create rich integrations with other programming languages. Note that this is separate from the use of entirely separate <em>kernels</em> for Jupyter itself, that are dedicated to executing code in other languages. Here we focus on making calls to other languages from within a mostly-Python, IPython-based session.</p>
+<p>We’ve already seen the use of <code class="docutils literal notranslate"><span class="pre">%%bash</span></code> above, and you may want to poke at the <code class="docutils literal notranslate"><span class="pre">%%script</span></code> magic if you’d like to run other arbitrary scripts.  Since this is meant to be a very brief intro we only show one more language integration here, with Fortran. But in <a class="reference external" href="https://nbviewer.jupyter.org/gist/fperez/5b49246af4e340c37549265a90894ce6/polyglot-ds.ipynb">this example</a> you can see how to interleave within one single session others, including R, Julia and Cython.</p>
+<p>To use the Fortran magic we load an extension we’ve previously installed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> fortranmagic
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">new Promise(function(resolve, reject) {
+	var script = document.createElement("script");
+	script.onload = resolve;
+	script.onerror = reject;
+	script.src = "https://raw.github.com/marijnh/CodeMirror/master/mode/fortran/fortran.js";
+	document.head.appendChild(script);
+}).then(() => {
+IPython.config.cell_magic_highlight['magic_fortran'] = {'reg':[/^%%fortran/]};
+});</script></div>
+</div>
+<p>And with this, we now can type arbitrary Fortran functions that will be compiled, linked and imported for us using the <a class="reference external" href="https://numpy.org/doc/stable/f2py"><code class="docutils literal notranslate"><span class="pre">f2py</span></code></a> tool that is central to the SciPy ecosystem:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">fortran</span>
+subroutine sinx2(x, y, n)
+    real, intent(in), dimension(n) :: x
+    real, intent(out), dimension(n) :: y
+    !intent(hide) :: n
+    y = sin(x**2)
+end subroutine sinx2
+</pre></div>
+</div>
+</div>
+</div>
+<p>After running the above cell, we have a new function in Python called <code class="docutils literal notranslate"><span class="pre">sinx2</span></code> that computes <span class="math notranslate nohighlight">\(\sin(x^2)\)</span> and that understands natively numpy arrays. It even has a docstring!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sinx2<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Call signature:</span> sinx2<span class=" -Color -Color-Blue">(*</span>args<span class=" -Color -Color-Blue">,</span> <span class=" -Color -Color-Blue">**</span>kwargs<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Type:</span>           fortran
+<span class=" -Color -Color-Red">String form:</span>    &lt;fortran object&gt;
+<span class=" -Color -Color-Red">Docstring:</span>     
+y = sinx2(x,[n])
+
+Wrapper for ``sinx2``.
+
+Parameters
+----------
+x : input rank-1 array(&#39;f&#39;) with bounds (n)
+
+Other Parameters
+----------------
+n : input int, optional
+    Default: len(x)
+
+Returns
+-------
+y : rank-1 array(&#39;f&#39;) with bounds (n)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now use it as any other Python function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sinx2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ipython-basics_60_0.png" src="../_images/ipython-basics_60_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="rich-object-displays">
+<h2>Rich object displays<a class="headerlink" href="#rich-object-displays" title="Permalink to this headline">¶</a></h2>
+<p>In Python, objects can define how to display themselves both for print statements, via the special <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method, and with a potentially richer representation with <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.  IPython takes this idea pretty far, allowing you to declare multiple display representations of your objects, that can include images, mathematical representations in LaTeX and arbitrarily rich HTML and JavaScript.</p>
+<p>For example, the <a class="reference external" href="https://sympy.org">SymPy library for symbolic computing</a> uses this system to display mathematical expressions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">Rational</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x y&quot;</span><span class="p">)</span>
+<span class="n">Rational</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">pi</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="n">I</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{3 \pi}{2} + \frac{e^{i x}}{x^{2} + y}\]</div>
+</div>
+</div>
+<p>This is the system that Pandas takes advantage of to display datframes as a readable, HTML table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The <a class="reference external" href="https://xarray.pydata.org/en/stable/examples/multidimensional-coords.html">Xarray library</a> makes particularly good use of this system, to provide very informative displays of datasets that describe the structure of the data immediately with a collapsible HTML view. Given the complexity of datasets frequently encountered in the geosciences and that Xarray can read, this can be a very useful feature when interactively exploring data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="n">xr</span><span class="o">.</span><span class="n">tutorial</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;rasm&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:  (time: 36, x: 275, y: 205)
+Coordinates:
+  * time     (time) object 1980-09-16 12:00:00 ... 1983-08-17 00:00:00
+    xc       (y, x) float64 189.2 189.4 189.6 189.7 ... 17.65 17.4 17.15 16.91
+    yc       (y, x) float64 16.53 16.78 17.02 17.27 ... 28.26 28.01 27.76 27.51
+Dimensions without coordinates: x, y
+Data variables:
+    Tair     (time, y, x) float64 nan nan nan nan nan ... 29.8 28.66 28.19 28.21
+Attributes:
+    title:                     /workspace/jhamman/processed/R1002RBRxaaa01a/l...
+    institution:               U.W.
+    source:                    RACM R1002RBRxaaa01a
+    output_frequency:          daily
+    output_mode:               averaged
+    convention:                CF-1.4
+    references:                Based on the initial model of Liang et al., 19...
+    comment:                   Output from the Variable Infiltration Capacity...
+    nco_openmp_thread_number:  1
+    NCO:                       netCDF Operators version 4.7.9 (Homepage = htt...
+    history:                   Fri Aug  7 17:57:38 2020: ncatted -a bounds,,d...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-15afd890-f6ed-48e3-8dc5-a3d6956431b6' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-15afd890-f6ed-48e3-8dc5-a3d6956431b6' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 36</li><li><span>x</span>: 275</li><li><span>y</span>: 205</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-b94413e6-b52a-467d-b6cd-d389aeb73f30' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b94413e6-b52a-467d-b6cd-d389aeb73f30' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>1980-09-16 12:00:00 ... 1983-08-...</div><input id='attrs-1a5a357e-50a7-4e8f-8c9d-2df711fe3d89' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1a5a357e-50a7-4e8f-8c9d-2df711fe3d89' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c238fda8-5b5a-4006-b5dc-ffaf4d095a6c' class='xr-var-data-in' type='checkbox'><label for='data-c238fda8-5b5a-4006-b5dc-ffaf4d095a6c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd><dt><span>type_preferred :</span></dt><dd>int</dd></dl></div><div class='xr-var-data'><pre>array([cftime.DatetimeNoLeap(1980, 9, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1980, 10, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1980, 11, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1980, 12, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 1, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 2, 15, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 3, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 4, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 5, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 6, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 7, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 8, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 9, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 10, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 11, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1981, 12, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 1, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 2, 15, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 3, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 4, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 5, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 6, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 7, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 8, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 9, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 10, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 11, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1982, 12, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1983, 1, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1983, 2, 15, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1983, 3, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1983, 4, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1983, 5, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1983, 6, 16, 12, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1983, 7, 17, 0, 0, 0, 0, has_year_zero=True),
+       cftime.DatetimeNoLeap(1983, 8, 17, 0, 0, 0, 0, has_year_zero=True)],
+      dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>xc</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>189.2 189.4 189.6 ... 17.15 16.91</div><input id='attrs-ac254b13-7410-46b0-809f-82cc98b23230' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ac254b13-7410-46b0-809f-82cc98b23230' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0834c074-5eeb-40b2-8b3a-4a264c44efef' class='xr-var-data-in' type='checkbox'><label for='data-0834c074-5eeb-40b2-8b3a-4a264c44efef' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>longitude of grid cell center</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([[189.22293223, 189.38990916, 189.55836619, ..., 293.77906088,
+        294.0279241 , 294.27439931],
+       [188.96836986, 189.13470591, 189.30253733, ..., 294.05584005,
+        294.30444387, 294.55065969],
+       [188.71234264, 188.87800731, 189.04515208, ..., 294.335053  ,
+        294.58337453, 294.8292928 ],
+       ...,
+       [124.04724025, 123.88362026, 123.71852016, ...,  16.83171831,
+         16.58436953,  16.33949649],
+       [123.78686428, 123.62254238, 123.45672512, ...,  17.11814486,
+         16.87043749,  16.62518298],
+       [123.52798366, 123.36295986, 123.1964407 , ...,  17.40209947,
+         17.1540526 ,  16.90845095]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>yc</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>16.53 16.78 17.02 ... 27.76 27.51</div><input id='attrs-5d713a9f-2ee3-443f-8535-0d1e7d0f0174' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5d713a9f-2ee3-443f-8535-0d1e7d0f0174' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f00cf79a-342c-4fa3-8085-d4cacccabb98' class='xr-var-data-in' type='checkbox'><label for='data-f00cf79a-342c-4fa3-8085-d4cacccabb98' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>latitude of grid cell center</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([[16.53498637, 16.7784556 , 17.02222429, ..., 27.36301592,
+        27.11811045, 26.87289026],
+       [16.69397341, 16.93865381, 17.18364512, ..., 27.5847719 ,
+        27.33821848, 27.0913656 ],
+       [16.85219179, 17.09808909, 17.34430872, ..., 27.80584314,
+        27.55764558, 27.30915621],
+       ...,
+       [17.31179033, 17.56124674, 17.81104646, ..., 28.4502485 ,
+        28.19718339, 27.94384744],
+       [17.15589701, 17.40414034, 17.65272318, ..., 28.23129632,
+        27.97989251, 27.72821596],
+       [16.99919497, 17.24622904, 17.49358736, ..., 28.01160028,
+        27.76185586, 27.51182726]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-419c39c1-b2e4-45d4-bdd0-e7fff31b4e75' class='xr-section-summary-in' type='checkbox'  checked><label for='section-419c39c1-b2e4-45d4-bdd0-e7fff31b4e75' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>Tair</span></div><div class='xr-var-dims'>(time, y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>nan nan nan ... 28.66 28.19 28.21</div><input id='attrs-4667fadf-5f4b-4a49-adeb-fcfdf51905cf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4667fadf-5f4b-4a49-adeb-fcfdf51905cf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4ea58b7a-36bb-4c50-a5f6-e60383a263e5' class='xr-var-data-in' type='checkbox'><label for='data-4ea58b7a-36bb-4c50-a5f6-e60383a263e5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>C</dd><dt><span>long_name :</span></dt><dd>Surface air temperature</dd><dt><span>type_preferred :</span></dt><dd>double</dd><dt><span>time_rep :</span></dt><dd>instantaneous</dd></dl></div><div class='xr-var-data'><pre>array([[[        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        [        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        [        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        ...,
+        [        nan,         nan,         nan, ..., 27.03290153,
+         27.03125761, 27.33531541],
+        [        nan,         nan,         nan, ..., 27.2784053 ,
+         26.80261869, 27.08603517],
+        [        nan,         nan,         nan, ..., 27.02344402,
+         26.56473862, 26.73064933]],
+
+       [[        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        [        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        [        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+...
+        [        nan,         nan,         nan, ..., 27.8597472 ,
+         27.82928439, 28.09249224],
+        [        nan,         nan,         nan, ..., 27.89704094,
+         27.31104941, 27.67387171],
+        [        nan,         nan,         nan, ..., 27.46837113,
+         27.0088944 , 27.23017976]],
+
+       [[        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        [        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        [        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        ...,
+        [        nan,         nan,         nan, ..., 28.95929072,
+         28.87672039, 29.04890862],
+        [        nan,         nan,         nan, ..., 29.036132  ,
+         28.42273578, 28.68721201],
+        [        nan,         nan,         nan, ..., 28.66381585,
+         28.18595533, 28.20753022]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7fd4725f-4017-44df-bcf5-675bdad36f2f' class='xr-section-summary-in' type='checkbox'  ><label for='section-7fd4725f-4017-44df-bcf5-675bdad36f2f' class='xr-section-summary' >Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>/workspace/jhamman/processed/R1002RBRxaaa01a/lnd/temp/R1002RBRxaaa01a.vic.ha.1979-09-01.nc</dd><dt><span>institution :</span></dt><dd>U.W.</dd><dt><span>source :</span></dt><dd>RACM R1002RBRxaaa01a</dd><dt><span>output_frequency :</span></dt><dd>daily</dd><dt><span>output_mode :</span></dt><dd>averaged</dd><dt><span>convention :</span></dt><dd>CF-1.4</dd><dt><span>references :</span></dt><dd>Based on the initial model of Liang et al., 1994, JGR, 99, 14,415- 14,429.</dd><dt><span>comment :</span></dt><dd>Output from the Variable Infiltration Capacity (VIC) model.</dd><dt><span>nco_openmp_thread_number :</span></dt><dd>1</dd><dt><span>NCO :</span></dt><dd>netCDF Operators version 4.7.9 (Homepage = http://nco.sf.net, Code = http://github.com/nco/nco)</dd><dt><span>history :</span></dt><dd>Fri Aug  7 17:57:38 2020: ncatted -a bounds,,d,, rasm.nc
+Tue Dec 27 14:15:22 2016: ncatted -a dimensions,,d,, rasm.nc rasm.nc
+Tue Dec 27 13:38:40 2016: ncks -3 rasm.nc rasm.nc
+history deleted for brevity</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<p>Again, we’re only scratching the surface of these capabilities here - you can read more in the IPython docs and in the <a class="reference external" href="https://github.com/ipython/ipython-in-depth">IPython in depth tutorial</a>, particularly in the notebooks that illustrate the <a class="reference external" href="https://nbviewer.jupyter.org/github/ipython/ipython-in-depth/blob/master/examples/IPython%20Kernel/Rich%20Output.ipynb">rich output</a> and <a class="reference external" href="https://nbviewer.jupyter.org/github/ipython/ipython-in-depth/blob/master/examples/IPython%20Kernel/Custom%20Display%20Logic.ipynb">custom display logic</a> that powers these capabilities.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "pangeo-data/jupyter-earth",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./interactive"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
