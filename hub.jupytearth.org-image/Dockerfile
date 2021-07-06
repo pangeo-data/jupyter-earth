@@ -21,7 +21,7 @@ RUN echo "Installing apt-get packages..." \
             # Issue about including it in future versions of pangeo-notebook:
             # https://github.com/pangeo-data/pangeo-docker-images/issues/216
         emacs-nox python-mode emacs-goodies-el \
-           
+            # Basic Emacs configuration for general development.
         nano \
             # A terminal file editor, vim is already made available
         micro \
