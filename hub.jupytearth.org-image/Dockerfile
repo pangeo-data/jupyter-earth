@@ -114,6 +114,7 @@ RUN echo "Installing conda packages..." \
         retrolab \
         #
         # other
+        cxx-compiler \
         cython \
         fortran-magic \
         google-cloud-sdk \
