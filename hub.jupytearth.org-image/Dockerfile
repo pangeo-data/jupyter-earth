@@ -114,6 +114,7 @@ RUN echo "Installing conda packages..." \
         retrolab \
         #
         # other
+        compilers \
         cxx-compiler \
         cython \
         fortran-magic \
