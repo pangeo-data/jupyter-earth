@@ -106,9 +106,6 @@ RUN echo "Installing conda packages..." \
         statsmodels \
         xlrd \
         jupyter-repo2docker \
-        # jupyterlab-drawio \
-            # DISABLED: One can't save work so it could be a disservice to have
-            #           it enabled: https://github.com/QuantStack/jupyterlab-drawio/issues/6
         jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
@@ -118,6 +115,8 @@ RUN echo "Installing conda packages..." \
         retrolab \
         #
         # other
+        ipydrawio \
+            # a drawio IDE launchable from jupyterlab's launcher
         compilers \
         cxx-compiler \
         cython \
