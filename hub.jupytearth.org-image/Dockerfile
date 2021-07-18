@@ -106,9 +106,6 @@ RUN echo "Installing conda packages..." \
         statsmodels \
         xlrd \
         jupyter-repo2docker \
-        # jupyterlab-drawio \
-            # DISABLED: One can't save work so it could be a disservice to have
-            #           it enabled: https://github.com/QuantStack/jupyterlab-drawio/issues/6
         jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
@@ -118,12 +115,13 @@ RUN echo "Installing conda packages..." \
         retrolab \
         #
         # other
+        ipydrawio \
+            # a drawio IDE launchable from jupyterlab's launcher
         compilers \
         cxx-compiler \
         cython \
         fortran-magic \
         google-cloud-sdk \
-        nodejs \
         sympy \
  && echo "Installing conda packages complete!"
 
@@ -145,18 +143,6 @@ RUN echo "Installing pip packages..." \
             #       plotly), even though they describe it to be.
             # ref: https://github.com/plotly/plotly.py#extended-geo-support
  && echo "Installing pip packages complete!"
-
-
-# NOTE: This is just for packages that doesn't yet support the JupyterLab 3 way
-#       of installing extensions using python packages. Plotly version 5
-#       probably won't need this but for now with plotly version 4 we still do.
-RUN echo "Installing jupyterlab extensions..." \
- && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
- && jupyter labextension install -y --clean \
-        @jupyter-widgets/jupyterlab-manager \
-        jupyterlab-plotly \
-        plotlywidget \
- && echo "Installing jupyterlab extensions complete!"
 
 
 # Configure conda/mamba to create new environments within the home folder by
