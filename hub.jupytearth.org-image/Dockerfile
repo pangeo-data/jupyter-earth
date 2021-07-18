@@ -32,6 +32,10 @@ RUN echo "Installing apt-get packages..." \
             # Regular build tools for compiling common stuff
         texlive-xetex texlive-fonts-recommended texlive-plain-generic \
             # Dependencies for nbconvert
+        rsync \
+            # for use with jupyterhub-ssh, generate a token at
+            # hub.jupytearth.org/hub/token and connect to
+            # <hub-username>@hub.jupytearth.org using the token as password
         # common geospatial dependencies:
         libspatialindex-dev \
         libgeos-dev \
