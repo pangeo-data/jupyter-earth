@@ -5,7 +5,7 @@
 # - pangeo/pangeo-notebook tags:        https://hub.docker.com/r/pangeo/pangeo-notebook/tags
 # - pangeo-notebook conda package:      https://github.com/conda-forge/pangeo-notebook-feedstock/blob/master/recipe/meta.yaml
 #
-FROM pangeo/pangeo-notebook:2021.05.15
+FROM pangeo/pangeo-notebook:2021.07.06
 ARG DEBIAN_FRONTEND=noninteractive
 
 
