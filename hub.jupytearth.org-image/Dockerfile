@@ -106,6 +106,7 @@ RUN echo "Installing conda packages..." \
         statsmodels \
         xlrd \
         jupyter-repo2docker \
+        # IDE:
         jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
@@ -113,10 +114,10 @@ RUN echo "Installing conda packages..." \
         jupyterlab-variableinspector \
         nbdime \
         retrolab \
-        #
-        # other
         ipydrawio \
             # a drawio IDE launchable from jupyterlab's launcher
+        #
+        # other
         compilers \
         cxx-compiler \
         cython \
@@ -136,7 +137,8 @@ RUN echo "Installing pip packages..." \
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
-        jupyterlab==3.1.0a12 \
+        jupyterlab==3.1.0rc1 \
+            # NOTE: This pre-release including RTC is not available in conda
             # ref: https://github.com/jupyterlab/jupyterlab
         plotly-geo \
             # NOTE: This package is not available in conda (conda-forge or
