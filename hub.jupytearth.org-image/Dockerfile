@@ -53,11 +53,28 @@ RUN echo "Installing apt-get packages..." \
         xfce4-settings \
         xorg \
         xubuntu-icon-theme \
+        # qgis
+            gnupg \
+            software-properties-common \
     > /dev/null \
     # chown $HOME to workaround that the xorg installation creates a
     # /home/jovyan/.cache directory owned by root
  && chown -R $NB_UID:$NB_GID $HOME \
  && rm -rf /var/lib/apt/lists/*
+
+
+# qgis, used by geographers, display gis data
+RUN wget -qO - https://qgis.org/downloads/qgis-2020.gpg.key \
+  | gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import \
+ && chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg \
+ && add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main" \
+ && apt-get -y update > /dev/null \
+ && apt-get -y install \
+        qgis \
+        qgis-plugin-grass \
+    > /dev/null \
+ && rm -rf /var/lib/apt/lists/*
+
 
 
 # Install TurboVNC (https://github.com/TurboVNC/turbovnc)
