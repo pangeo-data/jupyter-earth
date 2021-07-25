@@ -14,7 +14,7 @@ USER root
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/apt.txt
 RUN echo "Installing apt-get packages..." \
  && apt-get -y update > /dev/null \
- && apt-get -y install > /dev/null \
+ && apt-get -y install \
         curl \
         groff \
             # The aws CLI apparently relies on "groff"
@@ -175,7 +175,7 @@ RUN echo "Installing pip packages..." \
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
-        jupyterlab==3.1.0rc1 \
+        jupyterlab==3.1.0rc2 \
             # NOTE: This pre-release including RTC is not available in conda
             # ref: https://github.com/jupyterlab/jupyterlab
         plotly-geo \
