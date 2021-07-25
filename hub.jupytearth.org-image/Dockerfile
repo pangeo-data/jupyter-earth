@@ -5,7 +5,9 @@
 # - pangeo/pangeo-notebook tags:        https://hub.docker.com/r/pangeo/pangeo-notebook/tags
 # - pangeo-notebook conda package:      https://github.com/conda-forge/pangeo-notebook-feedstock/blob/master/recipe/meta.yaml
 #
-FROM pangeo/pangeo-notebook:2021.07.17
+# NOTE: Newer versions than 2021.07.06 bumped to ubuntu 21.10 that qgis doesn't
+#       support.
+FROM pangeo/pangeo-notebook:2021.07.06
 ARG DEBIAN_FRONTEND=noninteractive
 
 # While NB_GID is often defined in these jupyter images, it isn't for
@@ -71,7 +73,7 @@ RUN echo "Installing apt-get packages..." \
 RUN wget -qO - https://qgis.org/downloads/qgis-2020.gpg.key \
   | gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import \
  && chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg \
- && add-apt-repository "deb https://qgis.org/ubuntu focal main" \
+ && add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main" \
  && apt-get -y update > /dev/null \
  && apt-get -y install \
         qgis \
