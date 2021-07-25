@@ -8,6 +8,10 @@
 FROM pangeo/pangeo-notebook:2021.07.17
 ARG DEBIAN_FRONTEND=noninteractive
 
+# While NB_GID is often defined in these jupyter images, it isn't for
+# pangeo/base-image and derivative images. Let's define it here so copy pasting
+# various Dockerfile snippets will work.
+ENV NB_GID=$NB_UID
 
 USER root
 # We only need to install packages not listed in this file already:
