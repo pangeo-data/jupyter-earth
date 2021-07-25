@@ -13,8 +13,8 @@ USER root
 # We only need to install packages not listed in this file already:
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/apt.txt
 RUN echo "Installing apt-get packages..." \
- && apt-get update > /dev/null \
- && apt-get -qq install --yes \
+ && apt-get -y update > /dev/null \
+ && apt-get -y install > /dev/null \
         curl \
         groff \
             # The aws CLI apparently relies on "groff"
@@ -44,7 +44,30 @@ RUN echo "Installing apt-get packages..." \
         proj-bin \
         graphviz \
         ffmpeg \
+        # jupyter-remote-desktop-proxy dependencies
+        dbus-x11 \
+        firefox \
+        xfce4 \
+        xfce4-panel \
+        xfce4-session \
+        xfce4-settings \
+        xorg \
+        xubuntu-icon-theme \
+    > /dev/null \
+    # chown $HOME to workaround that the xorg installation creates a
+    # /home/jovyan/.cache directory owned by root
+ && chown -R $NB_UID:$NB_GID $HOME \
  && rm -rf /var/lib/apt/lists/*
+
+
+# Install TurboVNC (https://github.com/TurboVNC/turbovnc)
+ARG TURBOVNC_VERSION=2.2.6
+RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}/turbovnc_${TURBOVNC_VERSION}_amd64.deb/download" -O turbovnc.deb \
+ && apt-get install -y ./turbovnc.deb > /dev/null \
+    # remove light-locker to prevent screen lock
+ && apt-get remove -y light-locker > /dev/null \
+ && rm ./turbovnc.deb \
+ && ln -s /opt/TurboVNC/bin/* /usr/local/bin/
 
 
 # Install Julia
@@ -106,6 +129,7 @@ RUN echo "Installing conda packages..." \
         statsmodels \
         xlrd \
         jupyter-repo2docker \
+        #
         # IDE:
         jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
@@ -118,6 +142,8 @@ RUN echo "Installing conda packages..." \
             # a drawio IDE launchable from jupyterlab's launcher
         #
         # other
+        websockify \
+            # dependency for jupyter-remote-desktop-proxy
         compilers \
         cxx-compiler \
         cython \
@@ -134,6 +160,18 @@ RUN echo "Installing conda packages..." \
 RUN echo "Installing pip packages..." \
  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
  && pip install --no-cache-dir \
+        https://github.com/jupyterhub/jupyter-remote-desktop-proxy/archive/main.zip \
+            # jupyter-remote-desktop-proxy enables us to visit the /desktop path
+            # just like we visit the /lab path. Visiting /desktop provides us
+            # with an actual remote desktop experience.
+            #
+            # NOTE: This package is not available on conda-forge, but available
+            #       on PyPI as jupyter-desktop-server I think but maybe not.
+            #
+            # NOTE: This install requires websockify to be installed via
+            #       conda-forge. We have also installed TurboVNC for performance
+            #       I think, and also various apt packages to get a desktop UI.
+            #
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
