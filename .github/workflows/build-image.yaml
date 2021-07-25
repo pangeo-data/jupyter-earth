@@ -26,26 +26,6 @@ jobs:
       - name: Checkout files in repo
         uses: actions/checkout@v2
 
-      # ref: https://github.com/aws-actions/configure-aws-credentials
-      #
-      - name: Configure AWS credentials
-        if: github.event_name != 'pull_request'
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-region: us-west-2
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          role-to-assume: ci-ecr
-          role-skip-session-tagging: true
-          role-duration-seconds: 3600
-
-      # ref: https://github.com/aws-actions/amazon-ecr-login
-      #
-      - name: Login to Amazon ECR
-        if: github.event_name != 'pull_request'
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
-
       # If we run out of disk space building this image, we can decomment this
       # step to free up space for our GitHub Job runner.
       #
@@ -65,6 +45,26 @@ jobs:
       - name: Test build image
         run: |
           docker build -t image-build-test ./hub.jupytearth.org-image
+
+      # ref: https://github.com/aws-actions/configure-aws-credentials
+      #
+      - name: Configure AWS credentials
+        if: github.event_name != 'pull_request'
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-west-2
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ci-ecr
+          role-skip-session-tagging: true
+          role-duration-seconds: 3600
+
+      # ref: https://github.com/aws-actions/amazon-ecr-login
+      #
+      - name: Login to Amazon ECR
+        if: github.event_name != 'pull_request'
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push image to Amazon ECR
         if: github.event_name != 'pull_request'
