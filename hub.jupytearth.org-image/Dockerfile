@@ -160,6 +160,11 @@ RUN echo "Installing conda packages..." \
         jupyterlab-system-monitor \
         jupyterlab-variableinspector \
         nbdime \
+        qgis \
+            # We install this as an apt-get package but on startup we got errors
+            # about Python integration not being available. But installing this
+            # by itself didn't seem to give us the application, so now we try
+            # install both.
         retrolab \
         ipydrawio \
             # a drawio IDE launchable from jupyterlab's launcher
