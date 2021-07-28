@@ -154,6 +154,7 @@ RUN echo "Installing conda packages..." \
         jupyter-repo2docker \
         #
         # IDE:
+        juptyerlab \
         jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
@@ -163,8 +164,16 @@ RUN echo "Installing conda packages..." \
         qgis \
             # We install this as an apt-get package but on startup we got errors
             # about Python integration not being available. But installing this
-            # by itself didn't seem to give us the application, so now we try
-            # install both.
+            # by itself didn't seem to give us the application. Installing both
+            # though makes things work, but seem to cause an initial install
+            # followed by a downgrade as the conda-forge version isn't as well
+            # updated. It also makes the installation take ~5-10 minutes longer.
+            #
+            # FIXME: Install qgis in a way that provides us with a recent
+            #        version, a shortcut from the desktop UI, and with Python
+            #        support - without also taking 5-10 minutes more than needed
+            #        to install.
+            #
         retrolab \
         ipydrawio \
             # a drawio IDE launchable from jupyterlab's launcher
@@ -203,9 +212,6 @@ RUN echo "Installing pip packages..." \
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
-        jupyterlab==3.1.0rc2 \
-            # NOTE: This pre-release including RTC is not available in conda
-            # ref: https://github.com/jupyterlab/jupyterlab
         plotly-geo \
             # NOTE: This package is not available in conda (conda-forge or
             #       plotly), even though they describe it to be.
