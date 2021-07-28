@@ -154,7 +154,7 @@ RUN echo "Installing conda packages..." \
         jupyter-repo2docker \
         #
         # IDE:
-        juptyerlab \
+        jupyterlab \
         jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
