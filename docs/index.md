@@ -1,7 +1,7 @@
 # Jupyter Meets the Earth
 
 
-This is the project home for the EarthCube-funded project (Awards [1928406](https://nsf․gov/awardsearch/showAward?AWD_ID=1928406) and [1928374](https://nsf․gov/awardsearch/showAward?AWD_ID=1928374)):
+This is the project home for the EarthCube-funded project (Awards [1928406](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928406) and [1928374](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928374)):
 _Jupyter meets the Earth: Enabling discovery in geoscience through interactive computing at scale._
 
 ## Project description
