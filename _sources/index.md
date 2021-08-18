@@ -16,6 +16,29 @@ In addition to the [project updates and our event archive](#presentations-and-ev
 
 ## Presentations and events
 
+### Seminars in Taiwan
+_July 12, July 15, and August 4-6, 2021_
+
+Team member Whyjay Zheng was invited to host three virtual and in-person workshops in Taiwan (at Taiwan University, Taiwan Normal University, and Cheng Kung University, respectively), aiming to engage the international Earth science community with the Jupyter ecosystem and tools.
+
+### 2021 EarthCube annual meeting
+_June 15-17, 2021_
+
+In addition to the update about a Cryoscience use case (`EZ-FeatureTrack`), the JMTE project team hosted a workshop entitled "The Jupyter Landscape: a high-level map for (geo)scientists", aiming to provide onboarding resources and tutorials for earth scientists to use Jupyter tools. 
+
+- [EZ-FeatureTrack project notebook](https://github.com/earthcube2021/ec21_zheng_etal): an interactive, Jopyter notebook-based interface that deploys an entire glacier feature tracking workflow. This open-source tool aims to provide researchers, educators, and other users an accessible and reproducible method for mapping glacier velocity over time.
+- Jupyter workshop:
+  - slides (to be updated)
+  - recordings and videos (to be updated)
+
+### The 50th Arctic workshop
+_April 15-17, 2021_
+
+We gave a virtual presentation about the Cryoscience use case entitled "Mapping ice flow velocity using an interactive, cloud-based feature tracking workflow":
+
+- [abstract](https://instaar.colorado.edu/meetings/AW2021//abstract_details.php?abstract_id=59)
+- [project repository](https://github.com/whyjz/EZ-FeatureTrack)
+
 ### CIG developers meeting
 _February 25, 2021_
 
