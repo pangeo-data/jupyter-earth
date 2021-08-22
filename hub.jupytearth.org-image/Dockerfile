@@ -193,6 +193,7 @@ RUN echo "Installing conda packages..." \
         #   base image so it includes this or a more recent version of
         #   jupyter_server
         jupyter_server=1.10.2 \
+        notebook=6.4.3 \
  && echo "Installing conda packages complete!"
 
 
