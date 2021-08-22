@@ -187,6 +187,12 @@ RUN echo "Installing conda packages..." \
         fortran-magic \
         google-cloud-sdk \
         sympy \
+        #
+        # temp workarounds
+        # - jupyter_server pin can be removed when we bump the pangeo-notebook
+        #   base image so it includes this or a more recent version of
+        #   jupyter_server
+        jupyter_server=1.10.2 \
  && echo "Installing conda packages complete!"
 
 
