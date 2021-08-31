@@ -216,6 +216,9 @@ RUN echo "Installing pip packages..." \
             #       conda-forge. We have also installed TurboVNC for performance
             #       I think, and also various apt packages to get a desktop UI.
             #
+        https://github.com/jupyterhub/nbgitpuller/archive/main.zip \
+            # We want the unreleased version to avoid an issue with use of
+            # jupyter_server. We need something later than version 0.10.2.
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
