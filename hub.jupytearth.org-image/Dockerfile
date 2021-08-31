@@ -103,8 +103,18 @@ RUN mkdir -p ${JULIA_PATH} \
  && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH}
 
 
+# Install the nix package manager, step 1/2
+RUN mkdir -m 0755 /nix \
+ && chown jovyan /nix
+
+
 # Switch user away from ROOT for the rest
 USER ${NB_USER}
+
+
+# Install the nix package manager, step 2/2
+RUN curl -L https://nixos.org/nix/install | sh
+
 
 # Prepare Julia
 RUN julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
