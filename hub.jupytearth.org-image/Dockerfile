@@ -5,9 +5,7 @@
 # - pangeo/pangeo-notebook tags:        https://hub.docker.com/r/pangeo/pangeo-notebook/tags
 # - pangeo-notebook conda package:      https://github.com/conda-forge/pangeo-notebook-feedstock/blob/master/recipe/meta.yaml
 #
-# NOTE: Newer versions than 2021.07.06 bumped to ubuntu 21.10 that qgis doesn't
-#       support.
-FROM pangeo/pangeo-notebook:2021.07.06
+FROM pangeo/pangeo-notebook:master
 ARG DEBIAN_FRONTEND=noninteractive
 
 # While NB_GID is often defined in these jupyter images, it isn't for
@@ -189,11 +187,9 @@ RUN echo "Installing conda packages..." \
         sympy \
         #
         # temp workarounds
-        # - jupyter_server pin can be removed when we bump the pangeo-notebook
-        #   base image so it includes this or a more recent version of
-        #   jupyter_server
-        jupyter_server=1.10.2 \
-        notebook=6.4.3 \
+        # nodjs installed to help nbgitpuller build from git, which is installed
+        # as a workaround as well
+        nodejs \
  && echo "Installing conda packages complete!"
 
 
