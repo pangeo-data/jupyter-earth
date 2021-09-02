@@ -196,6 +196,23 @@ RUN echo "Installing conda packages..." \
         google-cloud-sdk \
         sympy \
         #
+        # GPU related
+        #
+        # We work against a specific NVIDIA Driver, so we should install the
+        # latest cudatoolkit that supports that driver or update the driver to
+        # support the cudatoolkit we want to install. Since cudatoolkit may
+        # update and require more modern drivers than available, we pin this
+        # explicitly to avoid such issues.
+        #
+        # I think the driver will be updatable by editing a DaemonSet installed
+        # in the k8s cluster automatically by eksctl.
+        #
+        # If the wanted cudatoolkit version is know, then what driver should be
+        # used? Answer: https://docs.cupy.dev/en/stable/install.html#installation
+        #
+        cupy \
+        cudatoolkit=11.4 \
+        #
         # temp workarounds
  && echo "Installing conda packages complete!"
 
