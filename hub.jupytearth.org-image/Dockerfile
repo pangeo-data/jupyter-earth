@@ -207,11 +207,15 @@ RUN echo "Installing conda packages..." \
         # I think the driver will be updatable by editing a DaemonSet installed
         # in the k8s cluster automatically by eksctl.
         #
-        # If the wanted cudatoolkit version is know, then what driver should be
-        # used? Answer: https://docs.cupy.dev/en/stable/install.html#installation
+        # https://docs.cupy.dev/en/stable/install.html#installation
+        # https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html
+        #
+        # Check latest cudatoolkit version on conda-forge, currently 11.2.2:
+        # - https://anaconda.org/conda-forge/cudatoolkit
+        # - https://github.com/conda-forge/cudatoolkit-feedstock
         #
         cupy \
-        cudatoolkit=11.4 \
+        cudatoolkit=11.2.2 \
         #
         # temp workarounds
  && echo "Installing conda packages complete!"
