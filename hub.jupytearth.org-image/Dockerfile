@@ -162,7 +162,7 @@ RUN echo "Installing conda packages..." \
         jupyter-repo2docker \
         #
         # IDE:
-        jupyterlab \
+        jupyterlab>=3.1.10 \
         jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
@@ -205,7 +205,9 @@ RUN echo "Installing conda packages..." \
         # explicitly to avoid such issues.
         #
         # I think the driver will be updatable by editing a DaemonSet installed
-        # in the k8s cluster automatically by eksctl.
+        # in the k8s cluster automatically by eksctl. Correction, I think it is
+        # installed as part of the AMI (whats installed by default on the node)
+        # for the machine.
         #
         # https://docs.cupy.dev/en/stable/install.html#installation
         # https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html
