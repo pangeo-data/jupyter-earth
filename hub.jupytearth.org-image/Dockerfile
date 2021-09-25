@@ -156,6 +156,7 @@ RUN echo "Installing conda packages..." \
         ipydatagrid \
         ipyparallel \
         lxml \
+        pyhdf \
         pytables \
         statsmodels \
         xlrd \
