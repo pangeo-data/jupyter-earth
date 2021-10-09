@@ -157,6 +157,7 @@ RUN echo "Installing conda packages..." \
         ipyparallel \
         lxml \
         pyhdf \
+	healpy \
         pytables \
         statsmodels \
         xlrd \
