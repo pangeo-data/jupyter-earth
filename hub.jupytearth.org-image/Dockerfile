@@ -157,8 +157,8 @@ RUN echo "Installing conda packages..." \
         ipyparallel \
         lxml \
         pyhdf \
-	vaex \
-	mhealpy \
+	  vaex \
+	  mhealpy \
         pytables \
         statsmodels \
         xlrd \
