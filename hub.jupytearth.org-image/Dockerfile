@@ -125,23 +125,18 @@ RUN curl -L https://nixos.org/nix/install | sh
 
 # Install Julia kernel (Julia part 2/2)
 #
-# By setting JUPYTER_DATA_DIR=$CONDA_PREFIX/share/jupyter, we make the julia
-# installkernel command install the kernel outside of the home directory next to
-# the python3 kernel.
+# NOTE: If we are not not setting JUPYTER_DATA_DIR, the Julia kernel gets
+#       installed in ~/.local/share/jupyter/kernels, and that folder may be
+#       overridden by a home directory mount. This was found out by using
+#       "jupyter kernelspec list" during debugging.
 #
-# See https://github.com/JuliaLang/IJulia.jl/blob/cc2a9bf61a2515596b177339f9a3514de8c38573/deps/kspec.jl#L32-L37
+#       Julia's installkernel function relates to JUPYTER_DATA_DIR via logic
+#       defined at https://github.com/JuliaLang/IJulia.jl/blob/cc2a9bf61a2515596b177339f9a3514de8c38573/deps/kspec.jl#L32-L37
 #
-# By not setting JUPYTER_DATA_DIR, the kernel is installed in
-# ~/.local/share/jupyter/kernels which may be overridden by a home directory
-# mount
+#       NB_PYTHON_PREFIX is presumed to be /srv/conda/envs/notebook in this
+#       case, which is defined in this specific Dockerfile's base image.
 #
-# $ jupyter kernelspec list
-#
-#   Available kernels:
-#     julia-1.6                   /home/jovyan/.local/share/jupyter/kernels/julia-1.6
-#     python3                     /srv/conda/envs/notebook/share/jupyter/kernels/python3
-#
-RUN export JUPYTER_DATA_DIR="$CONDA_PREFIX/share/jupyter" \
+RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
  && julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
  && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
 
