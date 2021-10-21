@@ -190,7 +190,6 @@ RUN echo "Installing conda packages..." \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
         jupyterlab-system-monitor \
-        jupyterlab-variableinspector \
         nbdime \
         qgis \
             # We install this as an apt-get package but on startup we got errors
