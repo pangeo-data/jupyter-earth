@@ -91,10 +91,17 @@ RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}
  && ln -s /opt/TurboVNC/bin/* /usr/local/bin/
 
 
-# Install Julia
+# Install Julia itself (Julia part 1/2)
+#
+# NOTE: Needs to be followed up by installing the Julia kernel in a location not
+#       overridden by mounting the user storage as done below when we are no
+#       longer acting as root.
+#
+# Latest version at https://julialang.org/downloads/
+#
+ENV JULIA_VERSION 1.6.3
 ENV JULIA_PATH /srv/julia
 ENV JULIA_DEPOT_PATH ${JULIA_PATH}/pkg
-ENV JULIA_VERSION 1.6.1
 ENV PATH $PATH:${JULIA_PATH}/bin
 RUN mkdir -p ${JULIA_PATH} \
  && curl -sSL "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_VERSION%[.-]*}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" \
@@ -116,8 +123,22 @@ USER ${NB_USER}
 RUN curl -L https://nixos.org/nix/install | sh
 
 
-# Prepare Julia
-RUN julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
+# Install Julia kernel (Julia part 2/2)
+#
+# By setting JUPYTER_DATA_DIR=$CONDA_PREFIX/share/jupyter, we make the julia
+# installkernel command install the kernel outside of the home directory next to
+# the python3 kernel.
+#
+# See https://github.com/JuliaLang/IJulia.jl/blob/cc2a9bf61a2515596b177339f9a3514de8c38573/deps/kspec.jl#L32-L37
+#
+# $ jupyter kernelspec list
+#
+#   Available kernels:
+#     julia-1.6                   /home/jovyan/.local/share/jupyter/kernels/julia-1.6
+#     python3                     /srv/conda/envs/notebook/share/jupyter/kernels/python3
+#
+RUN export JUPYTER_DATA_DIR="$CONDA_PREFIX/share/jupyter" \
+ && julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
  && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
 
 
