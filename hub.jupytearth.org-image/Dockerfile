@@ -131,6 +131,10 @@ RUN curl -L https://nixos.org/nix/install | sh
 #
 # See https://github.com/JuliaLang/IJulia.jl/blob/cc2a9bf61a2515596b177339f9a3514de8c38573/deps/kspec.jl#L32-L37
 #
+# By not setting JUPYTER_DATA_DIR, the kernel is installed in
+# ~/.local/share/jupyter/kernels which may be overridden by a home directory
+# mount
+#
 # $ jupyter kernelspec list
 #
 #   Available kernels:
