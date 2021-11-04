@@ -274,6 +274,17 @@ RUN echo "Installing pip packages..." \
  && echo "Installing pip packages complete!"
 
 
+# TEMPORARY:
+# Shane wants to trial this PR: https://github.com/dask/dask/pull/8223
+#
+RUN echo "Installing unreleased dask stuff..." \
+ && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
+ && pip install --no-cache-dir --upgrade \
+    git+https://github.com/gjoseph92/dask@shuffle_service \
+    distributed \
+&& echo "Installing unreleased dask stuff complete!"
+
+
 # Configure conda/mamba to create new environments within the home folder by
 # default. This allows the environments to remain in between restarts of the
 # container if only the home folder is persisted.
