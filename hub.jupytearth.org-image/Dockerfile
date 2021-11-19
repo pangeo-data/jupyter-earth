@@ -186,7 +186,7 @@ RUN echo "Installing conda packages..." \
         #
         # IDE:
         "jupyterlab>=3.2.4" \
-        "jupyterlab-link-share>=0.2.3" \
+        "jupyterlab-link-share>=0.2.2" \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
         jupyterlab-system-monitor \
