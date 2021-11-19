@@ -185,8 +185,8 @@ RUN echo "Installing conda packages..." \
         jupyter-repo2docker \
         #
         # IDE:
-        "jupyterlab>=3.1.10" \
-        jupyterlab-link-share \
+        "jupyterlab>=3.2.4" \
+        "jupyterlab-link-share>=0.2.3" \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
         jupyterlab-system-monitor \
