@@ -67,6 +67,12 @@ RUN echo "Installing apt-get packages..." \
  && rm -rf /var/lib/apt/lists/*
 
 
+# Install visual studio code-server
+# ref: https://github.com/cdr/code-server
+RUN curl -fsSL https://code-server.dev/install.sh | sh \
+ && rm -rf "${HOME}/.cache"
+
+
 # qgis, used by geographers, display gis data
 RUN wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key \
   | gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import \
@@ -185,6 +191,9 @@ RUN echo "Installing conda packages..." \
         jupyter-repo2docker \
         #
         # IDE:
+        jupyter-vscode-proxy \
+            # NOTE: Requires code-server to be installed.
+            # https://pypi.org/project/jupyter-vscode-proxy/
         "jupyterlab>=3.2.4" \
         "jupyterlab-link-share>=0.2.2" \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
