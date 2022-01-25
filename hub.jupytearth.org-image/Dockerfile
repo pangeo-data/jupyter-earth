@@ -273,6 +273,9 @@ RUN echo "Installing pip packages..." \
             #       conda-forge. We have also installed TurboVNC for performance
             #       I think, and also various apt packages to get a desktop UI.
             #
+        github-app-user-auth \
+            # Additional setup instructions: https://github.com/yuvipanda/github-app-user-auth#installation
+            # Related issue: https://github.com/pangeo-data/jupyter-earth/issues/96
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
