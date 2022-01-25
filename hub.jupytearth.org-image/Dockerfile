@@ -147,6 +147,17 @@ RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
  && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
 
 
+# WARNING: Messy workaround to install pyMC3, relying on mkl, but failing
+#          because of the base image has the nomkl package installed.
+#          Uninstalling nomkl may have consequences, but I'm not sure about
+#          them. I believe it can have big performance consequences to use or
+#          not use mkl.
+#
+RUN echo "Removing nomkl to enable install of PyMC3" \
+ && echo "But first clearing a history file to not make mamba uninstalling nomkl crash with a 'Segmentation fault (core dumped)' message..." \
+ && rm /srv/conda/envs/${CONDA_ENV}/conda-meta/history \
+ && mamba uninstall -n ${CONDA_ENV} -y nomkl
+
 # We only need to install packages not listed in this file already:
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/packages.txt
 RUN echo "Installing conda packages..." \
@@ -180,6 +191,8 @@ RUN echo "Installing conda packages..." \
         #
         # data:
         # pymc3 and dependencies start
+        # - WARNING: we had to remove nomkl to be able to install this, see note
+        #            about that above the mamba install step.
         # - installation instructions found at: https://github.com/pymc-devs/pymc/wiki/Installation-Guide-(Linux)
         # - installed for Abby and Facu following a slack discussion
         pymc3 \
