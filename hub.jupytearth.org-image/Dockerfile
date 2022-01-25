@@ -179,12 +179,20 @@ RUN echo "Installing conda packages..." \
         sphinx \
         #
         # data:
+        # pymc3 and dependencies start
+        # - installation instructions found at: https://github.com/pymc-devs/pymc/wiki/Installation-Guide-(Linux)
+        # - installed for Abby and Facu following a slack discussion
+        pymc3 \
+        theano-pymc \
+        mkl \
+        mkl-service \
+        # pymc3 and dependencies end
         ipydatagrid \
         ipyparallel \
         lxml \
         pyhdf \
-	  vaex \
-	  mhealpy \
+        vaex \
+        mhealpy \
         pytables \
         statsmodels \
         xlrd \
