@@ -146,6 +146,20 @@ RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
  && julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
  && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
 
+# WARNING: An attempt to avoid an issue reported by Fernando in
+#          https://github.com/pangeo-data/jupyter-earth/issues/101.
+#
+#          Note how we don't specify the name of the environment. This is because
+#          we want to update mamba in the base environment, not the notebook
+#          environment.
+#
+#          Note that an PR was made to the base image we rely on to update mamba
+#          to a more modern version in
+#          https://github.com/pangeo-data/pangeo-docker-images/pull/282.
+#
+RUN mamba --version \
+ && mamba update -y mamba \
+ && mamba --version
 
 # WARNING: Messy workaround to install pyMC3, relying on mkl, but failing
 #          because of the base image has the nomkl package installed.
