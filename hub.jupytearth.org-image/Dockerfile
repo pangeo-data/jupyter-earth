@@ -60,6 +60,10 @@ RUN echo "Installing apt-get packages..." \
         # qgis
             gnupg \
             software-properties-common \
+        # pymc3-theano relies on compiling some C++ code, this may be relevant
+        # to help that compilation succeed. See this issue for details:
+        # https://github.com/pangeo-data/jupyter-earth/issues/104#issuecomment-1027210956
+        libc-dev \
     > /dev/null \
     # chown $HOME to workaround that the xorg installation creates a
     # /home/jovyan/.cache directory owned by root
