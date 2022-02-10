@@ -14,6 +14,14 @@ The full project description is available in the [original grant proposal](https
 
 In addition to the [project updates and our event archive](#presentations-and-events), here you can find onboarding resources for Jupyter and the other related tools, tailored for Earth science researchers. Jupyter ecosystem helps advance Earth science research in many ways, including data exploration, interactive analysis, documentation, and reproducibility of work. To give you an idea of how Jupyter achieves this, some of these tutorials come along with a motivating example that focuses on real science problems using real data. 
 
+### Our YouTube channel and video resources
+
+[Our YouTube channel](https://www.youtube.com/channel/UCA3Y8FSD0bA7KczpzaE-VRQ) hosts the meeting records and learning resources delivered by the team members. You can also find several playlists introducing our project or Jupyter tools for geoscientists.
+
+- [Use Jupyter tools in a research project](https://www.youtube.com/watch?v=mC-RgRCwEa4)
+- [Cloud native workflows at scale, with Jupyter ecosystem](https://www.youtube.com/watch?v=lwbUjTNWBpQ)
+- [Jupyter Book overview](https://www.youtube.com/watch?v=seKOq-VMJgY)
+
 ## Presentations and events
 
 ### Seminars in Taiwan
