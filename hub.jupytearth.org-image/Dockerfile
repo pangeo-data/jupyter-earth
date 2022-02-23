@@ -259,7 +259,6 @@ RUN echo "Installing conda packages..." \
         # other
         websockify \
             # dependency for jupyter-remote-desktop-proxy
-        compilers \
         cxx-compiler \
         cython \
         fortran-magic \
