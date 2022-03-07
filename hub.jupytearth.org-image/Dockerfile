@@ -161,6 +161,10 @@ RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
 #          to a more modern version in
 #          https://github.com/pangeo-data/pangeo-docker-images/pull/282.
 #
+#          FIXME: This workaround can be removed as soon as a release later than
+#                 2022-03-07 has been made. As of this date, mamba 0.19 is installed,
+#                 and we need mamba 0.21+.
+#
 RUN mamba --version \
  && mamba update -y mamba \
  && mamba --version
@@ -233,8 +237,13 @@ RUN echo "Installing conda packages..." \
         jupyter-vscode-proxy \
             # NOTE: Requires code-server to be installed.
             # https://pypi.org/project/jupyter-vscode-proxy/
-        "jupyterlab>=3.2.4" \
-        "jupyterlab-link-share>=0.2.2" \
+        "jupyterlab>=3.3.0" \
+            # We require a modern version for JupyterLab as it is already
+            # installed in the base image, and by doing so ensure it gets
+            # upgraded to a modern version.
+            #
+            # ref: https://github.com/jupyterlab/jupyterlab
+        jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
         jupyterlab-system-monitor \
