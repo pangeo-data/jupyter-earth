@@ -14,14 +14,63 @@ The full project description is available in the [original grant proposal](https
 
 In addition to the [project updates and our event archive](#presentations-and-events), here you can find onboarding resources for Jupyter and the other related tools, tailored for Earth science researchers. Jupyter ecosystem helps advance Earth science research in many ways, including data exploration, interactive analysis, documentation, and reproducibility of work. To give you an idea of how Jupyter achieves this, some of these tutorials come along with a motivating example that focuses on real science problems using real data. 
 
-## Presentations and events
+### Demos
 
-### Seminars in Taiwan
+- [Jupyter Meets the Earth - A toy research workflow](https://workflow.jupytearth.org/)
+- [Jupyter Meets the Earth: Hydrological use cases](https://hydro.jupytearth.org/)
+
+
+### Our YouTube channel and video resources
+
+[Our YouTube channel](https://www.youtube.com/channel/UCA3Y8FSD0bA7KczpzaE-VRQ) hosts the meeting records and learning resources delivered by the team members. You can also find several playlists introducing our project or Jupyter tools for geoscientists.
+
+- [Use Jupyter tools in a research project](https://www.youtube.com/watch?v=mC-RgRCwEa4)
+- [Cloud native workflows at scale, with Jupyter ecosystem](https://www.youtube.com/watch?v=lwbUjTNWBpQ)
+- [Jupyter Book overview](https://www.youtube.com/watch?v=seKOq-VMJgY)
+
+### Blog Posts
+
+- Aug 17, 2020: [Summary of the EarthCube Community meeting](https://blog.jupyter.org/jupyter-meets-the-earth-earthcube-community-meeting-4bb9fb49cada?source=friends_link&sk=ecec9c45937c0e354bed03fc13dc0b92)
+- Sep 9, 2019: [Project announcement](https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f?source=friends_link&sk=945065ffe0c101b6c8ec369425574600)
+
+
+## Past presentations and events
+
+### 2022
+
+#### Project Tyra Seminar Series
+_January 22, 2022_
+
+Whyjay Zheng gave a talk introducing the JMTE project and the Jupyter ecosystem to researchers in/from Taiwan. 
+
+- [recording (in Chinese [Taiwan])](https://www.youtube.com/watch?v=0s6EWNVHGnY)
+
+### 2021
+
+#### American Geophysical Union Fall meeting
+_December 13-17, 2021_
+
+We delivered the following presentations in the 2021 AGU Fall meeting:
+
+- [Sapienza et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/973415) Spectral Unmixing of Antarctic Snow Grain Size Distribution: A Data-Driven Perspective
+- [Sundell et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/835265) How a cloud based JupyterHub can scaffold researchers’ scientific workflows and teaching activities
+- [Zheng et al.:](https://doi.org/10.1002/essoar.10509355.1) Gftt: an open-source tool for evaluating remotely sensed glacier velocity products
+- [Snow et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/987459) Basal channel outflow inferred from persistent polynya variability at the Eastern Thwaites Ice Shelf
+- [Grigsby et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/966963) Mission in a minute: Complex Spatial Query and Data Access in the Cloud for the ICESat-2 Mission
+- [Sapienza et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/877421) From MAVEN to Bayes: A Data-Driven Approach to Mars’ Space Environment
+- [Azari et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/909580) Mars’ Global Magnetic Field Response To Localized Crustal Fields and Interplanetary Magnetic Field Direction
+- [Bolibar et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/854992) Optimizing and Discovering Models of Glacier Processes with Neural Networks Embedded in Differential Equations
+- [Pérez et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/908621) Scientific Communication and Reproducible Publishing in the Jupyter Ecosystem and Beyond (Invited)
+- [Badman et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/899989) Pandemic Programming for an REU: Developing a Virtual Bootcamp and Professional Development Series for the Advancing Space Sciences through Undergraduate Research Experiences (ASSURE) Program
+- [Moges et al.:](https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/969783) HydroBench: Jupyter Supported Reproducible Hydrological Model Benchmarking and Diagnostic tool. 
+
+
+#### Seminars in Taiwan
 _July 12, July 15, and August 4-6, 2021_
 
 Team member Whyjay Zheng was invited to host three virtual and in-person workshops in Taiwan (at Taiwan University, Taiwan Normal University, and Cheng Kung University, respectively), aiming to engage the international Earth science community with the Jupyter ecosystem and tools.
 
-### 2021 EarthCube annual meeting
+#### EarthCube annual meeting
 _June 15-17, 2021_
 
 In addition to the update about a Cryoscience use case (`EZ-FeatureTrack`), the JMTE project team hosted a workshop entitled "The Jupyter Landscape: a high-level map for (geo)scientists", aiming to provide onboarding resources and tutorials for earth scientists to use Jupyter tools. 
@@ -31,7 +80,29 @@ In addition to the update about a Cryoscience use case (`EZ-FeatureTrack`), the 
   - slides (to be updated)
   - recordings and videos (to be updated)
 
-### The 50th Arctic workshop
+#### 2nd Eddy Cross Disciplinary Symposium
+_June 7-10, 2021_
+
+Fernando Pérez participated in a planery session.
+
+- [recordings](https://www.youtube.com/watch?v=Yp5D9Mo6XiY)
+
+#### Big Data from Space 2021
+_May 18-20, 2021_
+
+Fernando Pérez gave a keynote talk entitled "From Interactive Computing To Collaborative Science:Opportunities In The Cloud With Open Infrastructure."
+
+- [abstract](https://www.bigdatafromspace2021.org/keynote-speakers)
+
+#### CSDMS 2021
+_May 17-21, 2021_
+
+Fernando Pérez gave a keynote talk focusing on the Jupyter technology at the Community Surface Dynamics Modeling System (CSDMS) annual meeting.
+
+- [recordings](https://www.youtube.com/watch?v=SdRmxAPy2gc)
+
+
+#### The 50th Arctic workshop
 _April 15-17, 2021_
 
 We gave a virtual presentation about the Cryoscience use case entitled "Mapping ice flow velocity using an interactive, cloud-based feature tracking workflow":
@@ -39,21 +110,23 @@ We gave a virtual presentation about the Cryoscience use case entitled "Mapping 
 - [abstract](https://instaar.colorado.edu/meetings/AW2021//abstract_details.php?abstract_id=59)
 - [project repository](https://github.com/whyjz/EZ-FeatureTrack)
 
-### CIG developers meeting
+#### CIG developers meeting
 _February 25, 2021_
 
 We were invited to present a brief overview of the Pangeo ecosystem at the [2021 Computational Infrastructure for Geodynamics developers workshop](https://geodynamics.org/cig/events/calendar/2021-cig-developers-workshop/)
 
 - [slides](https://docs.google.com/presentation/d/1jdcov4EsHb2H64nTQLqhucATLLJFapzxX8YkykiqYY4/edit?usp=sharing)
 
-### ESIP winter meeting
+#### ESIP winter meeting
 _January 26, 2021_
 
 As a part of the [ESIP winter meeting](https://2021esipwintermeeting.sched.com/), we were invited to present in the session: [Jupyter Notebooks: Harnessing the full potential](https://2021esipwintermeeting.sched.com/event/g495/jupyter-notebooks-harnessing-the-full-potential)
 
 - [slides](https://docs.google.com/presentation/d/1QBR3BkM0xIa3FQJPxWjLenWs--FqrZk0Q8qPxuqHkyg/edit)
 
-### American Geophysical Union
+### 2020
+
+#### American Geophysical Union Fall meeting
 _December 1-17, 2020_
 
 As a part of the AGU Annual meeting, we presented:
@@ -67,12 +140,12 @@ As a part of the AGU Annual meeting, we presented:
 - [TH086](https://agu.confex.com/agu/fm20/meetingapp.cgi/Session/104761) Scripts to Software Frameworks: How Do We Share Our Research Code?
 - [SCIWS13](https://agu.confex.com/agu/fm20/meetingapp.cgi/Session/103714) Best Practices for Developing and Sustaining Your Open-Source Research Software
 
-### Supercomputing Conference (SC)
+#### Supercomputing Conference (SC)
 _November 11-19, 2020_
 
 As a part of the [Fourth Workshop on Interactive High-Performance Computing @ SC20](https://www.interactivehpc.com/), Anderson Banihirwe spoke on a panel about Interactive High Performance Computing.
 
-### EarthCube Webinar
+#### EarthCube Webinar
 _November 6, 2020_
 
 We gave a presentation "Jupyter and Pangeo: Building robust, open ecosystems in EarthCube" at the EarthCube Webinar [Joining the EarthCube Community as a Funded Project - a Discussion on the 2021 NSF EarthCube Solicitation](https://www.earthcube.org/event/earthcube-webinar-joining-earthcube-community-funded-project-discussion-2021-nsf-earthcube-solicitation).
@@ -80,7 +153,7 @@ We gave a presentation "Jupyter and Pangeo: Building robust, open ecosystems in 
 - [slides](https://docs.google.com/presentation/d/1oIDTq5M4GI4qr53VG8XcI_tP9mPUW_9B9J-lDj90nfc/edit?usp=sharing)
 
 
-### Next Generation Ecosystems Experiments (NGEE) Seminars
+#### Next Generation Ecosystems Experiments (NGEE) Seminars
 _October 19, 2020_
 
 As a part of the [NGEE-Tropics](https://ngee-tropics.lbl.gov/) seminar series, we gave a presentation entitled "Jupyter meets the Earth: partnering domain research with open-source development":
@@ -89,7 +162,7 @@ As a part of the [NGEE-Tropics](https://ngee-tropics.lbl.gov/) seminar series, w
 - [shared notes](https://docs.google.com/document/d/1UzrgbleUE0LCL2VewtbYce8qYVmU_o8z5325JYT9ij8/edit?usp=sharing)
 
 
-### JupyterCon Presentation
+#### JupyterCon Presentation
 _October 15, 2020_
 
 [JupyterCon](https://jupytercon.com/) was held online from October 5-17. We presented a poster on the Jupyter meets the Earth project:
@@ -99,7 +172,7 @@ _October 15, 2020_
 - [poster](https://drive.google.com/file/d/1AbDuTI9xtNowPHp6wN5MaT2NvJrmAB3T/view?usp=sharing)
 
 
-### Discussion with Coiled
+#### Discussion with Coiled
 _September 24, 2020_
 
 As a part of the [Science Thursdays](https://coiled.io/blog/coileds-first-live-stream-science-thursdays/) livestream events hosted by Hugo Bowne-Anderson and Matthew Rocklin, Lindsey Heagy joined for a conversation on using dask for inverse problems in geophysics
@@ -109,7 +182,7 @@ As a part of the [Science Thursdays](https://coiled.io/blog/coileds-first-live-s
 - [demo repository](https://github.com/simpeg-research/bookpurnong-inversion)
 
 
-### EarthCube Council of Funded projects
+#### EarthCube Council of Funded projects
 _September 10, 2020_
 
 We gave a project-overview presentation as a part of the EarthCube [Council of Funded Projects](https://www.earthcube.org/group/council-funded-projects-cfp) regular meeting series:
@@ -118,7 +191,7 @@ We gave a project-overview presentation as a part of the EarthCube [Council of F
 - [shared notes](https://docs.google.com/document/d/1v74fUNH6fldvv0iPFVx57bDyg3yJBGENNFc-DU74fxE/edit?usp=sharing)
 
 
-### EarthCube community meeting
+#### EarthCube community meeting
 _July 27, 2020_
 
 As a part of the [EarthCube 2020 meeting](https://www.earthcube.org/EC2020), we held a two hour session that included short presentations about the Jupyter meets the Earth project, lightning talks from members of the community and time for Q&A.
@@ -127,23 +200,18 @@ As a part of the [EarthCube 2020 meeting](https://www.earthcube.org/EC2020), we 
 - [video recording](https://youtu.be/Zj3Gm4LNfwo)
 
 
-### IceSat2 Hackweek
+#### IceSat2 Hackweek
 _June 8-18, 2020_
 
 Several team members participated as instructors and joing in the project-work at the [2020 ICESat-2 Hackweek](https://icesat-2hackweek.github.io/). The tutorials that project team members Fernando Pérez and Lindsey Heagy contributed to were on:
 - Git and GitHub ([video recording](https://youtu.be/O2lLC_s_d20), [repository](https://github.com/ICESAT-2HackWeek/intro-git))
 - Jupyter and IPython ([video recording](https://youtu.be/Jft9-RnmH1Y), [repository](https://github.com/ICESAT-2HackWeek/intro-jupyter))
 
-### Transform 2020
+#### Transform 2020
 _June 6-14, 2020_
 
 As a part of the [Transform 2020 virtual conference](https://transform2020.sched.com/), Lindsey Heagy gave a tutorial on [geophysical inversions with SimPEG](https://transform2020.sched.com/event/cD5V/tutorial-geophysical-inversion-in-simpeg).
 
 
-## Resources
 
-### Blog Posts
-
-- Aug 17, 2020: [Summary of the EarthCube Community meeting](https://blog.jupyter.org/jupyter-meets-the-earth-earthcube-community-meeting-4bb9fb49cada?source=friends_link&sk=ecec9c45937c0e354bed03fc13dc0b92)
-- Sep 9, 2019: [Project announcement](https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f?source=friends_link&sk=945065ffe0c101b6c8ec369425574600)
 
