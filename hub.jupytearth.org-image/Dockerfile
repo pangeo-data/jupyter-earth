@@ -161,6 +161,10 @@ RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
 #          to a more modern version in
 #          https://github.com/pangeo-data/pangeo-docker-images/pull/282.
 #
+#          FIXME: This workaround can be removed as soon as a release later than
+#                 2022-03-07 has been made. As of this date, mamba 0.19 is installed,
+#                 and we need mamba 0.21+.
+#
 RUN mamba --version \
  && mamba update -y mamba \
  && mamba --version
