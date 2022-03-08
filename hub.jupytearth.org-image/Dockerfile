@@ -273,6 +273,11 @@ RUN echo "Installing conda packages..." \
         fortran-magic \
         google-cloud-sdk \
         sympy \
+        # Storage related
+        #
+        syncthing \
+            # ref: https://anaconda.org/conda-forge/syncthing
+            # We also install jupyter-syncthing-proxy from pip.
         #
         # GPU related
         #
@@ -326,6 +331,13 @@ RUN echo "Installing pip packages..." \
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
+        jupyter-syncthing-proxy \
+            # We install the conda-forge package syncthing along with this, as
+            # this is just the glue to expose syncthing.
+            #
+            # ref, request:    https://github.com/pangeo-data/jupyter-earth/issues/103
+            # ref, source:     https://github.com/yuvipanda/jupyter-syncthing-proxy
+            # ref, dependency: https://anaconda.org/conda-forge/syncthing
         plotly-geo \
             # NOTE: This package is not available in conda (conda-forge or
             #       plotly), even though they describe it to be.
