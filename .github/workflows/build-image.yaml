@@ -76,11 +76,16 @@ jobs:
           echo ::set-output "name=image-name::$IMAGE"
 
           docker tag image-build-test $IMAGE
+          docker tag image-build-test $IMAGE_NAME:latest
           docker push $IMAGE
+          docker push $IMAGE_NAME:latest
 
-      - name: How to update hub.jupytearth.org to use this image
-        if: github.event_name != 'pull_request'
-        run: |
-          echo "1. Visit https://hub.jupytearth.org/services/configurator/ as a JupyterHub admin."
-          echo "2. Configure to use this image: ${{ steps.push.outputs.image-name }}"
-          echo "3. Press save."
+      # NOTE: This manual step is disabled as we are now configured to use the
+      #       :latest image by default so we don't need to do this.
+      #
+      # - name: How to update hub.jupytearth.org to use this image
+      #   if: github.event_name != 'pull_request'
+      #   run: |
+      #     echo "1. Visit https://hub.jupytearth.org/services/configurator/ as a JupyterHub admin."
+      #     echo "2. Configure to use this image: ${{ steps.push.outputs.image-name }}"
+      #     echo "3. Press save."
