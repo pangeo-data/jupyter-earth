@@ -150,25 +150,6 @@ RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
  && julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
  && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
 
-# WARNING: An attempt to avoid an issue reported by Fernando in
-#          https://github.com/pangeo-data/jupyter-earth/issues/101.
-#
-#          Note how we don't specify the name of the environment. This is because
-#          we want to update mamba in the base environment, not the notebook
-#          environment.
-#
-#          Note that an PR was made to the base image we rely on to update mamba
-#          to a more modern version in
-#          https://github.com/pangeo-data/pangeo-docker-images/pull/282.
-#
-#          FIXME: This workaround can be removed as soon as a release later than
-#                 2022-03-07 has been made. As of this date, mamba 0.19 is installed,
-#                 and we need mamba 0.21+.
-#
-RUN mamba --version \
- && mamba update -y mamba \
- && mamba --version
-
 # WARNING: Messy workaround to install pyMC3, relying on mkl, but failing
 #          because of the base image has the nomkl package installed.
 #          Uninstalling nomkl may have consequences, but I'm not sure about
@@ -176,8 +157,6 @@ RUN mamba --version \
 #          not use mkl.
 #
 RUN echo "Removing nomkl to enable install of PyMC3" \
- && echo "But first clearing a history file to not make mamba uninstalling nomkl crash with a 'Segmentation fault (core dumped)' message..." \
- && rm /srv/conda/envs/${CONDA_ENV}/conda-meta/history \
  && mamba uninstall -n ${CONDA_ENV} -y nomkl
 
 # We only need to install packages not listed in this file already:
@@ -237,7 +216,7 @@ RUN echo "Installing conda packages..." \
         jupyter-vscode-proxy \
             # NOTE: Requires code-server to be installed.
             # https://pypi.org/project/jupyter-vscode-proxy/
-        "jupyterlab>=3.3.0" \
+        "jupyterlab>=3.3.3" \
             # We require a modern version for JupyterLab as it is already
             # installed in the base image, and by doing so ensure it gets
             # upgraded to a modern version.
