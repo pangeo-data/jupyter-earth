@@ -78,6 +78,7 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh \
 
 
 # qgis, used by geographers, display gis data
+# ref: https://qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
 RUN wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key \
   | gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import \
  && chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg \
@@ -163,6 +164,11 @@ RUN echo "Removing nomkl to enable install of PyMC3" \
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/packages.txt
 RUN echo "Installing conda packages..." \
  && mamba install -n ${CONDA_ENV} -y \
+        # temporary upgrades, because sometimes we wish to have a more modern
+        # version than installed in the base image.
+        #
+        "jupyterlab>=3.4.3" \
+        "dask-gateway>=2022.6.1" \
         #
         # visualization:
         altair \
@@ -216,12 +222,6 @@ RUN echo "Installing conda packages..." \
         jupyter-vscode-proxy \
             # NOTE: Requires code-server to be installed.
             # https://pypi.org/project/jupyter-vscode-proxy/
-        "jupyterlab>=3.3.3" \
-            # We require a modern version for JupyterLab as it is already
-            # installed in the base image, and by doing so ensure it gets
-            # upgraded to a modern version.
-            #
-            # ref: https://github.com/jupyterlab/jupyterlab
         jupyterlab-link-share \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
@@ -331,7 +331,6 @@ RUN echo "Installing unreleased dask stuff..." \
  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
  && pip install --no-cache-dir --upgrade \
     git+https://github.com/gjoseph92/dask@shuffle_service \
-    distributed \
 && echo "Installing unreleased dask stuff complete!"
 
 
