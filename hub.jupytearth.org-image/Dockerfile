@@ -218,6 +218,9 @@ RUN echo "Installing conda packages..." \
         jupyterlab-favorites \
         nbdime \
         gh-scoped-creds \
+            # Additional setup instructions: https://github.com/yuvipanda/gh-scoped-creds#installation
+            # Additional setup done: https://github.com/2i2c-org/infrastructure/commit/5a9f69b11727965fd4f07571c03eb65de5279fa4
+            # Related issue: https://github.com/pangeo-data/jupyter-earth/issues/96
         qgis \
             # We install this as an apt-get package but on startup we got errors
             # about Python integration not being available. But installing this
@@ -295,9 +298,6 @@ RUN echo "Installing pip packages..." \
             #       conda-forge. We have also installed TurboVNC for performance
             #       I think, and also various apt packages to get a desktop UI.
             #
-        github-app-user-auth \
-            # Additional setup instructions: https://github.com/yuvipanda/github-app-user-auth#installation
-            # Related issue: https://github.com/pangeo-data/jupyter-earth/issues/96
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
