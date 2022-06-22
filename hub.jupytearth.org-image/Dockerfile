@@ -312,6 +312,8 @@ RUN echo "Installing pip packages..." \
             # NOTE: This package is not available in conda (conda-forge or
             #       plotly), even though they describe it to be.
             # ref: https://github.com/plotly/plotly.py#extended-geo-support
+        jupyter-datasette-proxy \
+            # This package is not available in conda
  && echo "Installing pip packages complete!"
 
 
