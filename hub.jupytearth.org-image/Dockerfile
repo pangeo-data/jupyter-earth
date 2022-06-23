@@ -108,6 +108,10 @@ RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}
 #       overridden by mounting the user storage as done below when we are no
 #       longer acting as root.
 #
+# NOTE: The following issue was observed, and we added the workaround of copying
+#       libstdc++.so.6 from the system to the julia directory:
+#       https://github.com/pangeo-data/jupyter-earth/issues/126
+#
 # Latest version at https://julialang.org/downloads/
 #
 ENV JULIA_VERSION 1.7.1
@@ -118,7 +122,8 @@ RUN mkdir -p ${JULIA_PATH} \
  && curl -sSL "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_VERSION%[.-]*}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" \
   | tar -xz -C ${JULIA_PATH} --strip-components 1 \
  && mkdir -p ${JULIA_DEPOT_PATH} \
- && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH}
+ && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH} \
+ && cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 $JULIA_PATH/lib/julia/
 
 
 # Install the nix package manager, step 1/2
