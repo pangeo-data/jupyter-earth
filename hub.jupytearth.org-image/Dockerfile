@@ -222,6 +222,11 @@ RUN echo "Installing conda packages..." \
         jupyterlab-system-monitor \
         jupyterlab-favorites \
         nbdime \
+        npm \
+        nodejs \
+            # npm and nodejs are required by jupyterlab-sos (https://vatlab.github.io/sos-docs/),
+            # a JupyterLab extension that enables users to activate more than one kernel in a 
+            # single Notebook.
         gh-scoped-creds \
             # Additional setup instructions: https://github.com/yuvipanda/gh-scoped-creds#installation
             # Additional setup done: https://github.com/2i2c-org/infrastructure/commit/5a9f69b11727965fd4f07571c03eb65de5279fa4
