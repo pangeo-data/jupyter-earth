@@ -24,8 +24,11 @@ RUN echo "Installing apt-get packages..." \
             # The aws CLI apparently relies on "groff"
             # Issue about including it in future versions of pangeo-notebook:
             # https://github.com/pangeo-data/pangeo-docker-images/issues/216
-        emacs-nox python-mode emacs-goodies-el \
+        emacs-nox emacs-goodies-el \
             # Basic Emacs configuration for general development.
+            #
+            # python-mode was part of this list, but removed as it was not
+            # available for ubuntu 22.04 that is now used.
         nano \
             # A terminal file editor, vim is already made available
         micro \
