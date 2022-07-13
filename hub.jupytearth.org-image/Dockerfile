@@ -317,7 +317,11 @@ RUN echo "Installing pip packages..." \
             # NOTE: This package is not available in conda (conda-forge or
             #       plotly), even though they describe it to be.
             # ref: https://github.com/plotly/plotly.py#extended-geo-support
-        jupyter-datasette-proxy \
+        # jupyter-datasette-proxy \
+            # FIXME: this is disabled because it malfunctions, and when it does,
+            #        all other jupyter-server-proxy processes fail and we
+            #        observe for example the vscode launcher entry in the
+            #        jupyterlab UI disappears.
             # This package is not available in conda
  && echo "Installing pip packages complete!"
 
