@@ -258,6 +258,13 @@ RUN echo "Installing conda packages..." \
         syncthing \
             # ref: https://anaconda.org/conda-forge/syncthing
             # We also install jupyter-syncthing-proxy from pip.
+        #
+        # gpu related
+        cuda-compat \
+            # This is installed in an attempt to resolve a bug caused by the
+            # limitation of only having nvidia driver 470 and its associated
+            # cuda 11.4 driver version in the amazon machine image (AMI) we get.
+            #
  && echo "Installing conda packages complete!"
 
 
