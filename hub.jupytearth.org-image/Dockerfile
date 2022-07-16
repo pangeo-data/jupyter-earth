@@ -1,12 +1,11 @@
 # References regarding our base image:
-# - ubuntu:20.04
+# - ubuntu:22.04
 # - pangeo/base-image definition:       https://github.com/pangeo-data/pangeo-docker-images/blob/master/base-image
-# - pangeo/pangeo-notebook definition:  https://github.com/pangeo-data/pangeo-docker-images/tree/master/pangeo-notebook
-# - pangeo/pangeo-notebook tags:        https://hub.docker.com/r/pangeo/pangeo-notebook/tags
-# - pangeo-notebook conda package:      https://github.com/conda-forge/pangeo-notebook-feedstock/blob/master/recipe/meta.yaml
+# - pangeo/pytorch-notebook definition: https://github.com/pangeo-data/pangeo-docker-images/tree/master/pytorch-notebook
+# - pangeo/pytorch-notebook tags:       https://hub.docker.com/r/pangeo/pytorch-notebook/tags
+# - pytorch-notebook conda package:     https://github.com/conda-forge/pytorch-notebook-feedstock/blob/master/recipe/meta.yaml
 #
-FROM pangeo/pangeo-notebook:master
-ARG DEBIAN_FRONTEND=noninteractive
+FROM pangeo/pytorch-notebook:master
 
 # While NB_GID is often defined in these jupyter images, it isn't for
 # pangeo/base-image and derivative images. Let's define it here so copy pasting
@@ -15,14 +14,14 @@ ENV NB_GID=$NB_UID
 
 USER root
 # We only need to install packages not listed in this file already:
-# https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/apt.txt
+# https://github.com/pangeo-data/pangeo-docker-images/blob/master/pytorch-notebook/apt.txt
 RUN echo "Installing apt-get packages..." \
  && apt-get -y update > /dev/null \
  && apt-get -y install \
         curl \
         groff \
             # The aws CLI apparently relies on "groff"
-            # Issue about including it in future versions of pangeo-notebook:
+            # Issue about including it in future versions of pytorch-notebook:
             # https://github.com/pangeo-data/pangeo-docker-images/issues/216
         emacs-nox emacs-goodies-el \
             # Basic Emacs configuration for general development.
@@ -160,7 +159,7 @@ RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
  && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
 
 # We only need to install packages not listed in this file already:
-# https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/packages.txt
+# https://github.com/pangeo-data/pangeo-docker-images/blob/master/pytorch-notebook/packages.txt
 RUN echo "Installing conda packages..." \
  && mamba install -n ${CONDA_ENV} -y \
         # temporary upgrades, because sometimes we wish to have a more modern
@@ -259,37 +258,12 @@ RUN echo "Installing conda packages..." \
         syncthing \
             # ref: https://anaconda.org/conda-forge/syncthing
             # We also install jupyter-syncthing-proxy from pip.
-        #
-        # GPU related
-        #
-        # We work against a specific NVIDIA Driver, so we should install the
-        # latest cudatoolkit that supports that driver or update the driver to
-        # support the cudatoolkit we want to install. Since cudatoolkit may
-        # update and require more modern drivers than available, we pin this
-        # explicitly to avoid such issues.
-        #
-        # I think the driver will be updatable by editing a DaemonSet installed
-        # in the k8s cluster automatically by eksctl. Correction, I think it is
-        # installed as part of the AMI (whats installed by default on the node)
-        # for the machine.
-        #
-        # https://docs.cupy.dev/en/stable/install.html#installation
-        # https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html
-        #
-        # Check latest cudatoolkit version on conda-forge, currently 11.2.2:
-        # - https://anaconda.org/conda-forge/cudatoolkit
-        # - https://github.com/conda-forge/cudatoolkit-feedstock
-        #
-        cupy \
-        cudatoolkit=11.2.2 \
-        #
-        # temp workarounds
  && echo "Installing conda packages complete!"
 
 
 # We use a conda first approach in this Dockerfile, so only install pip packages
 # if you have a clear reason to not use conda.
-# https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/packages.txt
+# https://github.com/pangeo-data/pangeo-docker-images/blob/master/pytorch-notebook/packages.txt
 #
 RUN echo "Installing pip packages..." \
  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
