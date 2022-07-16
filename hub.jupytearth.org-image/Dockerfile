@@ -66,13 +66,6 @@ RUN echo "Installing apt-get packages..." \
         # to help that compilation succeed. See this issue for details:
         # https://github.com/pangeo-data/jupyter-earth/issues/104#issuecomment-1027210956
         libc-dev \
-        #
-        # gpu related
-        cuda-compat \
-            # This is installed in an attempt to resolve a bug caused by the
-            # limitation of only having nvidia driver 470 and its associated
-            # cuda 11.4 driver version in the amazon machine image (AMI) we get.
-            #
     > /dev/null \
     # chown $HOME to workaround that the xorg installation creates a
     # /home/jovyan/.cache directory owned by root
