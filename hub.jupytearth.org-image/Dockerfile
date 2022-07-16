@@ -258,31 +258,6 @@ RUN echo "Installing conda packages..." \
         syncthing \
             # ref: https://anaconda.org/conda-forge/syncthing
             # We also install jupyter-syncthing-proxy from pip.
-        #
-        # GPU related
-        #
-        # We work against a specific NVIDIA Driver, so we should install the
-        # latest cudatoolkit that supports that driver or update the driver to
-        # support the cudatoolkit we want to install. Since cudatoolkit may
-        # update and require more modern drivers than available, we pin this
-        # explicitly to avoid such issues.
-        #
-        # I think the driver will be updatable by editing a DaemonSet installed
-        # in the k8s cluster automatically by eksctl. Correction, I think it is
-        # installed as part of the AMI (whats installed by default on the node)
-        # for the machine.
-        #
-        # https://docs.cupy.dev/en/stable/install.html#installation
-        # https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html
-        #
-        # Check latest cudatoolkit version on conda-forge, currently 11.2.2:
-        # - https://anaconda.org/conda-forge/cudatoolkit
-        # - https://github.com/conda-forge/cudatoolkit-feedstock
-        #
-        cupy \
-        cudatoolkit=11.2.2 \
-        #
-        # temp workarounds
  && echo "Installing conda packages complete!"
 
 
