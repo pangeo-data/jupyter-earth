@@ -75,7 +75,13 @@ RUN echo "Installing apt-get packages..." \
 
 # Install visual studio code-server
 # ref: https://github.com/cdr/code-server
-RUN curl -fsSL https://code-server.dev/install.sh | sh \
+#
+# NOTE: We have pinned code-server to version 4.4.0 because 4.5.0 introduced a
+#       regression. See https://github.com/coder/code-server/issues/5343 and
+#       https://github.com/pangeo-data/jupyter-earth/issues/137.
+#
+RUN export VERSION=4.4.0 \
+ && curl -fsSL https://code-server.dev/install.sh | sh \
  && rm -rf "${HOME}/.cache"
 
 
