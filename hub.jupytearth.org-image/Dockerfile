@@ -80,7 +80,10 @@ RUN echo "Installing apt-get packages..." \
 #       regression. See https://github.com/coder/code-server/issues/5343 and
 #       https://github.com/pangeo-data/jupyter-earth/issues/137.
 #
-RUN export VERSION=4.4.0 \
+#       We pinned code-server to version 4.3.0 because 4.4.0 introduced a
+#       regression. See https://github.com/coder/code-server/issues/5218.
+#
+RUN export VERSION=4.3.0 \
  && curl -fsSL https://code-server.dev/install.sh | sh \
  && rm -rf "${HOME}/.cache"
 
