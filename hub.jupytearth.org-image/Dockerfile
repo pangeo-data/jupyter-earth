@@ -202,12 +202,19 @@ RUN echo "Installing conda packages..." \
         jupyter-book \
         jupytext \
         numpydoc \
+            # FIXME: Installing numpydoc downgrades jinja2 for some reason, see
+            #        https://github.com/conda-forge/numpydoc-feedstock/issues/22.
+            #
         sphinx \
         #
         # data:
         # pymc3 and dependencies start
         # - installation instructions found at: https://github.com/pymc-devs/pymc/wiki/Installation-Guide-(Linux)
         # - installed for Abby and Facu following a slack discussion
+        #
+        # NOTE: Installing this below will make us downgrade scipy and numpy
+        #       etc.
+        #
         pymc3 \
         theano-pymc \
         mkl \
@@ -232,6 +239,10 @@ RUN echo "Installing conda packages..." \
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
         jupyterlab-system-monitor \
+            # FIXME: Installing jupyterlab-system-monitor causes a downgrade of
+            #        jupyter-resource-usage. See
+            #        https://github.com/jtpio/jupyterlab-system-monitor/issues/93
+            #
         jupyterlab-favorites \
         nbdime \
         gh-scoped-creds \
@@ -250,6 +261,9 @@ RUN echo "Installing conda packages..." \
             #        version, a shortcut from the desktop UI, and with Python
             #        support - without also taking 5-10 minutes more than needed
             #        to install.
+            #
+            # FIXME: Installing qgis downgrades pytorch and lots of other files,
+            #        causing a 1 GB download.
             #
         retrolab \
         ipydrawio \
