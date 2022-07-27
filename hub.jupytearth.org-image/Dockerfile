@@ -67,6 +67,12 @@ RUN echo "Installing apt-get packages..." \
         # https://github.com/pangeo-data/jupyter-earth/issues/104#issuecomment-1027210956
         libc-dev \
     > /dev/null \
+ && apt-get -y remove \
+        xfce4-screensaver \
+            # jupyter-remote-desktop-proxy works better if we remove this, and
+            # there is no great option to avoid installing it while installing
+            # other xfce4 packages above it seems.
+    > /dev/null \
     # chown $HOME to workaround that the xorg installation creates a
     # /home/jovyan/.cache directory owned by root
  && chown -R $NB_UID:$NB_GID $HOME \
@@ -108,8 +114,6 @@ RUN wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key \
 ARG TURBOVNC_VERSION=2.2.6
 RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}/turbovnc_${TURBOVNC_VERSION}_amd64.deb/download" -O turbovnc.deb \
  && apt-get install -y ./turbovnc.deb > /dev/null \
-    # remove light-locker to prevent screen lock
- && apt-get remove -y light-locker > /dev/null \
  && rm ./turbovnc.deb \
  && ln -s /opt/TurboVNC/bin/* /usr/local/bin/
 
