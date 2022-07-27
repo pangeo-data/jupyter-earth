@@ -111,7 +111,7 @@ RUN wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key \
 
 
 # Install TurboVNC (https://github.com/TurboVNC/turbovnc)
-ARG TURBOVNC_VERSION=2.2.6
+ARG TURBOVNC_VERSION=3.0
 RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}/turbovnc_${TURBOVNC_VERSION}_amd64.deb/download" -O turbovnc.deb \
  && apt-get install -y ./turbovnc.deb > /dev/null \
  && rm ./turbovnc.deb \
