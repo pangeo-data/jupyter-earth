@@ -72,17 +72,6 @@ RUN echo "Installing apt-get packages..." \
             # there is no great option to avoid installing it while installing
             # other xfce4 packages above it seems.
     > /dev/null \
- && apt-get -y install \
-        firefox \
-            # For use in /desktop, it is installed after xfce4 in hope that it
-            # is configured as the default browser automatically if installed
-            # after xfce4.
-            #
- && sed -i 's/debian-sensible-browser/firefox.desktop/' /etc/xdg/xfce4/helpers.rc \
-        # jupyter-remote-desktop-proxy related: firefox won't be made available
-        # via icons in the UI unless we do this. This may not be needed, its
-        # unclear atm.
-        #
     # chown $HOME to workaround that the xorg installation creates a
     # /home/jovyan/.cache directory owned by root
  && chown -R $NB_UID:$NB_GID $HOME \
@@ -92,15 +81,7 @@ RUN echo "Installing apt-get packages..." \
 # Install visual studio code-server
 # ref: https://github.com/cdr/code-server
 #
-# NOTE: We have pinned code-server to version 4.4.0 because 4.5.0 introduced two
-#       possibly separate regressions. See
-#       https://github.com/coder/code-server/issues/5343 about syntax
-#       highlighting, and https://github.com/coder/code-server/issues/5218 about
-#       a blank terminal, and
-#       https://github.com/pangeo-data/jupyter-earth/issues/137 for a discussion
-#       about them.
-#
-RUN export VERSION=4.4.0 \
+RUN export VERSION=4.5.1 \
  && curl -fsSL https://code-server.dev/install.sh | sh \
  && rm -rf "${HOME}/.cache"
 
@@ -148,8 +129,7 @@ RUN mkdir -p ${JULIA_PATH} \
  && curl -sSL "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_VERSION%[.-]*}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" \
   | tar -xz -C ${JULIA_PATH} --strip-components 1 \
  && mkdir -p ${JULIA_DEPOT_PATH} \
- && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH} \
- && cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 $JULIA_PATH/lib/julia/
+ && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH}
 
 
 # Install the nix package manager, step 1/2
@@ -285,7 +265,9 @@ RUN echo "Installing conda packages..." \
         #
         # other
         websockify \
-            # dependency for jupyter-remote-desktop-proxy
+            # optional performance benefit for jupyter-remote-desktop-proxy
+        firefox \
+            # optional good to have for use with jupyter-remote-desktop-proxy
         cxx-compiler \
         cython \
         fortran-magic \
