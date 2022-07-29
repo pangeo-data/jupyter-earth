@@ -129,8 +129,7 @@ RUN mkdir -p ${JULIA_PATH} \
  && curl -sSL "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_VERSION%[.-]*}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" \
   | tar -xz -C ${JULIA_PATH} --strip-components 1 \
  && mkdir -p ${JULIA_DEPOT_PATH} \
- && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH} \
- && cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 $JULIA_PATH/lib/julia/
+ && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH}
 
 
 # Install the nix package manager, step 1/2
