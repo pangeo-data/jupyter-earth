@@ -36,7 +36,6 @@ jobs:
       # NOTE: Removes pre-installed .NET, Android, and Haskell things
       #
       - name: Maximize build space
-        if: steps.info.outputs.continue-job == 'true' && matrix.maximize-build-space
         run: |
           sudo rm -rf /usr/share/dotnet
           sudo rm -rf /usr/local/lib/android
