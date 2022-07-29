@@ -26,21 +26,21 @@ jobs:
       - name: Checkout files in repo
         uses: actions/checkout@v2
 
-      # If we run out of disk space building this image, we can decomment this
-      # step to free up space for our GitHub Job runner.
+      # Without this we can run out of disk space.
       #
-      # ref: https://github.com/easimon/maximize-build-space
+      # NOTE: This logic is copy pasted from a github action that started to
+      #       error due to an unrelated issue. If we need to update this logic,
+      #       see the following origin of the source code:
+      #       https://github.com/easimon/maximize-build-space/blob/b4d02c14493a9653fe7af06cc89ca5298071c66e/action.yml#L96-L106
       #
-      # - name: Maximize build space
-      #   uses: easimon/maximize-build-space@b4d02c14493a9653fe7af06cc89ca5298071c66e
-      #   with:
-      #     root-reserve-mb: 51200 # 50 GB
-      #     # NOTE: We dump remaining space here to avoid
-      #     #       overriding our checked out repo folder.
-      #     build-mount-path: /var/lib/docker/tmp
-      #     remove-dotnet: "true"
-      #     remove-haskell: "true"
-      #     remove-android: "true"
+      # NOTE: Removes pre-installed .NET, Android, and Haskell things
+      #
+      - name: Maximize build space
+        if: steps.info.outputs.continue-job == 'true' && matrix.maximize-build-space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
 
       - name: Test build image
         run: |
