@@ -72,17 +72,6 @@ RUN echo "Installing apt-get packages..." \
             # there is no great option to avoid installing it while installing
             # other xfce4 packages above it seems.
     > /dev/null \
- && apt-get -y install \
-        firefox \
-            # For use in /desktop, it is installed after xfce4 in hope that it
-            # is configured as the default browser automatically if installed
-            # after xfce4.
-            #
- && sed -i 's/debian-sensible-browser/firefox.desktop/' /etc/xdg/xfce4/helpers.rc \
-        # jupyter-remote-desktop-proxy related: firefox won't be made available
-        # via icons in the UI unless we do this. This may not be needed, its
-        # unclear atm.
-        #
     # chown $HOME to workaround that the xorg installation creates a
     # /home/jovyan/.cache directory owned by root
  && chown -R $NB_UID:$NB_GID $HOME \
@@ -285,7 +274,9 @@ RUN echo "Installing conda packages..." \
         #
         # other
         websockify \
-            # dependency for jupyter-remote-desktop-proxy
+            # optional performance benefit for jupyter-remote-desktop-proxy
+        firefox \
+            # optional good to have for use with jupyter-remote-desktop-proxy
         cxx-compiler \
         cython \
         fortran-magic \
