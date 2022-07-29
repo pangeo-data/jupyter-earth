@@ -19,10 +19,6 @@ RUN echo "Installing apt-get packages..." \
  && apt-get -y update > /dev/null \
  && apt-get -y install \
         curl \
-        groff \
-            # The aws CLI apparently relies on "groff"
-            # Issue about including it in future versions of pytorch-notebook:
-            # https://github.com/pangeo-data/pangeo-docker-images/issues/216
         emacs-nox emacs-goodies-el \
             # Basic Emacs configuration for general development.
             #
