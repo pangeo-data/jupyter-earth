@@ -113,9 +113,26 @@ RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}
 #
 # NOTE: The following issue was observed, and we added the workaround of copying
 #       libstdc++.so.6 from the system to the julia directory:
-#       https://github.com/pangeo-data/jupyter-earth/issues/126
+#       https://github.com/pangeo-data/jupyter-earth/issues/126.
 #
-# Latest version at https://julialang.org/downloads/
+#       I've concluded that julia declares a version of CSL
+#       (CompilerSupportLibraries) as defined here
+#       https://github.com/JuliaLang/julia/blob/35ac6e1823a2145fdbd8273d62cc19f10bde3543/stdlib/CompilerSupportLibraries_jll/Project.toml#L4-L7,
+#       and that CSL version ships with stdlibc++.so.6 of a certain version. The
+#       version can be found by inspecting the .tar files in the releases of CSL
+#       as defined in
+#       https://github.com/JuliaBinaryWrappers/CompilerSupportLibraries_jll.jl/releases.
+#
+#       At this point in time, Julia 1.7.3 and 1.8.0-beta.3 is referencing CSL
+#       0.5.2, and only CSL 0.6.0+ included stdlibc++.so.6 version 6.0.30 as
+#       required. Due to that, we remove the stdlibc++.so.6 symlink and the
+#       stdlibc++.so.6.0.29 file provided by the julia installation currently
+#       and copy the more modern ubuntu 22.04 symlink to 6.0.30.
+#
+#       There was one open PR to bump to a modern version of CSL to 0.6.1 that
+#       that has stdlibc++.so.6.0.30 see https://github.com/JuliaLang/julia/pull/45582.
+#
+# Latest Julia version at https://julialang.org/downloads/
 #
 ENV JULIA_VERSION 1.7.1
 ENV JULIA_PATH /srv/julia
@@ -125,7 +142,9 @@ RUN mkdir -p ${JULIA_PATH} \
  && curl -sSL "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_VERSION%[.-]*}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" \
   | tar -xz -C ${JULIA_PATH} --strip-components 1 \
  && mkdir -p ${JULIA_DEPOT_PATH} \
- && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH}
+ && chown ${NB_UID}:${NB_UID} ${JULIA_DEPOT_PATH} \
+ && rm $JULIA_PATH/lib/julia/libstdc++.so.6* \
+ && cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 $JULIA_PATH/lib/julia/
 
 
 # Install the nix package manager, step 1/2
