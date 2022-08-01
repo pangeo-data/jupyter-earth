@@ -277,12 +277,6 @@ RUN echo "Installing conda packages..." \
         retrolab \
         ipydrawio \
             # a drawio IDE launchable from jupyterlab's launcher
-        #
-        # other
-        websockify \
-            # optional performance benefit for jupyter-remote-desktop-proxy
-        firefox \
-            # optional good to have for use with jupyter-remote-desktop-proxy
         cxx-compiler \
         cython \
         fortran-magic \
@@ -293,6 +287,18 @@ RUN echo "Installing conda packages..." \
         syncthing \
             # ref: https://anaconda.org/conda-forge/syncthing
             # We also install jupyter-syncthing-proxy from pip.
+        #
+        # other
+        websockify \
+            # optional performance benefit for jupyter-remote-desktop-proxy
+        firefox \
+            # optional good to have for use with jupyter-remote-desktop-proxy,
+            # note that we also set it as a default in a command below.
+            #
+ && sed -i 's/debian-sensible-browser/firefox/' /etc/xdg/xfce4/helpers.rc \
+        # jupyter-remote-desktop-proxy related: firefox won't be set as the
+        # default browser without this when using the /desktop UI.
+        #
  && echo "Installing conda packages complete!"
 
 
