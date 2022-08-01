@@ -46,14 +46,15 @@ RUN echo "Installing apt-get packages..." \
         proj-bin \
         graphviz \
         ffmpeg \
-        # jupyter-remote-desktop-proxy dependencies
-        dbus-x11 \
-        xfce4 \
-        xfce4-panel \
-        xfce4-session \
-        xfce4-settings \
-        xorg \
-        xubuntu-icon-theme \
+        # /desktop part 1: install desktop UI via apt
+        #
+            dbus-x11 \
+            xfce4 \
+            xfce4-panel \
+            xfce4-session \
+            xfce4-settings \
+            xorg \
+            xubuntu-icon-theme \
         # qgis
             gnupg \
             software-properties-common \
@@ -64,14 +65,20 @@ RUN echo "Installing apt-get packages..." \
     > /dev/null \
  && apt-get -y remove \
         xfce4-screensaver \
-            # jupyter-remote-desktop-proxy works better if we remove this, and
-            # there is no great option to avoid installing it while installing
+            # /desktop part 2: xfce4-screensaver removal
+            #
+            # There is no great option to avoid installing it while installing
             # other xfce4 packages above it seems.
+            #
     > /dev/null \
     # chown $HOME to workaround that the xorg installation creates a
     # /home/jovyan/.cache directory owned by root
  && chown -R $NB_UID:$NB_GID $HOME \
  && rm -rf /var/lib/apt/lists/*
+
+# /desktop part 3: firefox as default browswer
+#
+RUN sed -i 's/WebBrowser=.*/WebBrowser=firefox/' /etc/xdg/xfce4/helpers.rc
 
 
 # Install visual studio code-server
@@ -288,17 +295,13 @@ RUN echo "Installing conda packages..." \
             # ref: https://anaconda.org/conda-forge/syncthing
             # We also install jupyter-syncthing-proxy from pip.
         #
-        # other
+        # /desktop part 4: websocify and firefox
         websockify \
             # optional performance benefit for jupyter-remote-desktop-proxy
         firefox \
             # optional good to have for use with jupyter-remote-desktop-proxy,
             # note that we also set it as a default in a command below.
             #
- && sed -i 's/debian-sensible-browser/firefox/' /etc/xdg/xfce4/helpers.rc \
-        # jupyter-remote-desktop-proxy related: firefox won't be set as the
-        # default browser without this when using the /desktop UI.
-        #
  && echo "Installing conda packages complete!"
 
 
@@ -310,6 +313,8 @@ RUN echo "Installing pip packages..." \
  && export PATH=${NB_PYTHON_PREFIX}/bin:${PATH} \
  && pip install --no-cache-dir \
         https://github.com/jupyterhub/jupyter-remote-desktop-proxy/archive/main.zip \
+            # /desktop part 5: jupyter-remote-desktop-proxy
+            #
             # jupyter-remote-desktop-proxy enables us to visit the /desktop path
             # just like we visit the /lab path. Visiting /desktop provides us
             # with an actual remote desktop experience.
