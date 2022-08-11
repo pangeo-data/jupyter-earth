@@ -38,6 +38,11 @@ RUN echo "Installing apt-get packages..." \
             # for use with jupyterhub-ssh, generate a token at
             # hub.jupytearth.org/hub/token and connect to
             # <hub-username>@hub.jupytearth.org using the token as password
+        unrar \
+            # zipp is installed in the base image, but I think zipp provides
+            # `zip` and `unzip` which doesn't help us decompress .rar files. See
+            # https://github.com/pangeo-data/pangeo-docker-images/issues/366 for
+            # an issue about installing this in the base image.
         # common geospatial dependencies:
         libspatialindex-dev \
         libgeos-dev \
