@@ -1,45 +1,54 @@
-# Table of Content file reference: https://jupyterbook.org/customize/toc.html
-# Note that the file extensions (.md, .ipynb) are assumed
-- file: index
-
-- file: jupyter-resources/introduction/index
-  sections:
-    - file: jupyter-resources/introduction/overview
-    - file: jupyter-resources/introduction/ecosystem
-    - file: jupyter-resources/introduction/tour
-
-- file: jupyter-resources/quickstart/index
-  sections:
-
-    # - file: jupyter-resources/quickstart/environment
-    # - file: jupyter-resources/quickstart/get-data
-    - file: jupyter-resources/quickstart/interactive
-    - file: jupyter-resources/quickstart/computing
-    - file: jupyter-resources/quickstart/visualization
-    - file: jupyter-resources/quickstart/sharing-science
-    # - file: jupyter-resources/quickstart/writing-doc
-
-- file: jupyter-resources/ecosystem/index
-  sections:
-    - file: jupyter-resources/ecosystem/notebook
-    - file: jupyter-resources/ecosystem/jupyterlab
-    - file: jupyter-resources/ecosystem/ipython
-    - file: jupyter-resources/ecosystem/ipython-customization
-    - file: jupyter-resources/ecosystem/widgets
-    - file: jupyter-resources/ecosystem/managing-state
-    - file: jupyter-resources/ecosystem/jupyterhub
-    - file: jupyter-resources/ecosystem/binder
-    - file: jupyter-resources/ecosystem/jupyterbook
-
-- file: jupyter-resources/broader/index
-  sections:
-    - file: jupyter-resources/broader/data-structures
-    - file: jupyter-resources/broader/visualization
-    - file: jupyter-resources/broader/dask
-    - file: jupyter-resources/broader/intake
-    - file: jupyter-resources/broader/dashboards
-    - file: jupyter-resources/broader/domaintools
-
-- file: jupyter-resources/usecases/index
-
-- file: jupyter-resources/learning-resources/index
+format: jb-book
+root: index
+parts:
+  - caption: Jupyter for Earth Science
+    chapters:
+    - file: jupyter-resources/introduction/index
+      sections:
+        - file: jupyter-resources/introduction/overview
+        - file: jupyter-resources/introduction/ecosystem
+        - file: jupyter-resources/introduction/tour
+    # - file: jupyter-resources/quickstart/index
+      # sections:
+        # - file: jupyter-resources/quickstart/environment
+        # - file: jupyter-resources/quickstart/get-data
+        # - file: jupyter-resources/quickstart/interactive
+        # - file: jupyter-resources/quickstart/computing
+        # - file: jupyter-resources/quickstart/visualization
+        # - file: jupyter-resources/quickstart/sharing-science
+        # - file: jupyter-resources/quickstart/writing-doc
+    - file: jupyter-resources/ecosystem/index
+      sections:
+        - file: jupyter-resources/ecosystem/notebook
+        - file: jupyter-resources/ecosystem/jupyterlab
+        - file: jupyter-resources/ecosystem/ipython
+        - file: jupyter-resources/ecosystem/ipython-customization
+        - file: jupyter-resources/ecosystem/widgets
+        - file: jupyter-resources/ecosystem/managing-state
+        - file: jupyter-resources/ecosystem/jupyterhub
+        - file: jupyter-resources/ecosystem/binder
+        - file: jupyter-resources/ecosystem/jupyterbook
+    - file: jupyter-resources/broader/index
+      sections:
+        - file: jupyter-resources/broader/data-structures
+        - file: jupyter-resources/broader/visualization
+        - file: jupyter-resources/broader/dask
+        - file: jupyter-resources/broader/intake
+        - file: jupyter-resources/broader/dashboards
+        - file: jupyter-resources/broader/domaintools
+        
+  - caption: Demo use cases
+    chapters:
+    - url: https://workflow.jupytearth.org/
+      title: "Toy workflow: ICESat-2 sees glacier crevasses"
+    - url: https://hydro.jupytearth.org/
+      title: Hydrological data processing and benchmarking projects
+    - url: https://whyjz.github.io/pejzero/
+      title: Real supplemental material for a glacier physics article (Pejzero)
+      
+  - caption: External learning resources
+    chapters:
+    - url: https://projectpythia.org/
+      title: "Project Pythia: An education and training hub for the geoscientific Python community"
+    - url: https://pangeo.io/
+      title: "Pangeo: A community platform for Big Data geoscience"
