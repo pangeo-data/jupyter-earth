@@ -4,10 +4,20 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.7
   - numpy
   - scipy
+  - pandas
+  - xarray
   - matplotlib
+  - seaborn
+  - retrolab
   - ipywidgets
   - jupyter-book
-
+  - cython
+  - fortran-magic
+  - jupyterlab-geojson
+  - ipyleaflet
+  - leafmap
+  - pip
+  - pip:
+    - sphinxcontrib-bibtex<2.0.0
