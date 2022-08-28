@@ -38,6 +38,17 @@ In addition to the [project updates and our event archive](#presentations-and-ev
 
 ### 2022
 
+#### EarthCube annual meeting
+_June 14-16, 2022_
+
+- We gave a talk entitled "Let supplemental material be FAIR: using narrative and reusable Jupyter Book to complement your journal paper." It highlighted **Jupyter Book** as an ideal tool for making **supplemental information of an academic article** in terms of accessibility, reproducibility, and the FAIR concept. 
+  - Check out the [Real supplemental material for a glacier physics article (Pejzero)](https://whyjz.github.io/pejzero/) for a working example! 
+
+- We hosted a workshop entitled "Keeping your head in the clouds: reproducible, collaborative science with open cloud infrastructure” to reach out to the community about the concept of **living-in-the-cloud science**. We reviewed the recent development of the Jupyter tools and introduced our recommended cloud-native research practices to the audience. 
+  - Workshop slides (to be updated)
+  
+- Poster presentation: Moges et al. (2022). HydroBench: Jupyter Supported Reproducible Hydrological Model Benchmarking and Diagnostic tool. Our hydro team also presented HydroBench: Jupyter Supported Reproducible Hydrological Model Benchmarking and Diagnostic tool.
+
 #### Project Tyra Seminar Series
 _January 22, 2022_
 
