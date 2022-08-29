@@ -2,7 +2,6 @@ name: jupyter-earth
 
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.8
   - numpy
@@ -12,4 +11,4 @@ dependencies:
   - pip
   - pip:
     - jupyter-book
-    - sphinxcontrib-bibtex<2.0.0
+    - sphinxcontrib-bibtex

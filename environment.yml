@@ -2,7 +2,6 @@ name: jupyter-earth
 
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - numpy
   - scipy
@@ -12,7 +11,6 @@ dependencies:
   - seaborn
   - retrolab
   - ipywidgets
-  - jupyter-book
   - cython
   - fortran-magic
   - jupyterlab-geojson
@@ -20,4 +18,5 @@ dependencies:
   - leafmap
   - pip
   - pip:
-    - sphinxcontrib-bibtex<2.0.0
+    - jupyter-book
+    - sphinxcontrib-bibtex
