@@ -26,7 +26,7 @@ jobs:
       with:
         update-conda: true
         conda-channels: conda-forge
-        python-version: 3.8
+        python-version: "3.8"
 
     - name: Install dependencies
       run: |
