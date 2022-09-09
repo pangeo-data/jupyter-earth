@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Jupyter Notebook &#8212; Jupyter Meets the Earth</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,41 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/jupyter-resources/ecosystem/notebook.html" />
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://jupytearth.org/jupyter-resources/ecosystem/notebook.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="JupyterLab" href="jupyterlab.html" />
@@ -64,7 +64,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,14 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -98,13 +108,11 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Jupyter Meets the Earth
-  </a>
- </li>
-</ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Jupyter for Earth Science
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../introduction/index.html">
@@ -190,11 +198,6 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../usecases/index.html">
-   Geoscience use cases
-  </a>
- </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../broader/index.html">
    Examples from the broader ecosystem
@@ -237,121 +240,286 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Demo use cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../learning-resources/index.html">
-   External learning resources
+  <a class="reference external" href="https://workflow.jupytearth.org/">
+   Toy workflow: ICESat-2 sees glacier crevasses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://hydro.jupytearth.org/">
+   Hydrological data processing and benchmarking projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://whyjz.github.io/pejzero/">
+   Real supplemental material for a glacier physics article (Pejzero)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  External learning resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://projectpythia.org/">
+   Project Pythia: An education and training hub for the geoscientific Python community
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://pangeo.io/">
+   Pangeo: A community platform for Big Data geoscience
   </a>
  </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
             
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/jupyter-resources/ecosystem/notebook.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/pangeo-data/jupyter-earth"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/ecosystem/notebook.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/ecosystem/notebook.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/master?urlpath=lab/tree/docs/jupyter-resources/ecosystem/notebook.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
         </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/master?urlpath=lab/tree/docs/jupyter-resources/ecosystem/notebook.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/pangeo-data/jupyter-earth"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Fjupyter-resources/ecosystem/notebook.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/jupyter-resources/ecosystem/notebook.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/jupyter-resources/ecosystem/notebook.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#components">
    Components
@@ -496,12 +664,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Jupyter Notebook</h1>
@@ -662,11 +829,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="jupyter-notebook">
-<h1>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-notebook">
+<h1>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">#</a></h1>
 <p>The Jupyter Notebook is an <strong>interactive computing environment</strong> that enables users to author notebook documents that include:</p>
 <ul class="simple">
 <li><p>Live code</p></li>
@@ -684,17 +852,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/">JupyterLab documentation</a></p></li>
 </ul>
 <p>This material is adapted from the ICESat2 Hackweek <a class="reference external" href="https://github.com/ICESAT-2HackWeek/intro-jupyter-git">intro-jupyter-git</a> session by <a class="reference external" href="https://github.com/fperez">&#64;fperez</a>.</p>
-<div class="section" id="components">
-<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<section id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">#</a></h2>
 <p>The Jupyter Notebook combines three components:</p>
 <ul class="simple">
 <li><p><strong>The notebook web application</strong></p></li>
 <li><p><strong>Kernels</strong></p></li>
 <li><p><strong>Notebook documents</strong></p></li>
 </ul>
-</div>
-<div class="section" id="notebook-web-application">
-<h2>Notebook web application<a class="headerlink" href="#notebook-web-application" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="notebook-web-application">
+<h2>Notebook web application<a class="headerlink" href="#notebook-web-application" title="Permalink to this headline">#</a></h2>
 <p>The notebook web application enables users to:</p>
 <ul class="simple">
 <li><p><strong>Edit code in the browser</strong>, with automatic syntax highlighting, indentation, and tab completion/introspection.</p></li>
@@ -705,14 +873,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Build <strong>hierarchical documents</strong> that are organized into sections with different levels of headings.</p></li>
 <li><p>Include mathematical equations using <strong>LaTeX syntax in Markdown</strong>, which are rendered in-browser by <a class="reference external" href="http://www.mathjax.org/">MathJax</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="kernels">
-<h2>Kernels<a class="headerlink" href="#kernels" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="kernels">
+<h2>Kernels<a class="headerlink" href="#kernels" title="Permalink to this headline">#</a></h2>
 <p>Simply put, the kernel is the engine that runs the code. Each kernel is capable of running code in a single programming language and there are kernels available in over <a class="reference external" href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">100 programming languages</a>.</p>
 <p><a class="reference external" href="https://github.com/ipython/ipython">IPython</a> is the default kernel, it runs Python code.</p>
-</div>
-<div class="section" id="notebook-documents">
-<h2>Notebook documents<a class="headerlink" href="#notebook-documents" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="notebook-documents">
+<h2>Notebook documents<a class="headerlink" href="#notebook-documents" title="Permalink to this headline">#</a></h2>
 <p>Notebook documents contain the <strong>inputs and outputs</strong> of an interactive session as well as <strong>narrative text</strong> that accompanies the code but is not meant for execution. <strong>Rich output</strong> generated by running code, including HTML, images, video, and plots, is embeddeed in the notebook, which makes it a complete and self-contained record of a computation.</p>
 <p>When you run the notebook web application on your computer, notebook documents are just <strong>files on your local filesystem with a <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> extension</strong>. This allows you to use familiar workflows for organizing your notebooks into folders and sharing them with others using email, Dropbox and version control systems.</p>
 <p>Notebooks consist of a <strong>linear sequence of cells</strong>. There are three basic cell types:</p>
@@ -722,9 +890,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>Raw cells:</strong> Unformatted text that is included, without modification, when notebooks are converted to different formats using nbconvert</p></li>
 </ul>
 <p><strong>Notebooks can be exported</strong> to different static formats including HTML, reStructeredText, LaTeX, PDF, and slide shows using Jupyter’s <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code> utility.</p>
-<p>Furthermore, any notebook document available from a <strong>public URL on or GitHub can be shared</strong> via http://nbviewer.jupyter.org. This service loads the notebook document from the URL and renders it as a static web page. The resulting web page may thus be shared with others <strong>without their needing to install Jupyter</strong>.</p>
-<div class="section" id="body">
-<h3>Body<a class="headerlink" href="#body" title="Permalink to this headline">¶</a></h3>
+<p>Furthermore, any notebook document available from a <strong>public URL on or GitHub can be shared</strong> via <a class="reference external" href="http://nbviewer.jupyter.org">http://nbviewer.jupyter.org</a>. This service loads the notebook document from the URL and renders it as a static web page. The resulting web page may thus be shared with others <strong>without their needing to install Jupyter</strong>.</p>
+<section id="body">
+<h3>Body<a class="headerlink" href="#body" title="Permalink to this headline">#</a></h3>
 <p>The body of a notebook is composed of cells. Each cell contains either markdown, code input, code output, or raw text. Cells can be included in any order and edited at-will, allowing for a large ammount of flexibility for constructing a narrative.</p>
 <ul class="simple">
 <li><p><strong>Markdown cells</strong> - These are used to build a nicely formatted narrative around the code in the document. The majority of this lesson is composed of markdown cells.</p></li>
@@ -743,8 +911,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="modality">
-<h4>Modality<a class="headerlink" href="#modality" title="Permalink to this headline">¶</a></h4>
+<section id="modality">
+<h4>Modality<a class="headerlink" href="#modality" title="Permalink to this headline">#</a></h4>
 <p>The notebook user interface is <em>modal</em>. This means that the keyboard behaves differently depending upon the current mode of the notebook. A notebook has two modes: <strong>edit</strong> and <strong>command</strong>.</p>
 <p><strong>Edit mode</strong> is indicated by a blue cell border and a prompt showing in the editor area. When a cell is in edit mode, you can type into the cell, like a normal text editor.</p>
 <p><img alt="edit mode" src="../../_images/edit_mode.png" /></p>
@@ -760,15 +928,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="mouse-navigation">
-<h4>Mouse navigation<a class="headerlink" href="#mouse-navigation" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="mouse-navigation">
+<h4>Mouse navigation<a class="headerlink" href="#mouse-navigation" title="Permalink to this headline">#</a></h4>
 <p>The first concept to understand in mouse-based navigation is that <strong>cells can be selected by clicking on them.</strong> The currently selected cell is indicated with a blue outline or gray background depending on whether the notebook is in edit or command mode. Clicking inside a cell’s editor area will enter edit mode. Clicking on the prompt or the output area of a cell will enter command mode.</p>
 <p>The second concept to understand in mouse-based navigation is that <strong>cell actions usually apply to the currently selected cell</strong>. For example, to run the code in a cell, select it and then click the <button class='btn btn-default btn-xs'><i class="fa fa-play icon-play"></i></button> button in the toolbar or the <strong><code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">-&gt;</span> <span class="pre">Run</span> <span class="pre">Selected</span> <span class="pre">Cells</span></code></strong> menu item. Similarly, to copy a cell, select it and then click the <button class='btn btn-default btn-xs'><i class="fa fa-copy icon-copy"></i></button> button in the toolbar or the <strong><code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">-&gt;</span> <span class="pre">Copy</span></code></strong> menu item. With this simple pattern, it should be possible to perform nearly every action with the mouse.</p>
 <p>Markdown cells have one other state which can be modified with the mouse. These cells can either be rendered or unrendered. When they are rendered, a nice formatted representation of the cell’s contents will be presented. When they are unrendered, the raw text source of the cell will be presented. To render the selected cell with the mouse, click the <button class='btn btn-default btn-xs'><i class="fa fa-play icon-play"></i></button> button in the toolbar or the <strong><code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">-&gt;</span> <span class="pre">Run</span> <span class="pre">Selected</span> <span class="pre">Cells</span></code></strong> menu item. To unrender the selected cell, double click on the cell.</p>
-</div>
-<div class="section" id="keyboard-navigation">
-<h4>Keyboard Navigation<a class="headerlink" href="#keyboard-navigation" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="keyboard-navigation">
+<h4>Keyboard Navigation<a class="headerlink" href="#keyboard-navigation" title="Permalink to this headline">#</a></h4>
 <p>The modal user interface of the Jupyter Notebook has been optimized for efficient keyboard usage. This is made possible by having two different sets of keyboard shortcuts: one set that is active in edit mode and another in command mode.</p>
 <p>The most important keyboard shortcuts are <strong><code class="docutils literal notranslate"><span class="pre">Enter</span></code></strong>, which enters edit mode, and <strong><code class="docutils literal notranslate"><span class="pre">Esc</span></code></strong>, which enters command mode.</p>
 <p>In edit mode, most of the keyboard is dedicated to typing into the cell’s editor. Thus, in edit mode there are relatively few shortcuts. In command mode, the entire keyboard is available for shortcuts, so there are many more possibilities.</p>
@@ -815,14 +983,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">0</span></code></strong>: restart kernel</p></li>
 </ul>
 <p>You can fully customize JupyterLab’s keybindings by accessing the <strong><code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">-&gt;</span> <span class="pre">Advanced</span> <span class="pre">Settings</span> <span class="pre">Editor</span></code></strong> menu item.</p>
-</div>
-</div>
-</div>
-<div class="section" id="running-code">
-<h2>Running Code<a class="headerlink" href="#running-code" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="running-code">
+<h2>Running Code<a class="headerlink" href="#running-code" title="Permalink to this headline">#</a></h2>
 <p>First and foremost, the Jupyter Notebook is an interactive environment for writing and running code. Jupyter is capable of running code in a wide range of languages. However, this notebook, and the default kernel in Jupyter, runs Python code.</p>
-<div class="section" id="code-cells-allow-you-to-enter-and-run-python-code">
-<h3>Code cells allow you to enter and run Python code<a class="headerlink" href="#code-cells-allow-you-to-enter-and-run-python-code" title="Permalink to this headline">¶</a></h3>
+<section id="code-cells-allow-you-to-enter-and-run-python-code">
+<h3>Code cells allow you to enter and run Python code<a class="headerlink" href="#code-cells-allow-you-to-enter-and-run-python-code" title="Permalink to this headline">#</a></h3>
 <p>Run a code cell using <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> or pressing the <button class='btn btn-default btn-xs'><i class="icon-play fa fa-play"></i></button> button in the toolbar above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -883,9 +1051,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</span></code> run the current cell and enters command mode.</p></li>
 <li><p>Notice <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> runs the current cell and selects the cell below, while <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</span></code> stays on the executed cell in command mode.</p></li>
 </ul>
-</div>
-<div class="section" id="managing-the-ipython-kernel">
-<h3>Managing the IPython Kernel<a class="headerlink" href="#managing-the-ipython-kernel" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="managing-the-ipython-kernel">
+<h3>Managing the IPython Kernel<a class="headerlink" href="#managing-the-ipython-kernel" title="Permalink to this headline">#</a></h3>
 <p>Code is run in a separate process called the IPython Kernel.  The Kernel can be interrupted or restarted.  Try running the following cell and then hit the <button class='btn btn-default btn-xs'><i class='icon-stop fa fa-stop'></i></button> button in the toolbar above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -910,9 +1078,9 @@ ctypes to segfault the Python interpreter. To test it out, uncomment the next ce
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="run-menu">
-<h3>Run menu<a class="headerlink" href="#run-menu" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="run-menu">
+<h3>Run menu<a class="headerlink" href="#run-menu" title="Permalink to this headline">#</a></h3>
 <p>The “Run” menu has a number of items for running code in different ways, including</p>
 <ul class="simple">
 <li><p>Run Selected Cells</p></li>
@@ -922,13 +1090,13 @@ ctypes to segfault the Python interpreter. To test it out, uncomment the next ce
 <li><p>Run  Selected Cell and All Below</p></li>
 <li><p>Restart Kernel and Run All Cells</p></li>
 </ul>
-</div>
-<div class="section" id="restarting-the-kernels">
-<h3>Restarting the kernels<a class="headerlink" href="#restarting-the-kernels" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="restarting-the-kernels">
+<h3>Restarting the kernels<a class="headerlink" href="#restarting-the-kernels" title="Permalink to this headline">#</a></h3>
 <p>The kernel maintains the state of a notebook’s computations. You can reset this state by restarting the kernel. This is done by clicking on the <button class='btn btn-default btn-xs'><i class='fa fa-repeat icon-repeat'></i></button> in the toolbar above.</p>
-</div>
-<div class="section" id="sys-stdout-and-sys-stderr">
-<h3>sys.stdout and sys.stderr<a class="headerlink" href="#sys-stdout-and-sys-stderr" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sys-stdout-and-sys-stderr">
+<h3>sys.stdout and sys.stderr<a class="headerlink" href="#sys-stdout-and-sys-stderr" title="Permalink to this headline">#</a></h3>
 <p>The stdout (standard output) and stderr (standard error) streams are displayed as text in the output area.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -955,9 +1123,9 @@ ctypes to segfault the Python interpreter. To test it out, uncomment the next ce
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="output-is-asynchronous">
-<h3>Output is asynchronous<a class="headerlink" href="#output-is-asynchronous" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="output-is-asynchronous">
+<h3>Output is asynchronous<a class="headerlink" href="#output-is-asynchronous" title="Permalink to this headline">#</a></h3>
 <p>All output is displayed as it is generated in the Kernel: instead of blocking on the execution of the entire cell, output is made available to the Notebook immediately as it is generated by the kernel (even though the whole cell is submitted for execution as a single unit).</p>
 <p>If you execute the next cell, you will see the output one piece at a time, not all at the end:</p>
 <div class="cell docutils container">
@@ -971,34 +1139,20 @@ ctypes to segfault the Python interpreter. To test it out, uncomment the next ce
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+1
+2
+3
+4
+5
+6
+7
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="large-outputs">
-<h3>Large outputs<a class="headerlink" href="#large-outputs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="large-outputs">
+<h3>Large outputs<a class="headerlink" href="#large-outputs" title="Permalink to this headline">#</a></h3>
 <p>To better handle large outputs, the output area can be collapsed. Run the following cell and then click on the vertical blue bar to the left of the output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1062,16 +1216,16 @@ ctypes to segfault the Python interpreter. To test it out, uncomment the next ce
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="markdown-cells">
-<h2>Markdown Cells<a class="headerlink" href="#markdown-cells" title="Permalink to this headline">¶</a></h2>
+<section id="markdown-cells">
+<h2>Markdown Cells<a class="headerlink" href="#markdown-cells" title="Permalink to this headline">#</a></h2>
 <p>Text can be added to IPython Notebooks using Markdown cells.  Markdown is a popular markup language that is a superset of HTML. Its specification can be found here:</p>
 <p><a class="reference external" href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></p>
 <p>You can view the source of a cell by double clicking on it, or while the cell is selected in command mode, press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to edit it. Once a cell has been edited, use <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> to re-render it.</p>
-<div class="section" id="local-files">
-<h3>Local files<a class="headerlink" href="#local-files" title="Permalink to this headline">¶</a></h3>
+<section id="local-files">
+<h3>Local files<a class="headerlink" href="#local-files" title="Permalink to this headline">#</a></h3>
 <p>If you have local files in your Notebook directory, you can refer to these files in Markdown cells directly:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[subdirectory/]&lt;filename&gt;
 </pre></div>
@@ -1087,8 +1241,8 @@ ctypes to segfault the Python interpreter. To test it out, uncomment the next ce
 </div>
 <video controls src="../images/animation.m4v" />
 <p>These do not embed the data into the notebook file, and require that the files exist when you are viewing the notebook.</p>
-<div class="section" id="security-of-local-files">
-<h4>Security of local files<a class="headerlink" href="#security-of-local-files" title="Permalink to this headline">¶</a></h4>
+<section id="security-of-local-files">
+<h4>Security of local files<a class="headerlink" href="#security-of-local-files" title="Permalink to this headline">#</a></h4>
 <p>Note that this means that the IPython notebook server also acts as a generic file server
 for files inside the same tree as your notebooks.  Access is not granted outside the
 notebook folder so you have strict control over what files are visible, but for this
@@ -1096,14 +1250,14 @@ reason it is highly recommended that you do not run the notebook server with a n
 directory at a high level in your filesystem (e.g. your home directory).</p>
 <p>When you run the notebook in a password-protected manner, local file access is restricted
 to authenticated users unless read-only views are active.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="extra-content">
-<h3>Extra Content<a class="headerlink" href="#extra-content" title="Permalink to this headline">¶</a></h3>
+<section id="extra-content">
+<h3>Extra Content<a class="headerlink" href="#extra-content" title="Permalink to this headline">#</a></h3>
 <p>The following overview of Markdown is beyond the scope of this short tutorial, but it is included for your reference as you build your own Jupyter Notebooks during the Hackweek and beyond.</p>
-<div class="section" id="markdown-basics">
-<h4>Markdown basics<a class="headerlink" href="#markdown-basics" title="Permalink to this headline">¶</a></h4>
+<section id="markdown-basics">
+<h4>Markdown basics<a class="headerlink" href="#markdown-basics" title="Permalink to this headline">#</a></h4>
 <p>You can make text <em>italic</em> or <strong>bold</strong>.</p>
 <p>You can build nested itemized or enumerated lists:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">One</span>
@@ -1200,10 +1354,10 @@ Namespaces are one honking great idea – let’s do more of those!</p>
 <span class="c1">## Heading 2.2</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="embedded-code">
-<h3>Embedded code<a class="headerlink" href="#embedded-code" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="embedded-code">
+<h3>Embedded code<a class="headerlink" href="#embedded-code" title="Permalink to this headline">#</a></h3>
 <p>You can embed code meant for illustration instead of execution in Python:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def f(x):
     &quot;&quot;&quot;a docstring&quot;&quot;&quot;
@@ -1217,9 +1371,9 @@ Namespaces are one honking great idea – let’s do more of those!</p>
 }
 </pre></div>
 </div>
-</div>
-<div class="section" id="latex-equations">
-<h3>LaTeX equations<a class="headerlink" href="#latex-equations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="latex-equations">
+<h3>LaTeX equations<a class="headerlink" href="#latex-equations" title="Permalink to this headline">#</a></h3>
 <p>Courtesy of MathJax, you can include mathematical expressions both inline:
 <span class="math notranslate nohighlight">\(e^{i\pi} + 1 = 0\)</span>  and displayed:</p>
 <div class="math notranslate nohighlight">
@@ -1228,9 +1382,9 @@ Namespaces are one honking great idea – let’s do more of those!</p>
 <p>Double dollars <code class="docutils literal notranslate"><span class="pre">$$\int_0^{2\pi}</span> <span class="pre">f(r,</span> <span class="pre">\phi)</span> <span class="pre">\partial</span> <span class="pre">\phi</span> <span class="pre">$$</span></code> is used for standalone formulas:</p>
 <div class="math notranslate nohighlight">
 \[\int_0^{2\pi} f(r, \phi) \partial \phi \]</div>
-</div>
-<div class="section" id="github-flavored-markdown-gfm">
-<h3>Github flavored markdown (GFM)<a class="headerlink" href="#github-flavored-markdown-gfm" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="github-flavored-markdown-gfm">
+<h3>Github flavored markdown (GFM)<a class="headerlink" href="#github-flavored-markdown-gfm" title="Permalink to this headline">#</a></h3>
 <p>The Notebook webapp support Github flavored markdown meaning that you can use triple backticks for code blocks</p>
 <pre>
 ```python
@@ -1245,7 +1399,7 @@ console.log("Hello World")
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Hello World&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>And a table like this :</p>
@@ -1267,9 +1421,9 @@ console.log("Hello World")
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="general-html">
-<h3>General HTML<a class="headerlink" href="#general-html" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="general-html">
+<h3>General HTML<a class="headerlink" href="#general-html" title="Permalink to this headline">#</a></h3>
 <p>Because Markdown is a superset of HTML you can even add things like HTML tables:</p>
 <table>
 <tr>
@@ -1284,10 +1438,10 @@ console.log("Hello World")
 <td>row 2, cell 1</td>
 <td>row 2, cell 2</td>
 </tr>
-</table></div>
+</table></section>
 <hr class="docutils" />
-<div class="section" id="typesetting-equations">
-<h3>Typesetting Equations<a class="headerlink" href="#typesetting-equations" title="Permalink to this headline">¶</a></h3>
+<section id="typesetting-equations">
+<h3>Typesetting Equations<a class="headerlink" href="#typesetting-equations" title="Permalink to this headline">#</a></h3>
 <p>The Markdown parser included in IPython is MathJax-aware.  This means that you can freely mix in mathematical expressions using the <a class="reference external" href="http://docs.mathjax.org/en/latest/tex.html#tex-support">MathJax subset of Tex and LaTeX</a>.</p>
 <p>You can use single-dollar signs to include inline math, e.g. <code class="docutils literal notranslate"><span class="pre">$e^{i</span> <span class="pre">\pi}</span> <span class="pre">=</span> <span class="pre">-1$</span></code> will render as <span class="math notranslate nohighlight">\(e^{i \pi} = -1\)</span>, and double-dollars for displayed math:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
@@ -1315,9 +1469,9 @@ e^x=\sum_{i=0}^\infty \frac{1}{i!}x^i
 \dot{z} &amp; = -\beta z + xy
 \end{align}</p>
 <p>Please refer to the MathJax documentation for a comprehensive description of which parts of LaTeX are supported, but note that Jupyter’s support for LaTeX is <strong>limited to mathematics</strong>. You can <strong>not</strong> use LaTeX typesetting constrcuts for text or document structure, for text formatting you should restrict yourself to Markdown syntax.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1341,9 +1495,11 @@ e^x=\sum_{i=0}^\infty \frac{1}{i!}x^i
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1359,24 +1515,28 @@ e^x=\sum_{i=0}^\infty \frac{1}{i!}x^i
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2020.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

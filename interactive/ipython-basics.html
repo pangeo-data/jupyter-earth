@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>IPython basics: beyond plain Python &#8212; Jupyter Meets the Earth</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,41 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/interactive/ipython-basics.html" />
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://jupytearth.org/interactive/ipython-basics.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -62,7 +62,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,14 +85,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -96,13 +106,11 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Jupyter Meets the Earth
-  </a>
- </li>
-</ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Jupyter for Earth Science
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../jupyter-resources/introduction/index.html">
@@ -188,11 +196,6 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../jupyter-resources/usecases/index.html">
-   Geoscience use cases
-  </a>
- </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../jupyter-resources/broader/index.html">
    Examples from the broader ecosystem
@@ -235,121 +238,286 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Demo use cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../jupyter-resources/learning-resources/index.html">
-   External learning resources
+  <a class="reference external" href="https://workflow.jupytearth.org/">
+   Toy workflow: ICESat-2 sees glacier crevasses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://hydro.jupytearth.org/">
+   Hydrological data processing and benchmarking projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://whyjz.github.io/pejzero/">
+   Real supplemental material for a glacier physics article (Pejzero)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  External learning resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://projectpythia.org/">
+   Project Pythia: An education and training hub for the geoscientific Python community
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://pangeo.io/">
+   Pangeo: A community platform for Big Data geoscience
   </a>
  </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
             
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/interactive/ipython-basics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/pangeo-data/jupyter-earth"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Finteractive/ipython-basics.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/interactive/ipython-basics.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/master?urlpath=lab/tree/docs/interactive/ipython-basics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
         </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/pangeo-data/jupyter-earth/master?urlpath=lab/tree/docs/interactive/ipython-basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/pangeo-data/jupyter-earth"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Finteractive/ipython-basics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/interactive/ipython-basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/interactive/ipython-basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#first-things-first-running-code-getting-help">
    First things first: running code, getting help
@@ -399,12 +567,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>IPython basics: beyond plain Python</h1>
@@ -470,11 +637,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="ipython-basics-beyond-plain-python">
-<h1>IPython basics: beyond plain Python<a class="headerlink" href="#ipython-basics-beyond-plain-python" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ipython-basics-beyond-plain-python">
+<h1>IPython basics: beyond plain Python<a class="headerlink" href="#ipython-basics-beyond-plain-python" title="Permalink to this headline">#</a></h1>
 <p>This short notebook will give you a quick taste of some of IPython’s capabilities. IPython is the default “kernel” for most Jupyter installations (the kernel is the process that executes the code you type into notebook cells, and it’s typically based on a single programming language).</p>
 <p>IPython started its life in 2001 as a terminal-based application that offered enhancements over the default Python interactive prompt. You can still use it that way, but here we’ll use it through the notebook environment in JupyterLab.</p>
 <p>The focus of IPython is on your Interactive experience, and its features are tailored to the typical workflow of everyday scientific computation and data analysis. In a nutshell, IPython is an interactive Python prompt that:</p>
@@ -487,19 +655,19 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>This notebook is a small introduction to the features of IPython. Our <a class="reference external" href="https://github.com/ipython/ipython-in-depth">IPython in depth
 tutorial</a> contains many more details on these topics and much more.</p>
-<div class="section" id="first-things-first-running-code-getting-help">
-<h2>First things first: running code, getting help<a class="headerlink" href="#first-things-first-running-code-getting-help" title="Permalink to this headline">¶</a></h2>
+<section id="first-things-first-running-code-getting-help">
+<h2>First things first: running code, getting help<a class="headerlink" href="#first-things-first-running-code-getting-help" title="Permalink to this headline">#</a></h2>
 <p>In the notebook, to run a cell of code, hit <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code>. This executes the cell and puts the cursor in the next cell below, or makes a new one if you are at the end.  Alternately, you can use:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Alt-Enter</span></code> to force the creation of a new cell unconditionally (useful when inserting new content in the middle of an existing notebook).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Control-Enter</span></code> executes the cell and keeps the cursor in the same cell, useful for quick experimentation of snippets that you don’t need to keep permanently.</p></li>
 </ul>
-</div>
-<div class="section" id="discovering-what-you-need-within-ipython-itself">
-<h2>Discovering what you need within IPython itself<a class="headerlink" href="#discovering-what-you-need-within-ipython-itself" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="discovering-what-you-need-within-ipython-itself">
+<h2>Discovering what you need within IPython itself<a class="headerlink" href="#discovering-what-you-need-within-ipython-itself" title="Permalink to this headline">#</a></h2>
 <p>IPython tries to make it easy for you to discover things about all your Python tools, objects, variables and libraries (including IPython itself, obviously) with a few keystrokes, and while staying focused on the task at hand. The first key you will want to use is <code class="docutils literal notranslate"><span class="pre">?</span></code>, which can be summoned by itself:</p>
-<div class="section" id="asking-for-help-with">
-<h3>Asking for help with <code class="docutils literal notranslate"><span class="pre">?</span></code><a class="headerlink" href="#asking-for-help-with" title="Permalink to this headline">¶</a></h3>
+<section id="asking-for-help-with">
+<h3>Asking for help with <code class="docutils literal notranslate"><span class="pre">?</span></code><a class="headerlink" href="#asking-for-help-with" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>
@@ -515,11 +683,67 @@ collections.namedtuple<span class="o">?</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+collections<span class=" -Color -Color-Blue">.</span>namedtuple<span class=" -Color -Color-Blue">(</span>
+    typename<span class=" -Color -Color-Blue">,</span>
+    field_names<span class=" -Color -Color-Blue">,</span>
+    <span class=" -Color -Color-Blue">*,</span>
+    rename<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    defaults<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    module<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Returns a new subclass of tuple with named fields.
+
+&gt;&gt;&gt; Point = namedtuple(&#39;Point&#39;, [&#39;x&#39;, &#39;y&#39;])
+&gt;&gt;&gt; Point.__doc__                   # docstring for the new class
+&#39;Point(x, y)&#39;
+&gt;&gt;&gt; p = Point(11, y=22)             # instantiate with positional args or keywords
+&gt;&gt;&gt; p[0] + p[1]                     # indexable like a plain tuple
+33
+&gt;&gt;&gt; x, y = p                        # unpack like a regular tuple
+&gt;&gt;&gt; x, y
+(11, 22)
+&gt;&gt;&gt; p.x + p.y                       # fields also accessible by name
+33
+&gt;&gt;&gt; d = p._asdict()                 # convert to a dictionary
+&gt;&gt;&gt; d[&#39;x&#39;]
+11
+&gt;&gt;&gt; Point(**d)                      # convert from a dictionary
+Point(x=11, y=22)
+&gt;&gt;&gt; p._replace(x=100)               # _replace() is like str.replace() but targets named fields
+Point(x=100, y=22)
+<span class=" -Color -Color-Red">File:</span>      ~/local/conda/lib/python3.9/collections/__init__.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
 </div>
 <p>If you use <em>two</em> <code class="docutils literal notranslate"><span class="pre">??</span></code> characters, IPython will attempt to dig deeper into the object and show you its source code, if available:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>collections.Counter.most_common<span class="o">??</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> collections<span class=" -Color -Color-Blue">.</span>Counter<span class=" -Color -Color-Blue">.</span>most_common<span class=" -Color -Color-Blue">(</span>self<span class=" -Color -Color-Blue">,</span> n<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Source:</span>   
+    <span class=" -Color -Color-Green">def</span> most_common<span class=" -Color -Color-Blue">(</span>self<span class=" -Color -Color-Blue">,</span> n<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">):</span>
+        <span class=" -Color -Color-Blue">&#39;&#39;&#39;List the n most common elements and their counts from the most</span>
+<span class=" -Color -Color-Blue">        common to the least.  If n is None, then list all element counts.</span>
+
+<span class=" -Color -Color-Blue">        &gt;&gt;&gt; Counter(&#39;abracadabra&#39;).most_common(3)</span>
+<span class=" -Color -Color-Blue">        [(&#39;a&#39;, 5), (&#39;b&#39;, 2), (&#39;r&#39;, 2)]</span>
+
+<span class=" -Color -Color-Blue">        &#39;&#39;&#39;</span>
+        <span class=" -Color -Color-Red"># Emulate Bag.sortedByCount from Smalltalk</span>
+        <span class=" -Color -Color-Green">if</span> n <span class=" -Color -Color-Green">is</span> <span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">:</span>
+            <span class=" -Color -Color-Green">return</span> sorted<span class=" -Color -Color-Blue">(</span>self<span class=" -Color -Color-Blue">.</span>items<span class=" -Color -Color-Blue">(),</span> key<span class=" -Color -Color-Blue">=</span>_itemgetter<span class=" -Color -Color-Blue">(</span><span class=" -Color -Color-Cyan">1</span><span class=" -Color -Color-Blue">),</span> reverse<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">)</span>
+        <span class=" -Color -Color-Green">return</span> _heapq<span class=" -Color -Color-Blue">.</span>nlargest<span class=" -Color -Color-Blue">(</span>n<span class=" -Color -Color-Blue">,</span> self<span class=" -Color -Color-Blue">.</span>items<span class=" -Color -Color-Blue">(),</span> key<span class=" -Color -Color-Blue">=</span>_itemgetter<span class=" -Color -Color-Blue">(</span><span class=" -Color -Color-Cyan">1</span><span class=" -Color -Color-Blue">))</span>
+<span class=" -Color -Color-Red">File:</span>      ~/local/conda/lib/python3.9/collections/__init__.py
+<span class=" -Color -Color-Red">Type:</span>      function
 </pre></div>
 </div>
 </div>
@@ -531,22 +755,22 @@ collections.namedtuple<span class="o">?</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FloatingPointError
+breakpoint
+int
+print
+</pre></div>
 </div>
 </div>
-<div class="section" id="tab-completion">
-<h3>Tab completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h3>
+</div>
+</section>
+<section id="tab-completion">
+<h3>Tab completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">#</a></h3>
 <p>Tab completion, especially for attributes, is a convenient way to explore the structure of any object you’re dealing with. Simply type <code class="docutils literal notranslate"><span class="pre">object_name.&lt;TAB&gt;</span></code> to view the object’s attributes. Besides Python objects and keywords, tab completion also works on file and directory names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collections</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_3804/1397204736.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="n">collections</span><span class="o">.</span>
-                <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -559,10 +783,10 @@ collections.namedtuple<span class="o">?</span>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="accessing-the-underlying-operating-system">
-<h2>Accessing the underlying operating system<a class="headerlink" href="#accessing-the-underlying-operating-system" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="accessing-the-underlying-operating-system">
+<h2>Accessing the underlying operating system<a class="headerlink" href="#accessing-the-underlying-operating-system" title="Permalink to this headline">#</a></h2>
 <p>Any text prepended with a <code class="docutils literal notranslate"><span class="pre">!</span></code> is sent directly to the underlying OS:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -636,9 +860,9 @@ collections.namedtuple<span class="o">?</span>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="beyond-python-magic-functions">
-<h2>Beyond Python: magic functions<a class="headerlink" href="#beyond-python-magic-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="beyond-python-magic-functions">
+<h2>Beyond Python: magic functions<a class="headerlink" href="#beyond-python-magic-functions" title="Permalink to this headline">#</a></h2>
 <p>The IPyhton ‘magic’ functions are a set of commands, invoked by prepending one or two <code class="docutils literal notranslate"><span class="pre">%</span></code> signs to their name, that live in a namespace separate from your normal Python variables and provide a more command-like interface.  They take flags with <code class="docutils literal notranslate"><span class="pre">--</span></code> and arguments without quotes, parentheses or commas. The motivation behind this system is two-fold:</p>
 <ul class="simple">
 <li><p>To provide an orthogonal namespace for controlling IPython itself and exposing other system-oriented functionality.</p></li>
@@ -901,9 +1125,9 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="multi-language-integration">
-<h2>Multi-language integration<a class="headerlink" href="#multi-language-integration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="multi-language-integration">
+<h2>Multi-language integration<a class="headerlink" href="#multi-language-integration" title="Permalink to this headline">#</a></h2>
 <p>Through the Magic system, IPython makes it possible to create rich integrations with other programming languages. Note that this is separate from the use of entirely separate <em>kernels</em> for Jupyter itself, that are dedicated to executing code in other languages. Here we focus on making calls to other languages from within a mostly-Python, IPython-based session.</p>
 <p>We’ve already seen the use of <code class="docutils literal notranslate"><span class="pre">%%bash</span></code> above, and you may want to poke at the <code class="docutils literal notranslate"><span class="pre">%%script</span></code> magic if you’d like to run other arbitrary scripts.  Since this is meant to be a very brief intro we only show one more language integration here, with Fortran. But in <a class="reference external" href="https://nbviewer.jupyter.org/gist/fperez/5b49246af4e340c37549265a90894ce6/polyglot-ds.ipynb">this example</a> you can see how to interleave within one single session others, including R, Julia and Cython.</p>
 <p>To use the Fortran magic we load an extension we’ve previously installed:</p>
@@ -991,9 +1215,9 @@ y : rank-1 array(&#39;f&#39;) with bounds (n)
 <img alt="../_images/ipython-basics_60_0.png" src="../_images/ipython-basics_60_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="rich-object-displays">
-<h2>Rich object displays<a class="headerlink" href="#rich-object-displays" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rich-object-displays">
+<h2>Rich object displays<a class="headerlink" href="#rich-object-displays" title="Permalink to this headline">#</a></h2>
 <p>In Python, objects can define how to display themselves both for print statements, via the special <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method, and with a potentially richer representation with <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.  IPython takes this idea pretty far, allowing you to declare multiple display representations of your objects, that can include images, mathematical representations in LaTeX and arbitrarily rich HTML and JavaScript.</p>
 <p>For example, the <a class="reference external" href="https://sympy.org">SymPy library for symbolic computing</a> uses this system to display mathematical expressions:</p>
 <div class="cell docutils container">
@@ -1549,8 +1773,8 @@ Tue Dec 27 13:38:40 2016: ncks -3 rasm.nc rasm.nc
 history deleted for brevity</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Again, we’re only scratching the surface of these capabilities here - you can read more in the IPython docs and in the <a class="reference external" href="https://github.com/ipython/ipython-in-depth">IPython in depth tutorial</a>, particularly in the notebooks that illustrate the <a class="reference external" href="https://nbviewer.jupyter.org/github/ipython/ipython-in-depth/blob/master/examples/IPython%20Kernel/Rich%20Output.ipynb">rich output</a> and <a class="reference external" href="https://nbviewer.jupyter.org/github/ipython/ipython-in-depth/blob/master/examples/IPython%20Kernel/Custom%20Display%20Logic.ipynb">custom display logic</a> that powers these capabilities.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1574,28 +1798,34 @@ history deleted for brevity</dd></dl></div></li></ul></div></div></div></div>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2020.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

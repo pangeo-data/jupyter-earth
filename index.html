@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Jupyter Meets the Earth &#8212; Jupyter Meets the Earth</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <link rel="canonical" href="https://pangeo-data.github.io/jupyter-earth/index.html" />
+    <link rel="canonical" href="https://jupytearth.org/index.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Introduction: What is Jupyter?" href="jupyter-resources/introduction/index.html" />
@@ -61,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -70,14 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="#">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,13 +105,11 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
-   Jupyter Meets the Earth
-  </a>
- </li>
-</ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Jupyter for Earth Science
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="jupyter-resources/introduction/index.html">
@@ -187,11 +195,6 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="jupyter-resources/usecases/index.html">
-   Geoscience use cases
-  </a>
- </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="jupyter-resources/broader/index.html">
    Examples from the broader ecosystem
@@ -234,100 +237,239 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Demo use cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="jupyter-resources/learning-resources/index.html">
-   External learning resources
+  <a class="reference external" href="https://workflow.jupytearth.org/">
+   Toy workflow: ICESat-2 sees glacier crevasses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://hydro.jupytearth.org/">
+   Hydrological data processing and benchmarking projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://whyjz.github.io/pejzero/">
+   Real supplemental material for a glacier physics article (Pejzero)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  External learning resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://projectpythia.org/">
+   Project Pythia: An education and training hub for the geoscientific Python community
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://pangeo.io/">
+   Pangeo: A community platform for Big Data geoscience
   </a>
  </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
             
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/pangeo-data/jupyter-earth"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/index.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
         </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/pangeo-data/jupyter-earth"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pangeo-data/jupyter-earth/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pangeo-data/jupyter-earth/edit/master/docs/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#project-description">
    Project description
@@ -366,6 +508,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#earthcube-annual-meeting">
+       EarthCube annual meeting
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#project-tyra-seminar-series">
        Project Tyra Seminar Series
       </a>
@@ -388,7 +535,7 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#earthcube-annual-meeting">
+      <a class="reference internal nav-link" href="#id3">
        EarthCube annual meeting
       </a>
      </li>
@@ -425,12 +572,12 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#id4">
      2020
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id5">
        American Geophysical Union Fall meeting
       </a>
      </li>
@@ -485,12 +632,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Jupyter Meets the Earth</h1>
@@ -541,6 +687,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#earthcube-annual-meeting">
+       EarthCube annual meeting
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#project-tyra-seminar-series">
        Project Tyra Seminar Series
       </a>
@@ -563,7 +714,7 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#earthcube-annual-meeting">
+      <a class="reference internal nav-link" href="#id3">
        EarthCube annual meeting
       </a>
      </li>
@@ -600,12 +751,12 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#id4">
      2020
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id5">
        American Geophysical Union Fall meeting
       </a>
      </li>
@@ -664,62 +815,80 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="jupyter-meets-the-earth">
-<h1>Jupyter Meets the Earth<a class="headerlink" href="#jupyter-meets-the-earth" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-meets-the-earth">
+<h1>Jupyter Meets the Earth<a class="headerlink" href="#jupyter-meets-the-earth" title="Permalink to this headline">#</a></h1>
 <p>This is the project home for the EarthCube-funded project (Awards <a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928406">1928406</a> and <a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928374">1928374</a>):
 <em>Jupyter meets the Earth: Enabling discovery in geoscience through interactive computing at scale.</em></p>
-<div class="section" id="project-description">
-<h2>Project description<a class="headerlink" href="#project-description" title="Permalink to this headline">¶</a></h2>
+<section id="project-description">
+<h2>Project description<a class="headerlink" href="#project-description" title="Permalink to this headline">#</a></h2>
 <p>The <a class="reference external" href="https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f?source=friends_link&amp;sk=945065ffe0c101b6c8ec369425574600">Jupyter meets the Earth project</a> combines research use cases in geosciences with technical developments within the <a class="reference external" href="http://jupyter.org/">Jupyter</a> and <a class="reference external" href="http://pangeo.io/">Pangeo</a> ecosystems. In this model of equal partners, scientific questions help drive software infrastructure development, and new technologies expand the horizons of viable research.</p>
 <p>The full project description is available in the <a class="reference external" href="https://zenodo.org/record/3369939">original grant proposal</a>.</p>
-</div>
-<div class="section" id="what-you-can-find-here">
-<h2>What you can find here<a class="headerlink" href="#what-you-can-find-here" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="what-you-can-find-here">
+<h2>What you can find here<a class="headerlink" href="#what-you-can-find-here" title="Permalink to this headline">#</a></h2>
 <p>In addition to the <a class="reference external" href="#presentations-and-events">project updates and our event archive</a>, here you can find onboarding resources for Jupyter and the other related tools, tailored for Earth science researchers. Jupyter ecosystem helps advance Earth science research in many ways, including data exploration, interactive analysis, documentation, and reproducibility of work. To give you an idea of how Jupyter achieves this, some of these tutorials come along with a motivating example that focuses on real science problems using real data.</p>
-<div class="section" id="demos">
-<h3>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h3>
+<section id="demos">
+<h3>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://workflow.jupytearth.org/">Jupyter Meets the Earth - A toy research workflow</a></p></li>
 <li><p><a class="reference external" href="https://hydro.jupytearth.org/">Jupyter Meets the Earth: Hydrological use cases</a></p></li>
 </ul>
-</div>
-<div class="section" id="our-youtube-channel-and-video-resources">
-<h3>Our YouTube channel and video resources<a class="headerlink" href="#our-youtube-channel-and-video-resources" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="our-youtube-channel-and-video-resources">
+<h3>Our YouTube channel and video resources<a class="headerlink" href="#our-youtube-channel-and-video-resources" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://www.youtube.com/channel/UCA3Y8FSD0bA7KczpzaE-VRQ">Our YouTube channel</a> hosts the meeting records and learning resources delivered by the team members. You can also find several playlists introducing our project or Jupyter tools for geoscientists.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=mC-RgRCwEa4">Use Jupyter tools in a research project</a></p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=lwbUjTNWBpQ">Cloud native workflows at scale, with Jupyter ecosystem</a></p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=seKOq-VMJgY">Jupyter Book overview</a></p></li>
 </ul>
-</div>
-<div class="section" id="blog-posts">
-<h3>Blog Posts<a class="headerlink" href="#blog-posts" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="blog-posts">
+<h3>Blog Posts<a class="headerlink" href="#blog-posts" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Aug 17, 2020: <a class="reference external" href="https://blog.jupyter.org/jupyter-meets-the-earth-earthcube-community-meeting-4bb9fb49cada?source=friends_link&amp;sk=ecec9c45937c0e354bed03fc13dc0b92">Summary of the EarthCube Community meeting</a></p></li>
 <li><p>Sep 9, 2019: <a class="reference external" href="https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f?source=friends_link&amp;sk=945065ffe0c101b6c8ec369425574600">Project announcement</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="past-presentations-and-events">
-<h2>Past presentations and events<a class="headerlink" href="#past-presentations-and-events" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>2022<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="project-tyra-seminar-series">
-<h4>Project Tyra Seminar Series<a class="headerlink" href="#project-tyra-seminar-series" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="past-presentations-and-events">
+<h2>Past presentations and events<a class="headerlink" href="#past-presentations-and-events" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>2022<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<section id="earthcube-annual-meeting">
+<h4>EarthCube annual meeting<a class="headerlink" href="#earthcube-annual-meeting" title="Permalink to this headline">#</a></h4>
+<p><em>June 14-16, 2022</em></p>
+<ul class="simple">
+<li><p>We gave a talk entitled “Let supplemental material be FAIR: using narrative and reusable Jupyter Book to complement your journal paper.” It highlighted <strong>Jupyter Book</strong> as an ideal tool for making <strong>supplemental information of an academic article</strong> in terms of accessibility, reproducibility, and the FAIR concept.</p>
+<ul>
+<li><p>Check out the <a class="reference external" href="https://whyjz.github.io/pejzero/">Real supplemental material for a glacier physics article (Pejzero)</a> for a working example!</p></li>
+</ul>
+</li>
+<li><p>We hosted a workshop entitled “Keeping your head in the clouds: reproducible, collaborative science with open cloud infrastructure” to reach out to the community about the concept of <strong>living-in-the-cloud science</strong>. We reviewed the recent development of the Jupyter tools and introduced our recommended cloud-native research practices to the audience.</p>
+<ul>
+<li><p>Workshop slides (to be updated)</p></li>
+</ul>
+</li>
+<li><p>Poster presentation: Moges et al. (2022). HydroBench: Jupyter Supported Reproducible Hydrological Model Benchmarking and Diagnostic tool. Our hydro team also presented HydroBench: Jupyter Supported Reproducible Hydrological Model Benchmarking and Diagnostic tool.</p></li>
+</ul>
+</section>
+<section id="project-tyra-seminar-series">
+<h4>Project Tyra Seminar Series<a class="headerlink" href="#project-tyra-seminar-series" title="Permalink to this headline">#</a></h4>
 <p><em>January 22, 2022</em></p>
 <p>Whyjay Zheng gave a talk introducing the JMTE project and the Jupyter ecosystem to researchers in/from Taiwan.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=0s6EWNVHGnY">recording (in Chinese [Taiwan])</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id2">
-<h3>2021<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="american-geophysical-union-fall-meeting">
-<h4>American Geophysical Union Fall meeting<a class="headerlink" href="#american-geophysical-union-fall-meeting" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id2">
+<h3>2021<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<section id="american-geophysical-union-fall-meeting">
+<h4>American Geophysical Union Fall meeting<a class="headerlink" href="#american-geophysical-union-fall-meeting" title="Permalink to this headline">#</a></h4>
 <p><em>December 13-17, 2021</em></p>
 <p>We delivered the following presentations in the 2021 AGU Fall meeting:</p>
 <ul class="simple">
@@ -735,14 +904,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/899989">Badman et al.:</a> Pandemic Programming for an REU: Developing a Virtual Bootcamp and Professional Development Series for the Advancing Space Sciences through Undergraduate Research Experiences (ASSURE) Program</p></li>
 <li><p><a class="reference external" href="https://agu.confex.com/agu/fm21/meetingapp.cgi/Paper/969783">Moges et al.:</a> HydroBench: Jupyter Supported Reproducible Hydrological Model Benchmarking and Diagnostic tool.</p></li>
 </ul>
-</div>
-<div class="section" id="seminars-in-taiwan">
-<h4>Seminars in Taiwan<a class="headerlink" href="#seminars-in-taiwan" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="seminars-in-taiwan">
+<h4>Seminars in Taiwan<a class="headerlink" href="#seminars-in-taiwan" title="Permalink to this headline">#</a></h4>
 <p><em>July 12, July 15, and August 4-6, 2021</em></p>
 <p>Team member Whyjay Zheng was invited to host three virtual and in-person workshops in Taiwan (at Taiwan University, Taiwan Normal University, and Cheng Kung University, respectively), aiming to engage the international Earth science community with the Jupyter ecosystem and tools.</p>
-</div>
-<div class="section" id="earthcube-annual-meeting">
-<h4>EarthCube annual meeting<a class="headerlink" href="#earthcube-annual-meeting" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id3">
+<h4>EarthCube annual meeting<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p><em>June 15-17, 2021</em></p>
 <p>In addition to the update about a Cryoscience use case (<code class="docutils literal notranslate"><span class="pre">EZ-FeatureTrack</span></code>), the JMTE project team hosted a workshop entitled “The Jupyter Landscape: a high-level map for (geo)scientists”, aiming to provide onboarding resources and tutorials for earth scientists to use Jupyter tools.</p>
 <ul class="simple">
@@ -754,61 +923,61 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="nd-eddy-cross-disciplinary-symposium">
-<h4>2nd Eddy Cross Disciplinary Symposium<a class="headerlink" href="#nd-eddy-cross-disciplinary-symposium" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="nd-eddy-cross-disciplinary-symposium">
+<h4>2nd Eddy Cross Disciplinary Symposium<a class="headerlink" href="#nd-eddy-cross-disciplinary-symposium" title="Permalink to this headline">#</a></h4>
 <p><em>June 7-10, 2021</em></p>
 <p>Fernando Pérez participated in a planery session.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=Yp5D9Mo6XiY">recordings</a></p></li>
 </ul>
-</div>
-<div class="section" id="big-data-from-space-2021">
-<h4>Big Data from Space 2021<a class="headerlink" href="#big-data-from-space-2021" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="big-data-from-space-2021">
+<h4>Big Data from Space 2021<a class="headerlink" href="#big-data-from-space-2021" title="Permalink to this headline">#</a></h4>
 <p><em>May 18-20, 2021</em></p>
 <p>Fernando Pérez gave a keynote talk entitled “From Interactive Computing To Collaborative Science:Opportunities In The Cloud With Open Infrastructure.”</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.bigdatafromspace2021.org/keynote-speakers">abstract</a></p></li>
 </ul>
-</div>
-<div class="section" id="csdms-2021">
-<h4>CSDMS 2021<a class="headerlink" href="#csdms-2021" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="csdms-2021">
+<h4>CSDMS 2021<a class="headerlink" href="#csdms-2021" title="Permalink to this headline">#</a></h4>
 <p><em>May 17-21, 2021</em></p>
 <p>Fernando Pérez gave a keynote talk focusing on the Jupyter technology at the Community Surface Dynamics Modeling System (CSDMS) annual meeting.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=SdRmxAPy2gc">recordings</a></p></li>
 </ul>
-</div>
-<div class="section" id="the-50th-arctic-workshop">
-<h4>The 50th Arctic workshop<a class="headerlink" href="#the-50th-arctic-workshop" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="the-50th-arctic-workshop">
+<h4>The 50th Arctic workshop<a class="headerlink" href="#the-50th-arctic-workshop" title="Permalink to this headline">#</a></h4>
 <p><em>April 15-17, 2021</em></p>
 <p>We gave a virtual presentation about the Cryoscience use case entitled “Mapping ice flow velocity using an interactive, cloud-based feature tracking workflow”:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://instaar.colorado.edu/meetings/AW2021//abstract_details.php?abstract_id=59">abstract</a></p></li>
 <li><p><a class="reference external" href="https://github.com/whyjz/EZ-FeatureTrack">project repository</a></p></li>
 </ul>
-</div>
-<div class="section" id="cig-developers-meeting">
-<h4>CIG developers meeting<a class="headerlink" href="#cig-developers-meeting" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="cig-developers-meeting">
+<h4>CIG developers meeting<a class="headerlink" href="#cig-developers-meeting" title="Permalink to this headline">#</a></h4>
 <p><em>February 25, 2021</em></p>
 <p>We were invited to present a brief overview of the Pangeo ecosystem at the <a class="reference external" href="https://geodynamics.org/cig/events/calendar/2021-cig-developers-workshop/">2021 Computational Infrastructure for Geodynamics developers workshop</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.google.com/presentation/d/1jdcov4EsHb2H64nTQLqhucATLLJFapzxX8YkykiqYY4/edit?usp=sharing">slides</a></p></li>
 </ul>
-</div>
-<div class="section" id="esip-winter-meeting">
-<h4>ESIP winter meeting<a class="headerlink" href="#esip-winter-meeting" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="esip-winter-meeting">
+<h4>ESIP winter meeting<a class="headerlink" href="#esip-winter-meeting" title="Permalink to this headline">#</a></h4>
 <p><em>January 26, 2021</em></p>
 <p>As a part of the <a class="reference external" href="https://2021esipwintermeeting.sched.com/">ESIP winter meeting</a>, we were invited to present in the session: <a class="reference external" href="https://2021esipwintermeeting.sched.com/event/g495/jupyter-notebooks-harnessing-the-full-potential">Jupyter Notebooks: Harnessing the full potential</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.google.com/presentation/d/1QBR3BkM0xIa3FQJPxWjLenWs--FqrZk0Q8qPxuqHkyg/edit">slides</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id3">
-<h3>2020<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id4">
-<h4>American Geophysical Union Fall meeting<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id4">
+<h3>2020<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<section id="id5">
+<h4>American Geophysical Union Fall meeting<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <p><em>December 1-17, 2020</em></p>
 <p>As a part of the AGU Annual meeting, we presented:</p>
 <ul class="simple">
@@ -821,31 +990,31 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://agu.confex.com/agu/fm20/meetingapp.cgi/Session/104761">TH086</a> Scripts to Software Frameworks: How Do We Share Our Research Code?</p></li>
 <li><p><a class="reference external" href="https://agu.confex.com/agu/fm20/meetingapp.cgi/Session/103714">SCIWS13</a> Best Practices for Developing and Sustaining Your Open-Source Research Software</p></li>
 </ul>
-</div>
-<div class="section" id="supercomputing-conference-sc">
-<h4>Supercomputing Conference (SC)<a class="headerlink" href="#supercomputing-conference-sc" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="supercomputing-conference-sc">
+<h4>Supercomputing Conference (SC)<a class="headerlink" href="#supercomputing-conference-sc" title="Permalink to this headline">#</a></h4>
 <p><em>November 11-19, 2020</em></p>
 <p>As a part of the <a class="reference external" href="https://www.interactivehpc.com/">Fourth Workshop on Interactive High-Performance Computing &#64; SC20</a>, Anderson Banihirwe spoke on a panel about Interactive High Performance Computing.</p>
-</div>
-<div class="section" id="earthcube-webinar">
-<h4>EarthCube Webinar<a class="headerlink" href="#earthcube-webinar" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="earthcube-webinar">
+<h4>EarthCube Webinar<a class="headerlink" href="#earthcube-webinar" title="Permalink to this headline">#</a></h4>
 <p><em>November 6, 2020</em></p>
 <p>We gave a presentation “Jupyter and Pangeo: Building robust, open ecosystems in EarthCube” at the EarthCube Webinar <a class="reference external" href="https://www.earthcube.org/event/earthcube-webinar-joining-earthcube-community-funded-project-discussion-2021-nsf-earthcube-solicitation">Joining the EarthCube Community as a Funded Project - a Discussion on the 2021 NSF EarthCube Solicitation</a>.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.google.com/presentation/d/1oIDTq5M4GI4qr53VG8XcI_tP9mPUW_9B9J-lDj90nfc/edit?usp=sharing">slides</a></p></li>
 </ul>
-</div>
-<div class="section" id="next-generation-ecosystems-experiments-ngee-seminars">
-<h4>Next Generation Ecosystems Experiments (NGEE) Seminars<a class="headerlink" href="#next-generation-ecosystems-experiments-ngee-seminars" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="next-generation-ecosystems-experiments-ngee-seminars">
+<h4>Next Generation Ecosystems Experiments (NGEE) Seminars<a class="headerlink" href="#next-generation-ecosystems-experiments-ngee-seminars" title="Permalink to this headline">#</a></h4>
 <p><em>October 19, 2020</em></p>
 <p>As a part of the <a class="reference external" href="https://ngee-tropics.lbl.gov/">NGEE-Tropics</a> seminar series, we gave a presentation entitled “Jupyter meets the Earth: partnering domain research with open-source development”:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.google.com/presentation/d/1lyigjwK-Wkl_FjxxhQHieycQvMOVdyMgZgYx-6fpcg8/edit?usp=sharing">slides</a></p></li>
 <li><p><a class="reference external" href="https://docs.google.com/document/d/1UzrgbleUE0LCL2VewtbYce8qYVmU_o8z5325JYT9ij8/edit?usp=sharing">shared notes</a></p></li>
 </ul>
-</div>
-<div class="section" id="jupytercon-presentation">
-<h4>JupyterCon Presentation<a class="headerlink" href="#jupytercon-presentation" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="jupytercon-presentation">
+<h4>JupyterCon Presentation<a class="headerlink" href="#jupytercon-presentation" title="Permalink to this headline">#</a></h4>
 <p><em>October 15, 2020</em></p>
 <p><a class="reference external" href="https://jupytercon.com/">JupyterCon</a> was held online from October 5-17. We presented a poster on the Jupyter meets the Earth project:</p>
 <ul class="simple">
@@ -853,9 +1022,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://drive.google.com/file/d/1mzik_NPnEaBf68ax1DvfASpZTsEK_FFO/view?usp=sharing">recording</a></p></li>
 <li><p><a class="reference external" href="https://drive.google.com/file/d/1AbDuTI9xtNowPHp6wN5MaT2NvJrmAB3T/view?usp=sharing">poster</a></p></li>
 </ul>
-</div>
-<div class="section" id="discussion-with-coiled">
-<h4>Discussion with Coiled<a class="headerlink" href="#discussion-with-coiled" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="discussion-with-coiled">
+<h4>Discussion with Coiled<a class="headerlink" href="#discussion-with-coiled" title="Permalink to this headline">#</a></h4>
 <p><em>September 24, 2020</em></p>
 <p>As a part of the <a class="reference external" href="https://coiled.io/blog/coileds-first-live-stream-science-thursdays/">Science Thursdays</a> livestream events hosted by Hugo Bowne-Anderson and Matthew Rocklin, Lindsey Heagy joined for a conversation on using dask for inverse problems in geophysics</p>
 <ul class="simple">
@@ -863,44 +1032,48 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://t.co/cImsLJUROP?amp=1">recording on youtube</a></p></li>
 <li><p><a class="reference external" href="https://github.com/simpeg-research/bookpurnong-inversion">demo repository</a></p></li>
 </ul>
-</div>
-<div class="section" id="earthcube-council-of-funded-projects">
-<h4>EarthCube Council of Funded projects<a class="headerlink" href="#earthcube-council-of-funded-projects" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="earthcube-council-of-funded-projects">
+<h4>EarthCube Council of Funded projects<a class="headerlink" href="#earthcube-council-of-funded-projects" title="Permalink to this headline">#</a></h4>
 <p><em>September 10, 2020</em></p>
 <p>We gave a project-overview presentation as a part of the EarthCube <a class="reference external" href="https://www.earthcube.org/group/council-funded-projects-cfp">Council of Funded Projects</a> regular meeting series:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.google.com/presentation/d/1xQTYROldMRDg8RTNmRTCjPbNZ_AIC_80KhnAR7rcNB4/edit?usp=sharing">slides</a></p></li>
 <li><p><a class="reference external" href="https://docs.google.com/document/d/1v74fUNH6fldvv0iPFVx57bDyg3yJBGENNFc-DU74fxE/edit?usp=sharing">shared notes</a></p></li>
 </ul>
-</div>
-<div class="section" id="earthcube-community-meeting">
-<h4>EarthCube community meeting<a class="headerlink" href="#earthcube-community-meeting" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="earthcube-community-meeting">
+<h4>EarthCube community meeting<a class="headerlink" href="#earthcube-community-meeting" title="Permalink to this headline">#</a></h4>
 <p><em>July 27, 2020</em></p>
 <p>As a part of the <a class="reference external" href="https://www.earthcube.org/EC2020">EarthCube 2020 meeting</a>, we held a two hour session that included short presentations about the Jupyter meets the Earth project, lightning talks from members of the community and time for Q&amp;A.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://blog.jupyter.org/jupyter-meets-the-earth-earthcube-community-meeting-4bb9fb49cada?source=friends_link&amp;sk=ecec9c45937c0e354bed03fc13dc0b92">blog post</a></p></li>
 <li><p><a class="reference external" href="https://youtu.be/Zj3Gm4LNfwo">video recording</a></p></li>
 </ul>
-</div>
-<div class="section" id="icesat2-hackweek">
-<h4>IceSat2 Hackweek<a class="headerlink" href="#icesat2-hackweek" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="icesat2-hackweek">
+<h4>IceSat2 Hackweek<a class="headerlink" href="#icesat2-hackweek" title="Permalink to this headline">#</a></h4>
 <p><em>June 8-18, 2020</em></p>
 <p>Several team members participated as instructors and joing in the project-work at the <a class="reference external" href="https://icesat-2hackweek.github.io/">2020 ICESat-2 Hackweek</a>. The tutorials that project team members Fernando Pérez and Lindsey Heagy contributed to were on:</p>
 <ul class="simple">
 <li><p>Git and GitHub (<a class="reference external" href="https://youtu.be/O2lLC_s_d20">video recording</a>, <a class="reference external" href="https://github.com/ICESAT-2HackWeek/intro-git">repository</a>)</p></li>
 <li><p>Jupyter and IPython (<a class="reference external" href="https://youtu.be/Jft9-RnmH1Y">video recording</a>, <a class="reference external" href="https://github.com/ICESAT-2HackWeek/intro-jupyter">repository</a>)</p></li>
 </ul>
-</div>
-<div class="section" id="transform-2020">
-<h4>Transform 2020<a class="headerlink" href="#transform-2020" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="transform-2020">
+<h4>Transform 2020<a class="headerlink" href="#transform-2020" title="Permalink to this headline">#</a></h4>
 <p><em>June 6-14, 2020</em></p>
 <p>As a part of the <a class="reference external" href="https://transform2020.sched.com/">Transform 2020 virtual conference</a>, Lindsey Heagy gave a tutorial on <a class="reference external" href="https://transform2020.sched.com/event/cD5V/tutorial-geophysical-inversion-in-simpeg">geophysical inversions with SimPEG</a>.</p>
+</section>
+</section>
+</section>
 <div class="toctree-wrapper compound">
 </div>
+<div class="toctree-wrapper compound">
 </div>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -924,8 +1097,10 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='right-next' id="next-link" href="jupyter-resources/introduction/index.html" title="next page">
     <div class="prev-next-info">
@@ -935,24 +1110,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2020.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
