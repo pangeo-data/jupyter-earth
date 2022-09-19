@@ -146,7 +146,7 @@ RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}
 #
 # Latest Julia version at https://julialang.org/downloads/
 #
-ENV JULIA_VERSION 1.7.1
+ENV JULIA_VERSION 1.8.1
 ENV JULIA_PATH /srv/julia
 ENV JULIA_DEPOT_PATH ${JULIA_PATH}/pkg
 ENV PATH $PATH:${JULIA_PATH}/bin
