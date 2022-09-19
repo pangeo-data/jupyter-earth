@@ -96,7 +96,7 @@ RUN export VERSION=4.5.1 \
 
 # qgis, used by geographers, display gis data
 # ref: https://qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
-RUN wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key \
+RUN wget -qO - https://qgis.org/downloads/qgis-2022.gpg.key \
   | gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import \
  && chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg \
  && add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main" \
