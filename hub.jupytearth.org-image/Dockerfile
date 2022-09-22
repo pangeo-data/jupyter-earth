@@ -300,6 +300,9 @@ RUN echo "Installing conda packages..." \
             #
             # https://anaconda.org/conda-forge/pymc
             # https://github.com/conda-forge/pymc-feedstock/blob/main/recipe/meta.yaml
+        cxx-compiler \
+            # Installed to help aesara function, a dependency for pymc
+            # https://anaconda.org/conda-forge/cxx-compiler
         ipydatagrid \
             # FIXME: currently holding back ipywidgets to 7.*, see
             #        https://github.com/bloomberg/ipydatagrid/pull/282 for a
