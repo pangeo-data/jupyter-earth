@@ -367,9 +367,6 @@ RUN echo "Installing conda packages..." \
             # a drawio IDE launchable from jupyterlab's launcher
             # https://anaconda.org/conda-forge/ipydrawio
             # https://github.com/conda-forge/ipydrawio-feedstock/blob/main/recipe/meta.yaml
-        cxx-compiler \
-            # https://anaconda.org/conda-forge/cxx-compiler
-            # https://github.com/conda-forge/compilers-feedstock/blob/main/recipe/meta.yaml
         cython \
         fortran-magic \
             # https://anaconda.org/conda-forge/fortran-magic
