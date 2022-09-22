@@ -63,10 +63,6 @@ RUN echo "Installing apt-get packages..." \
         # qgis
             gnupg \
             software-properties-common \
-        # pymc3-theano relies on compiling some C++ code, this may be relevant
-        # to help that compilation succeed. See this issue for details:
-        # https://github.com/pangeo-data/jupyter-earth/issues/104#issuecomment-1027210956
-        libc-dev \
     > /dev/null \
  && apt-get -y remove \
         xfce4-screensaver \
@@ -270,18 +266,13 @@ RUN echo "Installing conda packages..." \
             # https://github.com/conda-forge/sphinx-feedstock/blob/main/recipe/meta.yaml
         #
         # data:
-        # pymc3 and dependencies start
-        # - installation instructions found at: https://github.com/pymc-devs/pymc/wiki/Installation-Guide-(Linux)
-        # - installed for Abby and Facu following a slack discussion
-        #
-        # NOTE: Installing this below will make us downgrade scipy and numpy
-        #       etc.
-        #
-        pymc3 \
-        theano-pymc \
-        mkl \
-        mkl-service \
-        # pymc3 and dependencies end
+        pymc \
+            # Installed for Abby and Facu following a slack discussion, related:
+            # - https://github.com/pangeo-data/jupyter-earth/issues/153
+            # - https://github.com/pangeo-data/jupyter-earth/issues/104
+            #
+            # https://anaconda.org/conda-forge/pymc
+            # https://github.com/conda-forge/pymc-feedstock/blob/main/recipe/meta.yaml
         ipydatagrid \
             # FIXME: currently holding back ipywidgets to 7.*, see
             #        https://github.com/bloomberg/ipydatagrid/pull/282 for a
