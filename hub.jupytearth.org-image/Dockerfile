@@ -43,12 +43,6 @@ RUN echo "Installing apt-get packages..." \
             # `zip` and `unzip` which doesn't help us decompress .rar files. See
             # https://github.com/pangeo-data/pangeo-docker-images/issues/366 for
             # an issue about installing this in the base image.
-        # common geospatial dependencies:
-        libspatialindex-dev \
-        libgeos-dev \
-        libproj-dev \
-        proj-data \
-        proj-bin \
         graphviz \
         ffmpeg \
         # /desktop part 1: install desktop UI via apt
@@ -232,6 +226,33 @@ RUN echo "Installing conda packages..." \
             # https://anaconda.org/conda-forge/jupyterlab-geojson
             # https://github.com/conda-forge/jupyterlab-geojson-feedstock/blob/main/recipe/meta.yaml
         #
+        # common geospatial dependencies:
+        qgis \
+            # https://anaconda.org/conda-forge/qgis
+            # https://github.com/conda-forge/qgis-feedstock/blob/main/recipe/meta.yaml
+            #
+            # We install this as an apt-get package but on startup we got errors
+            # about Python integration not being available. But installing this
+            # by itself didn't seem to give us the application. Installing both
+            # though makes things work, but seem to cause an initial install
+            # followed by a downgrade as the conda-forge version isn't as well
+            # updated. It also makes the installation take ~5-10 minutes longer.
+            #
+            # FIXME: Install qgis in a way that provides us with a recent
+            #        version, a shortcut from the desktop UI, and with Python
+            #        support - without also taking 5-10 minutes more than needed
+            #        to install.
+            #
+            # FIXME: Installing qgis downgrades pytorch and lots of other files,
+            #        causing a 1 GB download. The reason is unclear.
+            #
+            # NOTE: qgis depends on libspatialindex, geos, proj, but not
+            #       proj-data. Fernando added these as apt packages initially.
+            #
+        proj-data \
+            # https://anaconda.org/conda-forge/proj-data
+            # https://github.com/conda-forge/proj-data-feedstock/blob/main/recipe/meta.yaml
+        #
         # tests and formatting:
         black \
             # https://anaconda.org/conda-forge/black
@@ -341,25 +362,6 @@ RUN echo "Installing conda packages..." \
             # Additional setup instructions: https://github.com/yuvipanda/gh-scoped-creds#installation
             # Additional setup done: https://github.com/2i2c-org/infrastructure/commit/5a9f69b11727965fd4f07571c03eb65de5279fa4
             # Related issue: https://github.com/pangeo-data/jupyter-earth/issues/96
-        qgis \
-            # https://anaconda.org/conda-forge/qgis
-            # https://github.com/conda-forge/qgis-feedstock/blob/main/recipe/meta.yaml
-            #
-            # We install this as an apt-get package but on startup we got errors
-            # about Python integration not being available. But installing this
-            # by itself didn't seem to give us the application. Installing both
-            # though makes things work, but seem to cause an initial install
-            # followed by a downgrade as the conda-forge version isn't as well
-            # updated. It also makes the installation take ~5-10 minutes longer.
-            #
-            # FIXME: Install qgis in a way that provides us with a recent
-            #        version, a shortcut from the desktop UI, and with Python
-            #        support - without also taking 5-10 minutes more than needed
-            #        to install.
-            #
-            # FIXME: Installing qgis downgrades pytorch and lots of other files,
-            #        causing a 1 GB download.
-            #
         retrolab \
             # https://anaconda.org/conda-forge/retrolab
             # https://github.com/conda-forge/retrolab-feedstock/blob/main/recipe/meta.yaml
@@ -369,6 +371,7 @@ RUN echo "Installing conda packages..." \
             # https://github.com/conda-forge/ipydrawio-feedstock/blob/main/recipe/meta.yaml
         cxx-compiler \
             # https://anaconda.org/conda-forge/cxx-compiler
+            # https://github.com/conda-forge/compilers-feedstock/blob/main/recipe/meta.yaml
         cython \
         fortran-magic \
             # https://anaconda.org/conda-forge/fortran-magic
