@@ -197,36 +197,77 @@ RUN echo "Installing conda packages..." \
         # version than installed in the base image.
         #
         "jupyterlab>=3.4.3" \
+            # https://anaconda.org/conda-forge/jupyterlab
+            # https://github.com/conda-forge/jupyterlab-feedstock/blob/main/recipe/meta.yaml
         "dask-gateway>=2022.6.1" \
+            # https://anaconda.org/conda-forge/dask-gateway
+            # https://github.com/conda-forge/dask-gateway-feedstock/blob/main/recipe/meta.yaml
         #
         # visualization:
         altair \
+            # https://anaconda.org/conda-forge/altair
+            # https://github.com/conda-forge/altair-feedstock/blob/main/recipe/meta.yaml
         bqplot \
+            # https://anaconda.org/conda-forge/bqplot
+            # https://github.com/conda-forge/bqplot-feedstock/blob/main/recipe/meta.yaml
         plotly \
+            # https://anaconda.org/conda-forge/plotly
+            # https://github.com/conda-forge/plotly-feedstock/blob/main/recipe/meta.yaml
         python-kaleido \
+            # https://anaconda.org/conda-forge/python-kaleido
+            # https://github.com/conda-forge/python-kaleido-feedstock/blob/main/recipe/meta.yaml
         seaborn \
+            # https://anaconda.org/conda-forge/seaborn
+            # https://github.com/conda-forge/seaborn-feedstock/blob/main/recipe/meta.yaml
         ipycanvas \
+            # https://anaconda.org/conda-forge/ipycanvas
+            # https://github.com/conda-forge/ipycanvas-feedstock/blob/main/recipe/meta.yaml
         ipympl \
+            # https://anaconda.org/conda-forge/ipympl
+            # https://github.com/conda-forge/ipympl-feedstock/blob/main/recipe/meta.yaml
         jupyter_bokeh \
+            # https://anaconda.org/conda-forge/jupyter_bokeh
+            # https://github.com/conda-forge/jupyter_bokeh-feedstock/blob/main/recipe/meta.yaml
         jupyterlab-geojson \
+            # https://anaconda.org/conda-forge/jupyterlab-geojson
+            # https://github.com/conda-forge/jupyterlab-geojson-feedstock/blob/main/recipe/meta.yaml
         #
         # tests and formatting:
         black \
+            # https://anaconda.org/conda-forge/black
+            # https://github.com/conda-forge/black-feedstock/blob/main/recipe/meta.yaml
         flake8 \
+            # https://anaconda.org/conda-forge/flake8
+            # https://github.com/conda-forge/flake8-feedstock/blob/main/recipe/meta.yaml
         pep8 \
+            # https://anaconda.org/conda-forge/pep8
+            # https://github.com/conda-forge/pep8-feedstock/blob/main/recipe/meta.yaml
         pyflakes \
+            # https://anaconda.org/conda-forge/pyflakes
+            # https://github.com/conda-forge/pyflakes-feedstock/blob/main/recipe/meta.yaml
         pylint \
+            # https://anaconda.org/conda-forge/pylint
+            # https://github.com/conda-forge/pylint-feedstock/blob/main/recipe/meta.yaml
         pytest \
+            # https://anaconda.org/conda-forge/pytest
+            # https://github.com/conda-forge/pytest-feedstock/blob/main/recipe/meta.yaml
         pytest-cov \
+            # https://anaconda.org/conda-forge/pytest-cov
+            # https://github.com/conda-forge/pytest-cov-feedstock/blob/main/recipe/meta.yaml
         #
         # documentation:
         jupyter-book \
+            # https://anaconda.org/conda-forge/jupyter-book
+            # https://github.com/conda-forge/jupyter-book-feedstock/blob/main/recipe/meta.yaml
         jupytext \
+            # https://anaconda.org/conda-forge/jupytext
+            # https://github.com/conda-forge/jupytext-feedstock/blob/main/recipe/meta.yaml
         numpydoc \
-            # FIXME: Installing numpydoc downgrades jinja2 for some reason, see
-            #        https://github.com/conda-forge/numpydoc-feedstock/issues/22.
-            #
+            # https://anaconda.org/conda-forge/numpydoc
+            # https://github.com/conda-forge/numpydoc-feedstock/blob/main/recipe/meta.yaml
         sphinx \
+            # https://anaconda.org/conda-forge/sphinx
+            # https://github.com/conda-forge/sphinx-feedstock/blob/main/recipe/meta.yaml
         #
         # data:
         # pymc3 and dependencies start
@@ -242,35 +283,73 @@ RUN echo "Installing conda packages..." \
         mkl-service \
         # pymc3 and dependencies end
         ipydatagrid \
+            # FIXME: currently holding back ipywidgets to 7.*, see
+            #        https://github.com/bloomberg/ipydatagrid/pull/282 for a
+            #        resolution.
+            #
+            # https://anaconda.org/conda-forge/ipydatagrid
+            # https://github.com/conda-forge/ipydatagrid-feedstock/blob/main/recipe/meta.yaml
         ipyparallel \
+            # https://anaconda.org/conda-forge/ipyparallel
+            # https://github.com/conda-forge/ipyparallel-feedstock/blob/main/recipe/meta.yaml
         lxml \
+            # https://anaconda.org/conda-forge/lxml
+            # https://github.com/conda-forge/lxml-feedstock/blob/main/recipe/meta.yaml
         pyhdf \
+            # https://anaconda.org/conda-forge/pyhdf
+            # https://github.com/conda-forge/pyhdf-feedstock/blob/main/recipe/meta.yaml
         vaex \
+            # https://anaconda.org/conda-forge/vaex
+            # https://github.com/conda-forge/vaex-feedstock/blob/main/recipe/meta.yaml
         mhealpy \
+            # https://anaconda.org/conda-forge/mhealpy
+            # https://github.com/conda-forge/mhealpy-feedstock/blob/main/recipe/meta.yaml
         pytables \
+            # https://anaconda.org/conda-forge/pytables
+            # https://github.com/conda-forge/pytables-feedstock/blob/main/recipe/meta.yaml
         statsmodels \
+            # https://anaconda.org/conda-forge/statsmodels
+            # https://github.com/conda-forge/statsmodels-feedstock/blob/main/recipe/meta.yaml
         xlrd \
+            # https://anaconda.org/conda-forge/xlrd
+            # https://github.com/conda-forge/xlrd-feedstock/blob/main/recipe/meta.yaml
         jupyter-repo2docker \
+            # https://anaconda.org/conda-forge/jupyter-repo2docker
+            # https://github.com/conda-forge/jupyter-repo2docker-feedstock/blob/main/recipe/meta.yaml
         #
         # IDE:
         jupyter-vscode-proxy \
+            # https://anaconda.org/conda-forge/jupyter-vscode-proxy
+            # https://github.com/conda-forge/jupyter-vscode-proxy-feedstock/blob/main/recipe/meta.yaml
             # NOTE: Requires code-server to be installed.
             # https://pypi.org/project/jupyter-vscode-proxy/
         jupyterlab-link-share \
+            # https://anaconda.org/conda-forge/jupyterlab-link-share
+            # https://github.com/conda-forge/jupyterlab-link-share-feedstock/blob/main/recipe/meta.yaml
             # ref: https://github.com/jupyterlab-contrib/jupyterlab-link-share
         jupyterlab-git \
+            # https://anaconda.org/conda-forge/jupyterlab-git
+            # https://github.com/conda-forge/jupyterlab-git-feedstock/blob/main/recipe/meta.yaml
         jupyterlab-system-monitor \
-            # FIXME: Installing jupyterlab-system-monitor causes a downgrade of
-            #        jupyter-resource-usage. See
-            #        https://github.com/jtpio/jupyterlab-system-monitor/issues/93
-            #
+            # https://anaconda.org/conda-forge/jupyterlab-system-monitor
+            # https://github.com/conda-forge/jupyterlab-system-monitor-feedstock/blob/main/recipe/meta.yaml
         jupyterlab-favorites \
+            # https://anaconda.org/conda-forge/jupyterlab-favorites
+            # https://github.com/conda-forge/jupyterlab-favorites-feedstock/blob/main/recipe/meta.yaml
         nbdime \
+            # https://anaconda.org/conda-forge/nbdime
+            # https://github.com/conda-forge/nbdime-feedstock/blob/main/recipe/meta.yaml
         gh-scoped-creds \
+            # https://anaconda.org/conda-forge/gh-scoped-creds
+            # https://github.com/conda-forge/gh-scoped-creds-feedstock/blob/main/recipe/meta.yaml
+            #
             # Additional setup instructions: https://github.com/yuvipanda/gh-scoped-creds#installation
             # Additional setup done: https://github.com/2i2c-org/infrastructure/commit/5a9f69b11727965fd4f07571c03eb65de5279fa4
             # Related issue: https://github.com/pangeo-data/jupyter-earth/issues/96
         qgis \
+            # https://anaconda.org/conda-forge/qgis
+            # https://github.com/conda-forge/qgis-feedstock/blob/main/recipe/meta.yaml
+            #
             # We install this as an apt-get package but on startup we got errors
             # about Python integration not being available. But installing this
             # by itself didn't seem to give us the application. Installing both
@@ -287,23 +366,36 @@ RUN echo "Installing conda packages..." \
             #        causing a 1 GB download.
             #
         retrolab \
+            # https://anaconda.org/conda-forge/retrolab
+            # https://github.com/conda-forge/retrolab-feedstock/blob/main/recipe/meta.yaml
         ipydrawio \
             # a drawio IDE launchable from jupyterlab's launcher
+            # https://anaconda.org/conda-forge/ipydrawio
+            # https://github.com/conda-forge/ipydrawio-feedstock/blob/main/recipe/meta.yaml
         cxx-compiler \
+            # https://anaconda.org/conda-forge/cxx-compiler
         cython \
         fortran-magic \
+            # https://anaconda.org/conda-forge/fortran-magic
+            # https://github.com/conda-forge/fortran-magic-feedstock/blob/main/recipe/meta.yaml
         google-cloud-sdk \
+            # https://anaconda.org/conda-forge/google-cloud-sdk
+            # https://github.com/conda-forge/google-cloud-sdk-feedstock/blob/main/recipe/meta.yaml
         sympy \
+            # https://anaconda.org/conda-forge/sympy
+            # https://github.com/conda-forge/sympy-feedstock/blob/main/recipe/meta.yaml
         # Storage related
         #
         syncthing \
-            # ref: https://anaconda.org/conda-forge/syncthing
+            # https://anaconda.org/conda-forge/syncthing
             # We also install jupyter-syncthing-proxy from pip.
         #
-        # /desktop part 4: websocify and firefox
+        # /desktop part 4: websockify and firefox
         websockify \
+            # https://anaconda.org/conda-forge/websockify
             # optional performance benefit for jupyter-remote-desktop-proxy
         firefox \
+            # https://anaconda.org/conda-forge/firefox
             # optional good to have for use with jupyter-remote-desktop-proxy,
             # note that we also set it as a default in a command below.
             #
