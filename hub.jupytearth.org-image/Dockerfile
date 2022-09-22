@@ -142,10 +142,10 @@ RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}
 #
 # Latest Julia version at https://julialang.org/downloads/
 #
-ENV JULIA_VERSION 1.8.1
-ENV JULIA_PATH /srv/julia
-ENV JULIA_DEPOT_PATH ${JULIA_PATH}/pkg
-ENV PATH $PATH:${JULIA_PATH}/bin
+ARG JULIA_VERSION=1.8.1
+ARG JULIA_PATH=/srv/julia
+ENV JULIA_DEPOT_PATH=${JULIA_PATH}/pkg
+ENV PATH=$PATH:${JULIA_PATH}/bin
 RUN mkdir -p ${JULIA_PATH} \
  && curl -sSL "https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_VERSION%[.-]*}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" \
   | tar -xz -C ${JULIA_PATH} --strip-components 1 \
@@ -184,6 +184,10 @@ RUN curl -L https://nixos.org/nix/install | sh
 RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
  && julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
  && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
+# Make additional julia packages be installed in the home folder while retaining
+# access to julia packages installed outside the home folder as well.
+#
+ENV JULIA_DEPOT_PATH=$HOME/.julia/pkg:$JULIA_DEPOT_PATH
 
 # We only need to install packages not listed in this file already:
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pytorch-notebook/packages.txt
