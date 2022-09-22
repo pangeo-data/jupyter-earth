@@ -55,6 +55,10 @@ RUN echo "Installing apt-get packages..." \
         # qgis
             gnupg \
             software-properties-common \
+        # pymc requires aesara which relies on compiling some C++ code, this may
+        # be relevant to help that compilation succeed. See this issue for
+        # details: https://github.com/pangeo-data/jupyter-earth/issues/104#issuecomment-1027210956
+            libc-dev \
     > /dev/null \
  && apt-get -y remove \
         xfce4-screensaver \
