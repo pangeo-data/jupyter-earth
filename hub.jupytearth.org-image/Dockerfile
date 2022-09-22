@@ -43,8 +43,6 @@ RUN echo "Installing apt-get packages..." \
             # `zip` and `unzip` which doesn't help us decompress .rar files. See
             # https://github.com/pangeo-data/pangeo-docker-images/issues/366 for
             # an issue about installing this in the base image.
-        graphviz \
-        ffmpeg \
         # /desktop part 1: install desktop UI via apt
         #
             dbus-x11 \
