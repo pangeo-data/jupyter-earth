@@ -184,8 +184,8 @@ ENV JULIA_DEPOT_PATH=$HOME/.julia/pkg:$JULIA_DEPOT_PATH
 # We only need to install packages not listed in this file already:
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pytorch-notebook/packages.txt
 RUN echo "Installing conda packages..." \
- && mamba install -n ${CONDA_ENV} -y \
-        "libblas=*=*mkl" \
+ && mamba install -n ${CONDA_ENV} -y --channel=nodefaults \
+        "libblas=*=*openblas" \
             # insane struggle for pymc, this was added because of this line, and
             # comparing to conclude that the shared/envs/pymc3 had this library
             # instead of the mkl associated libblas build.
