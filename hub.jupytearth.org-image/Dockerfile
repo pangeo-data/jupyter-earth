@@ -30,7 +30,7 @@ RUN echo "Installing apt-get packages..." \
             # A friendly terminal editor, even easier than nano for new users
         mc \
             # powerful terminal-based file manager, better than the one in JLab
-        build-essential gfortran \
+        build-essential gfortran g++ \
             # Regular build tools for compiling common stuff
         texlive-xetex texlive-fonts-recommended texlive-plain-generic \
             # Dependencies for nbconvert
@@ -184,8 +184,10 @@ ENV JULIA_DEPOT_PATH=$HOME/.julia/pkg:$JULIA_DEPOT_PATH
 # We only need to install packages not listed in this file already:
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pytorch-notebook/packages.txt
 RUN echo "Installing conda packages..." \
- && mamba install -n ${CONDA_ENV} -y --channel=nodefaults \
-        "blas=*=*openblas" \
+ && mamba install -n ${CONDA_ENV} -y \
+        mkl \
+        mkl-service \
+        "libblas=*=*mkl" \
             # insane struggle for pymc, this was added because of this line, and
             # comparing to conclude that the shared/envs/pymc3 had this library
             # instead of the mkl associated libblas build.
@@ -303,9 +305,9 @@ RUN echo "Installing conda packages..." \
             #
             # https://anaconda.org/conda-forge/pymc
             # https://github.com/conda-forge/pymc-feedstock/blob/main/recipe/meta.yaml
-        cxx-compiler \
+        compilers \
             # Installed to help aesara function, a dependency for pymc
-            # https://anaconda.org/conda-forge/cxx-compiler
+            # https://anaconda.org/conda-forge/compilers
         ipydatagrid \
             # FIXME: currently holding back ipywidgets to 7.*, see
             #        https://github.com/bloomberg/ipydatagrid/pull/282 for a
