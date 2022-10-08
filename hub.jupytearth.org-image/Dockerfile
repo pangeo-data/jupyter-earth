@@ -30,7 +30,7 @@ RUN echo "Installing apt-get packages..." \
             # A friendly terminal editor, even easier than nano for new users
         mc \
             # powerful terminal-based file manager, better than the one in JLab
-        build-essential gfortran g++ \
+        build-essential gfortran \
             # Regular build tools for compiling common stuff
         texlive-xetex texlive-fonts-recommended texlive-plain-generic \
             # Dependencies for nbconvert
@@ -77,7 +77,7 @@ RUN sed -i 's/WebBrowser=.*/WebBrowser=firefox/' /etc/xdg/xfce4/helpers.rc
 # Install visual studio code-server
 # ref: https://github.com/cdr/code-server
 #
-RUN export VERSION=4.7.0 \
+RUN export VERSION=4.7.1 \
  && curl -fsSL https://code-server.dev/install.sh | sh \
  && rm -rf "${HOME}/.cache"
 
@@ -98,7 +98,7 @@ RUN wget -qO - https://qgis.org/downloads/qgis-2022.gpg.key \
 
 
 # Install TurboVNC (https://github.com/TurboVNC/turbovnc)
-ARG TURBOVNC_VERSION=3.0
+ARG TURBOVNC_VERSION=3.0.1
 RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}/turbovnc_${TURBOVNC_VERSION}_amd64.deb/download" -O turbovnc.deb \
  && apt-get install -y ./turbovnc.deb > /dev/null \
  && rm ./turbovnc.deb \
@@ -185,15 +185,6 @@ ENV JULIA_DEPOT_PATH=$HOME/.julia/pkg:$JULIA_DEPOT_PATH
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pytorch-notebook/packages.txt
 RUN echo "Installing conda packages..." \
  && mamba install -n ${CONDA_ENV} -y \
-        mkl \
-        mkl-service \
-        "libblas=*=*mkl" \
-            # insane struggle for pymc, this was added because of this line, and
-            # comparing to conclude that the shared/envs/pymc3 had this library
-            # instead of the mkl associated libblas build.
-            #
-            # see https://github.com/aesara-devs/aesara/issues/326#issuecomment-794193854
-            #
         # temporary upgrades, because sometimes we wish to have a more modern
         # version than installed in the base image.
         #
@@ -298,16 +289,6 @@ RUN echo "Installing conda packages..." \
             # https://github.com/conda-forge/sphinx-feedstock/blob/main/recipe/meta.yaml
         #
         # data:
-        pymc \
-            # Installed for Abby and Facu following a slack discussion, related:
-            # - https://github.com/pangeo-data/jupyter-earth/issues/153
-            # - https://github.com/pangeo-data/jupyter-earth/issues/104
-            #
-            # https://anaconda.org/conda-forge/pymc
-            # https://github.com/conda-forge/pymc-feedstock/blob/main/recipe/meta.yaml
-        compilers \
-            # Installed to help aesara function, a dependency for pymc
-            # https://anaconda.org/conda-forge/compilers
         ipydatagrid \
             # FIXME: currently holding back ipywidgets to 7.*, see
             #        https://github.com/bloomberg/ipydatagrid/pull/282 for a
@@ -428,6 +409,11 @@ RUN echo "Installing pip packages..." \
             #       conda-forge. We have also installed TurboVNC for performance
             #       I think, and also various apt packages to get a desktop UI.
             #
+        https://github.com/minrk/jupyter-keepalive/archive/main.zip \
+            # This is a jupyter_server extension that is controllable via a
+            # JupyterLab plugin to keep a server running.
+            #
+            # ref: https://github.com/minrk/jupyter-keepalive
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
