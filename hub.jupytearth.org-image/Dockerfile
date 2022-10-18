@@ -188,12 +188,8 @@ RUN echo "Installing conda packages..." \
         # temporary upgrades, because sometimes we wish to have a more modern
         # version than installed in the base image.
         #
-        "jupyterlab>=3.4.3" \
-            # https://anaconda.org/conda-forge/jupyterlab
-            # https://github.com/conda-forge/jupyterlab-feedstock/blob/main/recipe/meta.yaml
-        "dask-gateway>=2022.6.1" \
-            # https://anaconda.org/conda-forge/dask-gateway
-            # https://github.com/conda-forge/dask-gateway-feedstock/blob/main/recipe/meta.yaml
+        # Should be possible to remove very soon
+        "ipyspin>=1.0.1" \
         #
         # visualization:
         altair \
