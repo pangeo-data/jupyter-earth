@@ -75,9 +75,9 @@ RUN sed -i 's/WebBrowser=.*/WebBrowser=firefox/' /etc/xdg/xfce4/helpers.rc
 
 
 # Install visual studio code-server
-# ref: https://github.com/cdr/code-server
+# ref: https://github.com/coder/code-server
 #
-RUN export VERSION=4.7.1 \
+RUN export VERSION=4.9.0 \
  && curl -fsSL https://code-server.dev/install.sh | sh \
  && rm -rf "${HOME}/.cache"
 
@@ -98,7 +98,7 @@ RUN wget -qO - https://qgis.org/downloads/qgis-2022.gpg.key \
 
 
 # Install TurboVNC (https://github.com/TurboVNC/turbovnc)
-ARG TURBOVNC_VERSION=3.0.1
+ARG TURBOVNC_VERSION=3.0.2
 RUN wget -q "https://sourceforge.net/projects/turbovnc/files/${TURBOVNC_VERSION}/turbovnc_${TURBOVNC_VERSION}_amd64.deb/download" -O turbovnc.deb \
  && apt-get install -y ./turbovnc.deb > /dev/null \
  && rm ./turbovnc.deb \
@@ -187,9 +187,6 @@ RUN echo "Installing conda packages..." \
  && mamba install -n ${CONDA_ENV} -y \
         # temporary upgrades, because sometimes we wish to have a more modern
         # version than installed in the base image.
-        #
-        # Should be possible to remove very soon
-        "ipyspin>=1.0.1" \
         #
         # visualization:
         altair \
@@ -286,10 +283,6 @@ RUN echo "Installing conda packages..." \
         #
         # data:
         ipydatagrid \
-            # FIXME: currently holding back ipywidgets to 7.*, see
-            #        https://github.com/bloomberg/ipydatagrid/pull/282 for a
-            #        resolution.
-            #
             # https://anaconda.org/conda-forge/ipydatagrid
             # https://github.com/conda-forge/ipydatagrid-feedstock/blob/main/recipe/meta.yaml
         ipyparallel \
