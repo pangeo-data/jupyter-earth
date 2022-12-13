@@ -268,9 +268,15 @@ RUN echo "Installing conda packages..." \
             # https://github.com/conda-forge/pytest-cov-feedstock/blob/main/recipe/meta.yaml
         #
         # documentation:
-        jupyter-book \
-            # https://anaconda.org/conda-forge/jupyter-book
-            # https://github.com/conda-forge/jupyter-book-feedstock/blob/main/recipe/meta.yaml
+        # jupyter-book \
+              # NOTE: jupyter-book is disabled as its providing upper bounds on
+              #       its dependencies, and that has led to ipywidgets 8 was
+              #       held back.
+              #
+              #       https://github.com/executablebooks/jupyter-book/issues/1898.
+              #
+              # https://anaconda.org/conda-forge/jupyter-book
+              # https://github.com/conda-forge/jupyter-book-feedstock/blob/main/recipe/meta.yaml
         jupytext \
             # https://anaconda.org/conda-forge/jupytext
             # https://github.com/conda-forge/jupytext-feedstock/blob/main/recipe/meta.yaml
