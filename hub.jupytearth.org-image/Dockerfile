@@ -196,6 +196,11 @@ RUN echo "Installing conda packages..." \
             # https://anaconda.org/conda-forge/bqplot
             # https://github.com/conda-forge/bqplot-feedstock/blob/main/recipe/meta.yaml
         plotly \
+            # NOTE: Plotly can downgrade ipywidgets in a sneaky way via "run
+            #       constrained", which won't show up using conda-tree's command
+            #       deptree. https://github.com/plotly/plotly.py/issues/3686 can
+            #       be tracked know when we can install plotly again.
+            #
             # https://anaconda.org/conda-forge/plotly
             # https://github.com/conda-forge/plotly-feedstock/blob/main/recipe/meta.yaml
         python-kaleido \
