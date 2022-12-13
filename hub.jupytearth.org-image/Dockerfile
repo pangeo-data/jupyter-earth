@@ -184,6 +184,16 @@ ENV JULIA_DEPOT_PATH=$HOME/.julia/pkg:$JULIA_DEPOT_PATH
 # We only need to install packages not listed in this file already:
 # https://github.com/pangeo-data/pangeo-docker-images/blob/master/pytorch-notebook/packages.txt
 RUN echo "Installing conda packages..." \
+ && mamba install -n ${CONDA_ENV} -y --no-update-deps \
+        plotly \
+            # NOTE: Plotly can downgrade ipywidgets in a sneaky way via "run
+            #       constrained", which won't show up using conda-tree's command
+            #       deptree. https://github.com/plotly/plotly.py/issues/3686 can
+            #       be tracked know when we can install plotly again normally
+            #       without a --no-update-deps flag.
+            #
+            # https://anaconda.org/conda-forge/plotly
+            # https://github.com/conda-forge/plotly-feedstock/blob/main/recipe/meta.yaml
  && mamba install -n ${CONDA_ENV} -y \
         # temporary upgrades, because sometimes we wish to have a more modern
         # version than installed in the base image.
@@ -195,14 +205,6 @@ RUN echo "Installing conda packages..." \
         bqplot \
             # https://anaconda.org/conda-forge/bqplot
             # https://github.com/conda-forge/bqplot-feedstock/blob/main/recipe/meta.yaml
-        # plotly \
-            # NOTE: Plotly can downgrade ipywidgets in a sneaky way via "run
-            #       constrained", which won't show up using conda-tree's command
-            #       deptree. https://github.com/plotly/plotly.py/issues/3686 can
-            #       be tracked know when we can install plotly again.
-            #
-            # https://anaconda.org/conda-forge/plotly
-            # https://github.com/conda-forge/plotly-feedstock/blob/main/recipe/meta.yaml
         python-kaleido \
             # https://anaconda.org/conda-forge/python-kaleido
             # https://github.com/conda-forge/python-kaleido-feedstock/blob/main/recipe/meta.yaml
