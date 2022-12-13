@@ -412,11 +412,14 @@ RUN echo "Installing pip packages..." \
             #       conda-forge. We have also installed TurboVNC for performance
             #       I think, and also various apt packages to get a desktop UI.
             #
-        https://github.com/minrk/jupyter-keepalive/archive/main.zip \
+        # https://github.com/minrk/jupyter-keepalive/archive/main.zip \
             # This is a jupyter_server extension that is controllable via a
             # JupyterLab plugin to keep a server running.
             #
             # ref: https://github.com/minrk/jupyter-keepalive
+            #
+            # NOTE: Disabled as we don't have nodejs installed, making us
+            #       require a pre-built wheel or installation of nodejs.
         julia \
             # To enable doing Julia stuff from Python
             # ref: https://pyjulia.readthedocs.io/en/latest/index.html
