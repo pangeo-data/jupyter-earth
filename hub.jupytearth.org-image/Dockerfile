@@ -193,7 +193,7 @@ RUN echo "Installing conda packages..." \
             #
             # https://anaconda.org/conda-forge/plotly
             # https://github.com/conda-forge/plotly-feedstock/blob/main/recipe/meta.yaml
- && mamba install -n ${CONDA_ENV} -y --no-pin --satisfied-skip-solve \
+ && mamba install -n ${CONDA_ENV} -y --satisfied-skip-solve \
         "ipywidgets>=8" \
             # NOTE: This is a workaround to plotly downgrading ipywidgets
             #       previously.
