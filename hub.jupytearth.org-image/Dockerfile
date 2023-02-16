@@ -77,7 +77,7 @@ RUN sed -i 's/WebBrowser=.*/WebBrowser=firefox/' /etc/xdg/xfce4/helpers.rc
 # Install visual studio code-server
 # ref: https://github.com/coder/code-server
 #
-RUN export VERSION=4.9.0 \
+RUN export VERSION=4.9.1 \
  && curl -fsSL https://code-server.dev/install.sh | sh \
  && rm -rf "${HOME}/.cache"
 
