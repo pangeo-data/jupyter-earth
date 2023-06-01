@@ -1,0 +1,59 @@
+channels:
+  - conda-forge
+dependencies:
+  - altair
+  - bqplot
+  - python-kaleido
+  - ipycanvas
+  - ipympl
+  - cython
+  - jupyter_bokeh
+  - jupyterlab-geojson
+  - sympy
+  - proj-data
+  # Dev tools
+  - black
+  - flake8
+  - pep8
+  - pyflakes
+  - pylint
+  - pytest
+  - pytest-cov
+  # jupyter-book is disabled as its providing upper bounds on
+  # its dependencies, and that has led to ipywidgets 8 was
+  # held back.
+  # https://github.com/executablebooks/jupyter-book/issues/1898.
+  # - jupyter-book
+  - jupytext
+  - numpydoc
+  - sphinx
+  # Data visualization
+  - plotly
+  - ipydatagrid
+  - ipyparallel
+  - pyhdf
+  - vaex
+  - mhealpy
+  - pytables
+  - xlrd
+  - jupyter-repo2docker
+  # UI changes
+  - jupyter-vscode-proxy
+  - jupypterlab-link-share
+  - jupyterlab-system-monitor
+  - jupyterlab-favorites
+  - nbdime
+  - retrolab
+  - ipydrawio
+  - google-cloud-sdk
+  - qgis
+  - syncthing
+  - websockify
+  - firefox
+  - pip
+  - pip:
+      - jupyter-remote-desktop-proxy==1.0.0
+      - julia # Enable interacting with julia from Python
+      - jupyter-syncthing-proxy
+      - plotly-geo
+
