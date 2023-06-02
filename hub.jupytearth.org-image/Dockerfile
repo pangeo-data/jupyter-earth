@@ -183,7 +183,7 @@ ENV JULIA_DEPOT_PATH=$HOME/.julia/pkg:$JULIA_DEPOT_PATH
 
 # Install extra packages not present in base env
 ADD environment.yml /tmp/environment.yml
-RUN mamba env update -n ${CONDA_ENV} -y -f /tmp/environment.yml \
+RUN mamba env update -n ${CONDA_ENV} -f /tmp/environment.yml && \
         && find ${CONDA_DIR} -follow -type f -name '*.a' -delete \
         && find ${CONDA_DIR} -follow -type f -name '*.js.map' -delete
         
