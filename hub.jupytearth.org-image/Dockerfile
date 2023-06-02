@@ -5,7 +5,7 @@
 # - pangeo/pytorch-notebook tags:       https://hub.docker.com/r/pangeo/pytorch-notebook/tags
 # - pytorch-notebook conda package:     https://github.com/conda-forge/pytorch-notebook-feedstock/blob/master/recipe/meta.yaml
 #
-FROM pangeo/pytorch-notebook:master
+FROM pangeo/pytorch-notebook:2023.02.16
 
 # While NB_GID is often defined in these jupyter images, it isn't for
 # pangeo/base-image and derivative images. Let's define it here so copy pasting
