@@ -52,7 +52,7 @@ dependencies:
   - firefox
   - pip
   - pip:
-      - jupyter-remote-desktop-proxy==1.0.0
+      - jupyter-remote-desktop-proxy
       - julia # Enable interacting with julia from Python
       - jupyter-syncthing-proxy
       - plotly-geo
